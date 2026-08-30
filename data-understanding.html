@@ -1,0 +1,1912 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data Understanding &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'data-understanding';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="2. Analisis Data Kualitas Udara — Kabupaten Lamongan" href="analisis_lamongan.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="psd.html">Proyek Sains Data</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="analisis-polutan-lamongan.html">Pengantar Analisis Polutan Kabupaten Lamongan</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ekstraksi_data.html">1. Ekstraksi Data Kualitas Udara — Kabupaten Lamongan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analisis_lamongan.html">2. Analisis Data Kualitas Udara — Kabupaten Lamongan</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Data Understanding</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdata-understanding.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/data-understanding.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data Understanding</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#library-python-yang-diperlukan">Library Python yang Diperlukan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-mengumpulkan-data">1. Collecting (Mengumpulkan Data)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">1.1 Sumber Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-dan-otentikasi">1.2 Koneksi dan Otentikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penentuan-area-of-interest-aoi">1.3 Penentuan Area of Interest (AOI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memuat-data-load-collection">1.4 Memuat Data (Load Collection)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-aoi-polygon">1.5 Definisi AOI (Polygon)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregasi-data">1.6 Agregasi Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menjalankan-batch-job-ekspor">1.7 Menjalankan Batch Job &amp; Ekspor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-peta-wilayah-kajian-folium">2. Visualisasi Peta Wilayah Kajian (Folium)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-hasil-data-csv">3. Menampilkan Hasil Data CSV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no2">3.1 NO₂</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#co">3.2 CO</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so2">3.3 SO₂</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ch4">3.4 CH₄</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kenapa-ada-nilai-nan">3.5 Kenapa Ada Nilai NaN?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-kualitas-data">4. Identifikasi Kualitas Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-values">4.1 Missing Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outliers">4.2 Outliers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#noise">4.3 Noise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-data-understanding">5. Ringkasan Data Understanding</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="data-understanding">
+<h1>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
+<p>Data Understanding adalah tahap untuk <strong>mengumpulkan</strong>, <strong>mengeksplorasi</strong>, dan <strong>menilai kualitas</strong> data yang akan digunakan dalam analisis kualitas udara di Kabupaten Lamongan.</p>
+<hr class="docutils" />
+<section id="library-python-yang-diperlukan">
+<h2>Library Python yang Diperlukan<a class="headerlink" href="#library-python-yang-diperlukan" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Library</p></th>
+<th class="head"><p>Kegunaan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">openeo</span></code></p></td>
+<td><p>Menghubungkan dan memproses data satelit dari server openEO (Copernicus Data Space).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">xarray</span></code> / <code class="docutils literal notranslate"><span class="pre">netCDF4</span></code></p></td>
+<td><p>Membaca file hasil batch job openEO berformat NetCDF (<code class="docutils literal notranslate"><span class="pre">.nc</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></td>
+<td><p>Membaca dan mengolah data tabular (CSV), serta manipulasi deret waktu.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code></p></td>
+<td><p>Komputasi numerik, misalnya untuk perhitungan rata-rata dan statistik.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">folium</span></code></p></td>
+<td><p>Membuat visualisasi peta interaktif lokasi pengamatan.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> / <code class="docutils literal notranslate"><span class="pre">seaborn</span></code></p></td>
+<td><p>Visualisasi grafik deret waktu dan deteksi outlier.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></p></td>
+<td><p>Algoritma <code class="docutils literal notranslate"><span class="pre">IsolationForest</span></code> untuk deteksi anomali/outlier.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Instalasi (lihat juga <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> pada proyek ini):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="collecting-mengumpulkan-data">
+<h2>1. Collecting (Mengumpulkan Data)<a class="headerlink" href="#collecting-mengumpulkan-data" title="Link to this heading">#</a></h2>
+<section id="sumber-data">
+<h3>1.1 Sumber Data<a class="headerlink" href="#sumber-data" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Item</p></th>
+<th class="head"><p>Keterangan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Sumber</strong></p></td>
+<td><p>Copernicus Data Space Ecosystem</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Layanan</strong></p></td>
+<td><p>openEO</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Server</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">openeo.dataspace.copernicus.eu</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Produk / Koleksi</strong></p></td>
+<td><p>Sentinel-5P L2</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Polutan</strong></p></td>
+<td><p>NO₂, CO, SO₂, CH₄</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Periode</strong></p></td>
+<td><p>24 Agustus 2025 – 24 Agustus 2026</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Lokasi</strong></p></td>
+<td><p>Kabupaten Lamongan, Jawa Timur</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="koneksi-dan-otentikasi">
+<h3>1.2 Koneksi dan Otentikasi<a class="headerlink" href="#koneksi-dan-otentikasi" title="Link to this heading">#</a></h3>
+<p>Langkah pertama adalah menghubungkan ke server openEO dan melakukan otentikasi menggunakan akun <strong>Copernicus Data Space</strong> dengan metode <strong>device code flow</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">openeo</span>
+
+<span class="n">connection</span> <span class="o">=</span> <span class="n">openeo</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;openeo.dataspace.copernicus.eu&quot;</span><span class="p">)</span>
+<span class="n">connection</span><span class="o">.</span><span class="n">authenticate_oidc</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Saat dijalankan, akan muncul tautan untuk login di browser. Setelah berhasil login, akan muncul konfirmasi seperti:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Visit (link autentikasi) 📋 to authenticate.
+✅ Authorized successfully
+Authenticated using device code flow.
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Catatan:</strong> Proses ekstraksi lengkap (loop 4 polutan, agregasi, ekspor NetCDF &amp; CSV) ada pada notebook <code class="docutils literal notranslate"><span class="pre">1-ekstraksi-data.ipynb</span></code> di proyek ini.</p>
+</div></blockquote>
+</section>
+<section id="penentuan-area-of-interest-aoi">
+<h3>1.3 Penentuan Area of Interest (AOI)<a class="headerlink" href="#penentuan-area-of-interest-aoi" title="Link to this heading">#</a></h3>
+<p>Lokasi pengamatan dibatasi pada wilayah <strong>Kabupaten Lamongan</strong>. Setiap titik pada polygon memiliki format <code class="docutils literal notranslate"><span class="pre">[longitude</span> <span class="pre">(bujur),</span> <span class="pre">latitude</span> <span class="pre">(lintang)]</span></code>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Atribut</p></th>
+<th class="head"><p>Nilai</p></th>
+<th class="head"><p>Keterangan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">west</span></code></p></td>
+<td><p>112.00</p></td>
+<td><p>Longitude terkecil (batas kiri)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">east</span></code></p></td>
+<td><p>112.60</p></td>
+<td><p>Longitude terbesar (batas kanan)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">south</span></code></p></td>
+<td><p>-7.35</p></td>
+<td><p>Latitude terkecil (batas bawah)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">north</span></code></p></td>
+<td><p>-6.85</p></td>
+<td><p>Latitude terbesar (batas atas)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><strong>Penting:</strong> Bounding box di atas adalah <strong>perkiraan sederhana</strong> yang mengikuti bentuk umum Kabupaten Lamongan. Untuk hasil yang presisi secara administratif, sebaiknya diganti dengan geometri resmi (mis. dari <a class="reference external" href="https://geojson.io">geojson.io</a>, <strong>GADM</strong>, atau <strong>Batas Administrasi BIG</strong>) dibaca via <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">spatial_extent</span></code> pada <code class="docutils literal notranslate"><span class="pre">load_collection</span></code> menggunakan <em>bounding box</em> (<code class="docutils literal notranslate"><span class="pre">west</span></code>, <code class="docutils literal notranslate"><span class="pre">south</span></code>, <code class="docutils literal notranslate"><span class="pre">east</span></code>, <code class="docutils literal notranslate"><span class="pre">north</span></code>), sedangkan geometri polygon digunakan pada tahap <code class="docutils literal notranslate"><span class="pre">aggregate_spatial</span></code> untuk menghitung rata-rata di dalam area tersebut.</p>
+</section>
+<section id="memuat-data-load-collection">
+<h3>1.4 Memuat Data (Load Collection)<a class="headerlink" href="#memuat-data-load-collection" title="Link to this heading">#</a></h3>
+<p>Data dimuat <strong>per polutan</strong>, karena band Sentinel-5P diproses satu per satu. Berikut contoh untuk NO₂ — CO, SO₂, dan CH₄ menggunakan struktur kode yang identik, hanya berbeda pada parameter <code class="docutils literal notranslate"><span class="pre">bands</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LAMONGAN_BBOX</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;west&quot;</span><span class="p">:</span> <span class="mf">112.00</span><span class="p">,</span>
+    <span class="s2">&quot;south&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">7.35</span><span class="p">,</span>
+    <span class="s2">&quot;east&quot;</span><span class="p">:</span> <span class="mf">112.60</span><span class="p">,</span>
+    <span class="s2">&quot;north&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">6.85</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">s5</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">load_collection</span><span class="p">(</span>
+    <span class="s2">&quot;SENTINEL_5P_L2&quot;</span><span class="p">,</span>
+    <span class="n">temporal_extent</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;2025-08-24&quot;</span><span class="p">,</span> <span class="s2">&quot;2026-08-24&quot;</span><span class="p">],</span>
+    <span class="n">spatial_extent</span><span class="o">=</span><span class="n">LAMONGAN_BBOX</span><span class="p">,</span>
+    <span class="n">bands</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;NO2&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="definisi-aoi-polygon">
+<h3>1.5 Definisi AOI (Polygon)<a class="headerlink" href="#definisi-aoi-polygon" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LAMONGAN_POLYGON</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[[</span>
+        <span class="p">[</span><span class="mf">112.00</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.00</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">112.10</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.30</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">112.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.35</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">112.40</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.25</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">112.55</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.15</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">112.60</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.00</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">112.50</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.88</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">112.30</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.85</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">112.10</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.90</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">112.00</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.00</span><span class="p">],</span>
+    <span class="p">]]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="agregasi-data">
+<h3>1.6 Agregasi Data<a class="headerlink" href="#agregasi-data" title="Link to this heading">#</a></h3>
+<p>Setiap datacube diagregasi menjadi <strong>rata-rata harian</strong>, lalu dihitung <strong>rata-rata spasial</strong> di dalam polygon AOI untuk menghasilkan deret waktu (time series).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s5</span> <span class="o">=</span> <span class="n">s5</span><span class="o">.</span><span class="n">aggregate_temporal_period</span><span class="p">(</span><span class="n">reducer</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">)</span>
+<span class="n">s5</span> <span class="o">=</span> <span class="n">s5</span><span class="o">.</span><span class="n">aggregate_spatial</span><span class="p">(</span><span class="n">reducer</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">geometries</span><span class="o">=</span><span class="n">LAMONGAN_POLYGON</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="menjalankan-batch-job-ekspor">
+<h3>1.7 Menjalankan Batch Job &amp; Ekspor<a class="headerlink" href="#menjalankan-batch-job-ekspor" title="Link to this heading">#</a></h3>
+<p>Hasil diunduh sebagai NetCDF, lalu dikonversi menjadi CSV:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Polutan</p></th>
+<th class="head"><p>File NetCDF</p></th>
+<th class="head"><p>File CSV</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NO₂</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/nc/no2_lamongan.nc</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/csv/no2_lamongan.csv</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>CO</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/nc/co_lamongan.nc</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/csv/co_lamongan.csv</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>SO₂</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/nc/so2_lamongan.nc</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/csv/so2_lamongan.csv</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>CH₄</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/nc/ch4_lamongan.nc</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/csv/ch4_lamongan.csv</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>Detail lengkap proses ini (fungsi <code class="docutils literal notranslate"><span class="pre">extract_pollutant()</span></code>, loop 4 polutan, konversi NetCDF→CSV) ada di notebook <code class="docutils literal notranslate"><span class="pre">1-ekstraksi-data.ipynb</span></code>.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="visualisasi-peta-wilayah-kajian-folium">
+<h2>2. Visualisasi Peta Wilayah Kajian (Folium)<a class="headerlink" href="#visualisasi-peta-wilayah-kajian-folium" title="Link to this heading">#</a></h2>
+<p>Peta interaktif berikut menampilkan <strong>batas wilayah kajian (AOI)</strong> Kabupaten Lamongan beserta <strong>titik-titik potensi sumber emisi</strong> yang telah dibahas pada bagian Business Understanding — Lamongan Integrated Shorebase (Paciran), kawasan industri kayu di jalur Babat–Jombang, dan pusat kota Lamongan sebagai titik acuan.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">folium</span>
+
+<span class="c1"># Titik pusat AOI (rata-rata bounding box)</span>
+<span class="n">LAMONGAN_BBOX</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;west&quot;</span><span class="p">:</span> <span class="mf">112.00</span><span class="p">,</span> <span class="s2">&quot;south&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">7.35</span><span class="p">,</span> <span class="s2">&quot;east&quot;</span><span class="p">:</span> <span class="mf">112.60</span><span class="p">,</span> <span class="s2">&quot;north&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">6.85</span><span class="p">}</span>
+<span class="n">lat_c</span> <span class="o">=</span> <span class="p">(</span><span class="n">LAMONGAN_BBOX</span><span class="p">[</span><span class="s2">&quot;south&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">LAMONGAN_BBOX</span><span class="p">[</span><span class="s2">&quot;north&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">lon_c</span> <span class="o">=</span> <span class="p">(</span><span class="n">LAMONGAN_BBOX</span><span class="p">[</span><span class="s2">&quot;west&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">LAMONGAN_BBOX</span><span class="p">[</span><span class="s2">&quot;east&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="c1"># Peta dasar dengan pilihan layer (jalan &amp; citra satelit)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">lat_c</span><span class="p">,</span> <span class="n">lon_c</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="s2">&quot;OpenStreetMap&quot;</span><span class="p">)</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
+    <span class="n">tiles</span><span class="o">=</span><span class="s2">&quot;https://</span><span class="si">{s}</span><span class="s2">.tile.opentopomap.org/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.png&quot;</span><span class="p">,</span>
+    <span class="n">attr</span><span class="o">=</span><span class="s2">&quot;OpenTopoMap&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Topografi&quot;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># Polygon AOI Kabupaten Lamongan (perkiraan)</span>
+<span class="n">lamongan_polygon_latlon</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">7.00</span><span class="p">,</span> <span class="mf">112.00</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">7.30</span><span class="p">,</span> <span class="mf">112.10</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">7.35</span><span class="p">,</span> <span class="mf">112.25</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">7.25</span><span class="p">,</span> <span class="mf">112.40</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">7.15</span><span class="p">,</span> <span class="mf">112.55</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">7.00</span><span class="p">,</span> <span class="mf">112.60</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">6.88</span><span class="p">,</span> <span class="mf">112.50</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">6.85</span><span class="p">,</span> <span class="mf">112.30</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">6.90</span><span class="p">,</span> <span class="mf">112.10</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">7.00</span><span class="p">,</span> <span class="mf">112.00</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span>
+    <span class="n">locations</span><span class="o">=</span><span class="n">lamongan_polygon_latlon</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+    <span class="n">weight</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">fill_color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+    <span class="n">fill_opacity</span><span class="o">=</span><span class="mf">0.12</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;Area of Interest (AOI) — Kabupaten Lamongan&quot;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># Kotak bounding box (persegi pembatas yang dipakai load_collection)</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span>
+    <span class="n">bounds</span><span class="o">=</span><span class="p">[[</span><span class="n">LAMONGAN_BBOX</span><span class="p">[</span><span class="s2">&quot;south&quot;</span><span class="p">],</span> <span class="n">LAMONGAN_BBOX</span><span class="p">[</span><span class="s2">&quot;west&quot;</span><span class="p">]],</span>
+            <span class="p">[</span><span class="n">LAMONGAN_BBOX</span><span class="p">[</span><span class="s2">&quot;north&quot;</span><span class="p">],</span> <span class="n">LAMONGAN_BBOX</span><span class="p">[</span><span class="s2">&quot;east&quot;</span><span class="p">]]],</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span>
+    <span class="n">weight</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">dash_array</span><span class="o">=</span><span class="s2">&quot;5,5&quot;</span><span class="p">,</span>
+    <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;Bounding Box (spatial_extent load_collection)&quot;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># Titik pusat kota Lamongan</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+    <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">7.1201</span><span class="p">,</span> <span class="mf">112.4147</span><span class="p">],</span>
+    <span class="n">popup</span><span class="o">=</span><span class="s2">&quot;Pusat Kota Lamongan&quot;</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;Pusat Kota Lamongan&quot;</span><span class="p">,</span>
+    <span class="n">icon</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">Icon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="p">),</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># Titik potensi sumber emisi: Lamongan Integrated Shorebase (Paciran)</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+    <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">6.8767</span><span class="p">,</span> <span class="mf">112.3735</span><span class="p">],</span>
+    <span class="n">popup</span><span class="o">=</span><span class="s2">&quot;Lamongan Integrated Shorebase (LIS) — Kec. Paciran&lt;br&gt;Aktivitas logistik &amp; shorebase migas lepas pantai&quot;</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;Lamongan Integrated Shorebase (Paciran)&quot;</span><span class="p">,</span>
+    <span class="n">icon</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">Icon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;ship&quot;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;fa&quot;</span><span class="p">),</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># Titik potensi sumber emisi: kawasan industri kayu Babat-Jombang</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+    <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">7.1000</span><span class="p">,</span> <span class="mf">112.1833</span><span class="p">],</span>
+    <span class="n">popup</span><span class="o">=</span><span class="s2">&quot;Kawasan Industri Kayu — Jalur Babat–Jombang&lt;br&gt;Pabrik kayu lapis, dilaporkan mengeluarkan asap cerobong&quot;</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;Kawasan Industri Babat&quot;</span><span class="p">,</span>
+    <span class="n">icon</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">Icon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;industry&quot;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;fa&quot;</span><span class="p">),</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="n">folium</span><span class="o">.</span><span class="n">LayerControl</span><span class="p">()</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    
+    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/&gt;
+    
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
+            &lt;style&gt;
+                #map_a3d3ba3ebff91de3217fd28f93addd1a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            &lt;/style&gt;
+
+            &lt;style&gt;html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            &lt;/style&gt;
+
+            &lt;style&gt;#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            &lt;/style&gt;
+
+            &lt;script&gt;
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            &lt;/script&gt;
+
+        
+&lt;/head&gt;
+&lt;body&gt;
+    
+    
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_a3d3ba3ebff91de3217fd28f93addd1a&quot; &gt;&lt;/div&gt;
+        
+&lt;/body&gt;
+&lt;script&gt;
+    
+    
+            var map_a3d3ba3ebff91de3217fd28f93addd1a = L.map(
+                &quot;map_a3d3ba3ebff91de3217fd28f93addd1a&quot;,
+                {
+                    center: [-7.1, 112.3],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  &quot;zoom&quot;: 10,
+  &quot;zoomControl&quot;: true,
+  &quot;preferCanvas&quot;: false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_afe3b507d78408943ad62477e277cd11 = L.tileLayer(
+                &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
+                {
+  &quot;minZoom&quot;: 0,
+  &quot;maxZoom&quot;: 19,
+  &quot;maxNativeZoom&quot;: 19,
+  &quot;noWrap&quot;: false,
+  &quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors&quot;,
+  &quot;subdomains&quot;: &quot;abc&quot;,
+  &quot;detectRetina&quot;: false,
+  &quot;tms&quot;: false,
+  &quot;opacity&quot;: 1,
+}
+
+            );
+        
+    
+            tile_layer_afe3b507d78408943ad62477e277cd11.addTo(map_a3d3ba3ebff91de3217fd28f93addd1a);
+        
+    
+            var tile_layer_cbd655949eb435e17e7b51b65870e99d = L.tileLayer(
+                &quot;https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png&quot;,
+                {
+  &quot;minZoom&quot;: 0,
+  &quot;maxZoom&quot;: 18,
+  &quot;maxNativeZoom&quot;: 18,
+  &quot;noWrap&quot;: false,
+  &quot;attribution&quot;: &quot;OpenTopoMap&quot;,
+  &quot;subdomains&quot;: &quot;abc&quot;,
+  &quot;detectRetina&quot;: false,
+  &quot;tms&quot;: false,
+  &quot;opacity&quot;: 1,
+}
+
+            );
+        
+    
+            tile_layer_cbd655949eb435e17e7b51b65870e99d.addTo(map_a3d3ba3ebff91de3217fd28f93addd1a);
+        
+    
+            var polygon_a5560d554d91f7d0d2bde97dbac9bfc9 = L.polygon(
+                [[-7.0, 112.0], [-7.3, 112.1], [-7.35, 112.25], [-7.25, 112.4], [-7.15, 112.55], [-7.0, 112.6], [-6.88, 112.5], [-6.85, 112.3], [-6.9, 112.1], [-7.0, 112.0]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.12, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 2}
+            ).addTo(map_a3d3ba3ebff91de3217fd28f93addd1a);
+        
+    
+            polygon_a5560d554d91f7d0d2bde97dbac9bfc9.bindTooltip(
+                `&lt;div&gt;
+                     Area of Interest (AOI) — Kabupaten Lamongan
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var rectangle_1c2e5e7bbb5dbcaa838f8cc22c6ba2c8 = L.rectangle(
+                [[-7.35, 112.0], [-6.85, 112.6]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;gray&quot;, &quot;dashArray&quot;: &quot;5,5&quot;, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;gray&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
+            ).addTo(map_a3d3ba3ebff91de3217fd28f93addd1a);
+        
+    
+            rectangle_1c2e5e7bbb5dbcaa838f8cc22c6ba2c8.bindTooltip(
+                `&lt;div&gt;
+                     Bounding Box (spatial_extent load_collection)
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+            var marker_174fb0ed275d7f2478c19e69c0171edb = L.marker(
+                [-7.1201, 112.4147],
+                {
+}
+            ).addTo(map_a3d3ba3ebff91de3217fd28f93addd1a);
+        
+    
+            var icon_f9c6c8769d66505b336cd20c6cec5e5e = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;blue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;home&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+        var popup_41d401fece77c6b344236738f0ba88d0 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+});
+
+        
+            
+                var html_fd350828834682ae4841f27c7bf10e33 = $(`&lt;div id=&quot;html_fd350828834682ae4841f27c7bf10e33&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Pusat Kota Lamongan&lt;/div&gt;`)[0];
+                popup_41d401fece77c6b344236738f0ba88d0.setContent(html_fd350828834682ae4841f27c7bf10e33);
+            
+        
+
+        marker_174fb0ed275d7f2478c19e69c0171edb.bindPopup(popup_41d401fece77c6b344236738f0ba88d0)
+        ;
+
+        
+    
+    
+            marker_174fb0ed275d7f2478c19e69c0171edb.bindTooltip(
+                `&lt;div&gt;
+                     Pusat Kota Lamongan
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_174fb0ed275d7f2478c19e69c0171edb.setIcon(icon_f9c6c8769d66505b336cd20c6cec5e5e);
+            
+    
+            var marker_ae91f4d6e6ebac1e825fd21d7c081c8b = L.marker(
+                [-6.8767, 112.3735],
+                {
+}
+            ).addTo(map_a3d3ba3ebff91de3217fd28f93addd1a);
+        
+    
+            var icon_3c5f5c4f671f32a5ed48e319f2063bb9 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;ship&quot;,
+  &quot;prefix&quot;: &quot;fa&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+        var popup_8a38813921a35f1660c5dab2a0aea534 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+});
+
+        
+            
+                var html_8e1c2e0bf786be7eac22525387235c83 = $(`&lt;div id=&quot;html_8e1c2e0bf786be7eac22525387235c83&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Lamongan Integrated Shorebase (LIS) — Kec. Paciran&lt;br&gt;Aktivitas logistik &amp; shorebase migas lepas pantai&lt;/div&gt;`)[0];
+                popup_8a38813921a35f1660c5dab2a0aea534.setContent(html_8e1c2e0bf786be7eac22525387235c83);
+            
+        
+
+        marker_ae91f4d6e6ebac1e825fd21d7c081c8b.bindPopup(popup_8a38813921a35f1660c5dab2a0aea534)
+        ;
+
+        
+    
+    
+            marker_ae91f4d6e6ebac1e825fd21d7c081c8b.bindTooltip(
+                `&lt;div&gt;
+                     Lamongan Integrated Shorebase (Paciran)
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_ae91f4d6e6ebac1e825fd21d7c081c8b.setIcon(icon_3c5f5c4f671f32a5ed48e319f2063bb9);
+            
+    
+            var marker_85562b7a2303221ddcabfa3092d0e3df = L.marker(
+                [-7.1, 112.1833],
+                {
+}
+            ).addTo(map_a3d3ba3ebff91de3217fd28f93addd1a);
+        
+    
+            var icon_a437e2d0a394f2fd2db0e90907694a1f = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;orange&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;industry&quot;,
+  &quot;prefix&quot;: &quot;fa&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+        var popup_4e4684ef0ed9d1c3dc284ebd4de85775 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+});
+
+        
+            
+                var html_5bb9aecf777b7e00d4c8ef3d1d5d0102 = $(`&lt;div id=&quot;html_5bb9aecf777b7e00d4c8ef3d1d5d0102&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Kawasan Industri Kayu — Jalur Babat–Jombang&lt;br&gt;Pabrik kayu lapis, dilaporkan mengeluarkan asap cerobong&lt;/div&gt;`)[0];
+                popup_4e4684ef0ed9d1c3dc284ebd4de85775.setContent(html_5bb9aecf777b7e00d4c8ef3d1d5d0102);
+            
+        
+
+        marker_85562b7a2303221ddcabfa3092d0e3df.bindPopup(popup_4e4684ef0ed9d1c3dc284ebd4de85775)
+        ;
+
+        
+    
+    
+            marker_85562b7a2303221ddcabfa3092d0e3df.bindTooltip(
+                `&lt;div&gt;
+                     Kawasan Industri Babat
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_85562b7a2303221ddcabfa3092d0e3df.setIcon(icon_a437e2d0a394f2fd2db0e90907694a1f);
+            
+    
+            var layer_control_afa0abc4ea02814cfb46c21d41aa63c2_layers = {
+                base_layers : {
+                    &quot;openstreetmap&quot; : tile_layer_afe3b507d78408943ad62477e277cd11,
+                    &quot;Topografi&quot; : tile_layer_cbd655949eb435e17e7b51b65870e99d,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_afa0abc4ea02814cfb46c21d41aa63c2 = L.control.layers(
+                layer_control_afa0abc4ea02814cfb46c21d41aa63c2_layers.base_layers,
+                layer_control_afa0abc4ea02814cfb46c21d41aa63c2_layers.overlays,
+                {
+  &quot;position&quot;: &quot;topright&quot;,
+  &quot;collapsed&quot;: true,
+  &quot;autoZIndex&quot;: true,
+}
+            ).addTo(map_a3d3ba3ebff91de3217fd28f93addd1a);
+
+        
+&lt;/script&gt;
+&lt;/html&gt;" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div></div></div>
+</div>
+<blockquote>
+<div><p>Koordinat titik marker (Shorebase Paciran, kawasan industri Babat) merupakan <strong>perkiraan lokasi kecamatan</strong>, bukan koordinat presisi fasilitas. Gunakan untuk konteks visual, bukan rujukan teknis presisi tinggi.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="menampilkan-hasil-data-csv">
+<h2>3. Menampilkan Hasil Data CSV<a class="headerlink" href="#menampilkan-hasil-data-csv" title="Link to this heading">#</a></h2>
+<p>Setelah data dikonversi menjadi CSV, kita tampilkan 5 baris teratas dari masing-masing polutan.</p>
+<section id="no2">
+<h3>3.1 NO₂<a class="headerlink" href="#no2" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">df_no2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/csv/no2_lamongan.csv&quot;</span><span class="p">)</span>
+<span class="n">df_no2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>t</th>
+      <th>feature</th>
+      <th>NO2</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>feature_names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-08-24</td>
+      <td>0</td>
+      <td>0.000032</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-08-25</td>
+      <td>0</td>
+      <td>0.000036</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-08-26</td>
+      <td>0</td>
+      <td>0.000060</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-08-27</td>
+      <td>0</td>
+      <td>0.000032</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-08-28</td>
+      <td>0</td>
+      <td>0.000066</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="co">
+<h3>3.2 CO<a class="headerlink" href="#co" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_co</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/csv/co_lamongan.csv&quot;</span><span class="p">)</span>
+<span class="n">df_co</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>t</th>
+      <th>feature</th>
+      <th>CO</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>feature_names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-08-24</td>
+      <td>0</td>
+      <td>0.030467</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-08-25</td>
+      <td>0</td>
+      <td>0.031682</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-08-26</td>
+      <td>0</td>
+      <td>0.033317</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-08-27</td>
+      <td>0</td>
+      <td>0.028469</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-08-28</td>
+      <td>0</td>
+      <td>0.026906</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="so2">
+<h3>3.3 SO₂<a class="headerlink" href="#so2" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_so2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/csv/so2_lamongan.csv&quot;</span><span class="p">)</span>
+<span class="n">df_so2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>t</th>
+      <th>feature</th>
+      <th>SO2</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>feature_names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-08-24</td>
+      <td>0</td>
+      <td>0.000190</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-08-25</td>
+      <td>0</td>
+      <td>0.000376</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-08-26</td>
+      <td>0</td>
+      <td>0.000137</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-08-27</td>
+      <td>0</td>
+      <td>0.000142</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-08-28</td>
+      <td>0</td>
+      <td>0.000025</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="ch4">
+<h3>3.4 CH₄<a class="headerlink" href="#ch4" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ch4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/csv/ch4_lamongan.csv&quot;</span><span class="p">)</span>
+<span class="n">df_ch4</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>t</th>
+      <th>feature</th>
+      <th>CH4</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>feature_names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-08-24</td>
+      <td>0</td>
+      <td>1894.733118</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-08-25</td>
+      <td>0</td>
+      <td>1847.136536</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-08-27</td>
+      <td>0</td>
+      <td>1880.886108</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-08-29</td>
+      <td>0</td>
+      <td>1871.754028</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-09-03</td>
+      <td>0</td>
+      <td>1858.547921</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="kenapa-ada-nilai-nan">
+<h3>3.5 Kenapa Ada Nilai NaN?<a class="headerlink" href="#kenapa-ada-nilai-nan" title="Link to this heading">#</a></h3>
+<p>Beberapa baris pada tabel di atas menunjukkan nilai <strong>NaN</strong> (Not a Number) — artinya pada tanggal tersebut tidak ada nilai polutan yang tercatat. Penyebabnya antara lain:</p>
+<ol class="arabic simple">
+<li><p><strong>Tidak ada lintasan satelit</strong> — Sentinel-5P memiliki <em>revisit time</em> (jadwal orbit) tertentu, sehingga tidak setiap hari melewati Kabupaten Lamongan.</p></li>
+<li><p><strong>Tutupan awan (cloud cover)</strong> — sensor Sentinel-5P dipengaruhi kondisi atmosfer; area yang tertutup awan tebal menghasilkan data tidak valid.</p></li>
+<li><p><strong>Validasi kualitas (quality flag)</strong> — data dengan kualitas buruk (noise instrumen) dibuang oleh proses validasi, menyisakan celah (<em>gap</em>) pada deret waktu.</p></li>
+</ol>
+<p>Dari total hari dalam rentang waktu ekstraksi, tidak semua tanggal memiliki nilai polutan. Hari-hari kosong ini dibahas lebih lanjut pada bagian <strong>identifikasi missing values</strong> berikut.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="identifikasi-kualitas-data">
+<h2>4. Identifikasi Kualitas Data<a class="headerlink" href="#identifikasi-kualitas-data" title="Link to this heading">#</a></h2>
+<p>Sesuai prinsip CRISP-DM, tahap Data Understanding hanya <strong>menemukan dan mencatat</strong> masalah kualitas data (missing values, outliers) — penanganan dilakukan pada tahap Data Preparation berikutnya.</p>
+<section id="missing-values">
+<h3>4.1 Missing Values<a class="headerlink" href="#missing-values" title="Link to this heading">#</a></h3>
+<p><strong>NO₂</strong></p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/csv/no2_lamongan.csv&quot;</span><span class="p">)</span>
+<span class="n">no2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah missing value pada data NO2 : </span><span class="si">{</span><span class="n">no2</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah data terisi (valid) pada data NO2 : </span><span class="si">{</span><span class="n">no2</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah missing value pada data NO2 : 0
+Jumlah data terisi (valid) pada data NO2 : 300
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>CO</strong></p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/csv/co_lamongan.csv&quot;</span><span class="p">)</span>
+<span class="n">co</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah missing value pada data CO : </span><span class="si">{</span><span class="n">co</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah data terisi (valid) pada data CO : </span><span class="si">{</span><span class="n">co</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah missing value pada data CO : 0
+Jumlah data terisi (valid) pada data CO : 302
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>SO₂</strong></p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/csv/so2_lamongan.csv&quot;</span><span class="p">)</span>
+<span class="n">so2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah missing value pada data SO2 : </span><span class="si">{</span><span class="n">so2</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah data terisi (valid) pada data SO2 : </span><span class="si">{</span><span class="n">so2</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah missing value pada data SO2 : 0
+Jumlah data terisi (valid) pada data SO2 : 336
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>CH₄</strong></p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/csv/ch4_lamongan.csv&quot;</span><span class="p">)</span>
+<span class="n">ch4</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah missing value pada data CH4 : </span><span class="si">{</span><span class="n">ch4</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah data terisi (valid) pada data CH4 : </span><span class="si">{</span><span class="n">ch4</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah missing value pada data CH4 : 0
+Jumlah data terisi (valid) pada data CH4 : 57
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="outliers">
+<h3>4.2 Outliers<a class="headerlink" href="#outliers" title="Link to this heading">#</a></h3>
+<p>Deteksi outlier dilakukan menggunakan algoritma <strong>Isolation Forest</strong> dengan <code class="docutils literal notranslate"><span class="pre">contamination=0.05</span></code> (5%). Sebelum deteksi, baris dengan nilai kosong (<code class="docutils literal notranslate"><span class="pre">NaN</span></code>) dibuang terlebih dahulu (<code class="docutils literal notranslate"><span class="pre">dropna()</span></code>) agar populasi perhitungan pencilan selaras.</p>
+<p><strong>NO₂</strong></p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">IsolationForest</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/csv/no2_lamongan.csv&quot;</span><span class="p">)</span>
+<span class="n">value_col</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="n">value_col</span><span class="p">])</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">IsolationForest</span><span class="p">(</span><span class="n">contamination</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[[</span><span class="n">value_col</span><span class="p">]])</span>
+
+<span class="n">normal</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah outlier pada data NO2 : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah tidak outlier (normal) pada data NO2 : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">normal</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">normal</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">normal</span><span class="p">[</span><span class="n">value_col</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">outliers</span><span class="p">[</span><span class="n">value_col</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Outlier&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Deteksi Outlier NO2 — Kabupaten Lamongan (Merah = Outlier, Biru = Normal)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tanggal&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Konsentrasi NO2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">~\AppData\Local\Temp\ipykernel_14460\3016548306.py</span> in <span class="ni">?</span><span class="nt">()</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">IsolationForest</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> 
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/csv/no2_lamongan.csv&quot;</span><span class="p">)</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python39\lib\site-packages\sklearn\base.py</span> in <span class="ni">?</span><span class="nt">(self, X, y, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1142</span>                     <span class="ne">UserWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1143</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1144</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1145</span>         <span class="c1"># override for transductive outlier detectors like LocalOulierFactor</span>
+<span class="ne">-&gt; </span><span class="mi">1146</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python39\lib\site-packages\sklearn\base.py</span> in <span class="ni">?</span><span class="nt">(estimator, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1385</span>                 <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1386</span>                     <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
+<span class="g g-Whitespace">   </span><span class="mi">1387</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1388</span>             <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1389</span>                 <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python39\lib\site-packages\sklearn\ensemble\_iforest.py</span> in <span class="ni">?</span><span class="nt">(self, X, y, sample_weight)</span>
+<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="o">-------</span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span>         <span class="bp">self</span> <span class="p">:</span> <span class="nb">object</span>
+<span class="g g-Whitespace">    </span><span class="mi">315</span>             <span class="n">Fitted</span> <span class="n">estimator</span><span class="o">.</span>
+<span class="g g-Whitespace">    </span><span class="mi">316</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">317</span><span class="s2">         X = validate_data(</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span><span class="s2">             self, X, accept_sparse=[&quot;csc&quot;], dtype=tree_dtype, ensure_all_finite=False</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span><span class="s2">         )</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span><span class="s2">         if issparse(X):</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python39\lib\site-packages\sklearn\utils\validation.py</span> in <span class="ni">?</span><span class="nt">(_estimator, X, y, reset, validate_separately, skip_check_array, **check_params)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2940</span><span class="s2">             out = y</span>
+<span class="g g-Whitespace">   </span><span class="mi">2941</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2942</span><span class="s2">             out = X, y</span>
+<span class="g g-Whitespace">   </span><span class="mi">2943</span><span class="s2">     elif not no_val_X and no_val_y:</span>
+<span class="ne">-&gt; </span><span class="mi">2944</span><span class="s2">         out = check_array(X, input_name=&quot;X&quot;, **check_params)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2945</span><span class="s2">     elif no_val_X and not no_val_y:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2946</span><span class="s2">         out = _check_y(y, **check_params)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2947</span><span class="s2">     else:</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python39\lib\site-packages\sklearn\utils\validation.py</span> in <span class="ni">?</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_writeable, force_all_finite, ensure_all_finite, ensure_non_negative, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator, input_name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1053</span><span class="s2">                     array = xp.astype(array, dtype, copy=False)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1054</span><span class="s2">                 else:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1055</span><span class="s2">                     array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1056</span><span class="s2">             except ComplexWarning as complex_warning:</span>
+<span class="ne">-&gt; </span><span class="mi">1057</span><span class="s2">                 raise ValueError(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span><span class="s2">                     &quot;Complex data not supported</span><span class="se">\n</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;.format(array)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span><span class="s2">                 ) from complex_warning</span>
+<span class="g g-Whitespace">   </span><span class="mi">1060</span><span class="s2"> </span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python39\lib\site-packages\sklearn\utils\_array_api.py</span> in <span class="ni">?</span><span class="nt">(array, dtype, order, copy, xp, device)</span>
+<span class="g g-Whitespace">    </span><span class="mi">835</span><span class="s2">         # Use NumPy API to support order</span>
+<span class="g g-Whitespace">    </span><span class="mi">836</span><span class="s2">         if copy is True:</span>
+<span class="g g-Whitespace">    </span><span class="mi">837</span><span class="s2">             array = numpy.array(array, order=order, dtype=dtype)</span>
+<span class="g g-Whitespace">    </span><span class="mi">838</span><span class="s2">         else:</span>
+<span class="ne">--&gt; </span><span class="mi">839</span><span class="s2">             array = numpy.asarray(array, order=order, dtype=dtype)</span>
+<span class="g g-Whitespace">    </span><span class="mi">840</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">841</span><span class="s2">         # At this point array is a NumPy ndarray. We convert it to an array</span>
+<span class="g g-Whitespace">    </span><span class="mi">842</span><span class="s2">         # container that is consistent with the input&#39;s namespace.</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\generic.py</span> in <span class="ni">?</span><span class="nt">(self, dtype, copy)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2167</span><span class="s2">             )</span>
+<span class="g g-Whitespace">   </span><span class="mi">2168</span><span class="s2">         values = self._values</span>
+<span class="g g-Whitespace">   </span><span class="mi">2169</span><span class="s2">         if copy is None:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2170</span><span class="s2">             # Note: branch avoids `copy=None` for NumPy 1.x support</span>
+<span class="ne">-&gt; </span><span class="mi">2171</span><span class="s2">             arr = np.asarray(values, dtype=dtype)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2172</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2173</span><span class="s2">             arr = np.array(values, dtype=dtype, copy=copy)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2174</span><span class="s2"> </span>
+
+<span class="ne">ValueError</span>: could not convert string to float: &#39;feature_0&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>CO</strong></p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/csv/co_lamongan.csv&quot;</span><span class="p">)</span>
+<span class="n">value_col</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="n">value_col</span><span class="p">])</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">IsolationForest</span><span class="p">(</span><span class="n">contamination</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[[</span><span class="n">value_col</span><span class="p">]])</span>
+
+<span class="n">normal</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah outlier pada data CO : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah tidak outlier (normal) pada data CO : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">normal</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">normal</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">normal</span><span class="p">[</span><span class="n">value_col</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">outliers</span><span class="p">[</span><span class="n">value_col</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Outlier&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Deteksi Outlier CO — Kabupaten Lamongan (Merah = Outlier, Biru = Normal)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tanggal&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Konsentrasi CO&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p><strong>SO₂</strong></p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/csv/so2_lamongan.csv&quot;</span><span class="p">)</span>
+<span class="n">value_col</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="n">value_col</span><span class="p">])</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">IsolationForest</span><span class="p">(</span><span class="n">contamination</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[[</span><span class="n">value_col</span><span class="p">]])</span>
+
+<span class="n">normal</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah outlier pada data SO2 : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah tidak outlier (normal) pada data SO2 : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">normal</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">normal</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">normal</span><span class="p">[</span><span class="n">value_col</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">outliers</span><span class="p">[</span><span class="n">value_col</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Outlier&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Deteksi Outlier SO2 — Kabupaten Lamongan (Merah = Outlier, Biru = Normal)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tanggal&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Konsentrasi SO2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p><strong>CH₄</strong></p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/csv/ch4_lamongan.csv&quot;</span><span class="p">)</span>
+<span class="n">value_col</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="n">value_col</span><span class="p">])</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">IsolationForest</span><span class="p">(</span><span class="n">contamination</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[[</span><span class="n">value_col</span><span class="p">]])</span>
+
+<span class="n">normal</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah outlier pada data CH4 : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah tidak outlier (normal) pada data CH4 : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">normal</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">normal</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">normal</span><span class="p">[</span><span class="n">value_col</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">outliers</span><span class="p">[</span><span class="n">value_col</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Outlier&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Deteksi Outlier CH4 — Kabupaten Lamongan (Merah = Outlier, Biru = Normal)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tanggal&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Konsentrasi CH4&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="noise">
+<h3>4.3 Noise<a class="headerlink" href="#noise" title="Link to this heading">#</a></h3>
+<p><em>(Akan dibahas pada iterasi berikutnya — belum dianalisis pada versi ini.)</em></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ringkasan-data-understanding">
+<h2>5. Ringkasan Data Understanding<a class="headerlink" href="#ringkasan-data-understanding" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Data bersumber dari <strong>Sentinel-5P L2</strong> via openEO Copernicus Data Space, mencakup 4 polutan (NO₂, CO, SO₂, CH₄) di Kabupaten Lamongan sepanjang 24 Agustus 2025 – 24 Agustus 2026.</p></li>
+<li><p>Data memiliki <strong>missing values</strong> akibat <em>revisit time</em> satelit, tutupan awan, dan validasi kualitas — proporsi tiap polutan diringkas pada Bagian 4.1.</p></li>
+<li><p>Deteksi awal <strong>outlier</strong> dengan Isolation Forest (<code class="docutils literal notranslate"><span class="pre">contamination=0.05</span></code>) menunjukkan sebagian kecil (~5%) titik data yang menyimpang signifikan dari pola umum, perlu ditelaah lebih lanjut apakah mencerminkan kejadian nyata atau gangguan data.</p></li>
+<li><p>Temuan-temuan ini menjadi dasar untuk tahap <strong>Data Preparation</strong> (imputasi missing values, penanganan outlier) sebelum data digunakan pada tahap analisis/pemodelan lanjutan.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="analisis_lamongan.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2. Analisis Data Kualitas Udara — Kabupaten Lamongan</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#library-python-yang-diperlukan">Library Python yang Diperlukan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-mengumpulkan-data">1. Collecting (Mengumpulkan Data)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">1.1 Sumber Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-dan-otentikasi">1.2 Koneksi dan Otentikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penentuan-area-of-interest-aoi">1.3 Penentuan Area of Interest (AOI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memuat-data-load-collection">1.4 Memuat Data (Load Collection)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-aoi-polygon">1.5 Definisi AOI (Polygon)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregasi-data">1.6 Agregasi Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menjalankan-batch-job-ekspor">1.7 Menjalankan Batch Job &amp; Ekspor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-peta-wilayah-kajian-folium">2. Visualisasi Peta Wilayah Kajian (Folium)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-hasil-data-csv">3. Menampilkan Hasil Data CSV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no2">3.1 NO₂</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#co">3.2 CO</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so2">3.3 SO₂</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ch4">3.4 CH₄</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kenapa-ada-nilai-nan">3.5 Kenapa Ada Nilai NaN?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-kualitas-data">4. Identifikasi Kualitas Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-values">4.1 Missing Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outliers">4.2 Outliers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#noise">4.3 Noise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-data-understanding">5. Ringkasan Data Understanding</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

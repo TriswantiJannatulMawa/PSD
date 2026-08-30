@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Business Understanding &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'business-understanding';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="psd.html">Proyek Sains Data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="analisis-polutan-lamongan.html">Pengantar Analisis Polutan Kabupaten Lamongan</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="ekstraksi_data.html">1. Ekstraksi Data Kualitas Udara — Kabupaten Lamongan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analisis_lamongan.html">2. Analisis Data Kualitas Udara — Kabupaten Lamongan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-understanding.html">Data Understanding</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fbusiness-understanding.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/business-understanding.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Business Understanding</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latar-belakang-masalah">1. Latar Belakang Masalah</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konteks-kabupaten-lamongan">Konteks Kabupaten Lamongan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-analisis">2. Tujuan Analisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengamati-kualitas-udara">3. Mengamati Kualitas Udara</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-indeks-kualitas-udara-aqi">Apa itu Indeks Kualitas Udara (AQI)?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsur-polutan-yang-dianalisis">4. Unsur Polutan yang Dianalisis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no2-nitrogen-dioksida">4.1 NO₂ (Nitrogen Dioksida)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#co-karbon-monoksida">4.2 CO (Karbon Monoksida)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so2-sulfur-dioksida">4.3 SO₂ (Sulfur Dioksida)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ch4-metana">4.4 CH₄ (Metana)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">5. Ringkasan</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="business-understanding">
+<h1>Business Understanding<a class="headerlink" href="#business-understanding" title="Link to this heading">#</a></h1>
+<p>Business Understanding adalah tahap awal dalam kerangka kerja <strong>CRISP-DM</strong> yang bertujuan memahami <strong>latar belakang</strong>, <strong>tujuan</strong>, dan <strong>konteks masalah</strong> sebelum masuk ke tahap pengolahan data. Pada proyek ini, kita membahas kualitas udara di <strong>Kabupaten Lamongan, Jawa Timur</strong>, dengan fokus pada empat polutan utama: <strong>NO₂, CO, SO₂, dan CH₄</strong>.</p>
+<hr class="docutils" />
+<section id="latar-belakang-masalah">
+<h2>1. Latar Belakang Masalah<a class="headerlink" href="#latar-belakang-masalah" title="Link to this heading">#</a></h2>
+<p>Kualitas udara adalah salah satu indikator lingkungan yang berdampak langsung pada kesehatan masyarakat. Meskipun Kabupaten Lamongan tidak sebesar Gresik atau Surabaya dari sisi kepadatan industri berat, wilayah ini tetap memiliki beberapa <strong>sumber emisi udara yang nyata</strong> dan terus berkembang, sehingga pemantauan kualitas udara berbasis data tetap relevan untuk dilakukan.</p>
+<section id="konteks-kabupaten-lamongan">
+<h3>Konteks Kabupaten Lamongan<a class="headerlink" href="#konteks-kabupaten-lamongan" title="Link to this heading">#</a></h3>
+<p>Berikut adalah beberapa aktivitas di Kabupaten Lamongan yang berpotensi menjadi sumber emisi udara:</p>
+<ul class="simple">
+<li><p><strong>Lamongan Integrated Shorebase (LIS) — Kecamatan Paciran</strong>
+Fasilitas logistik dan <em>shorebase</em> migas lepas pantai (<em>offshore oil &amp; gas</em>) yang melayani eksplorasi dan produksi minyak-gas di perairan Jawa Timur. Aktivitas bongkar-muat, lalu lintas kapal, dan operasional alat berat di kawasan pelabuhan ini berpotensi menyumbang emisi NO₂ dan CO dari pembakaran bahan bakar kapal dan kendaraan operasional.</p></li>
+<li><p><strong>Kawasan industri di jalur Babat–Jombang</strong>
+Terdapat pabrik pengolahan kayu (kayu lapis) di sekitar Desa Kalen dan Dradahblumbang yang pernah menjadi sorotan warga karena cerobong asapnya mengeluarkan asap hitam pekat, memicu keluhan gangguan pernapasan dan iritasi mata di sekitar permukiman.</p></li>
+<li><p><strong>Industri pengolahan hasil laut</strong>
+Dengan garis pantai sepanjang ±47 km yang mencakup 17 desa pesisir (Paciran, Brondong, dan sekitarnya), Lamongan memiliki sejumlah industri pengolahan ikan (surimi, tepung ikan) yang sebagian masih menggunakan bahan bakar solar dan batu bara untuk boiler dan genset — sumber emisi SO₂ dan CO yang khas dari pembakaran bahan bakar fosil konvensional.</p></li>
+<li><p><strong>Sektor pertanian</strong>
+Lamongan dikenal sebagai salah satu lumbung padi Jawa Timur. Aktivitas pertanian (sawah, pengelolaan limbah organik) merupakan salah satu sumber emisi CH₄ (metana) yang signifikan secara global maupun lokal.</p></li>
+<li><p><strong>Jalur transportasi Pantura (Jalan Daendels) dan koridor Surabaya–Babat–Jombang</strong>
+Sebagai jalur penghubung utama pantai utara Jawa dan koridor ke Surabaya, kepadatan lalu lintas kendaraan bermotor turut berkontribusi terhadap emisi NO₂ dan CO.</p></li>
+</ul>
+<blockquote>
+<div><p>Kombinasi aktivitas pelabuhan/logistik migas, industri manufaktur skala menengah, pengolahan hasil laut, pertanian, dan transportasi inilah yang menjadi alasan mengapa kualitas udara di Kabupaten Lamongan perlu dipantau secara berkala dan berbasis data.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tujuan-analisis">
+<h2>2. Tujuan Analisis<a class="headerlink" href="#tujuan-analisis" title="Link to this heading">#</a></h2>
+<p>Proyek ini disusun sebagai bagian dari mata kuliah <strong>Proyek Sains Data</strong>, dengan tujuan sebagai berikut:</p>
+<ol class="arabic simple">
+<li><p><strong>Mengukur dan memantau</strong> konsentrasi empat polutan udara utama (NO₂, CO, SO₂, CH₄) di wilayah Kabupaten Lamongan menggunakan data satelit Sentinel-5P, tanpa memerlukan stasiun pemantauan darat.</p></li>
+<li><p><strong>Mengidentifikasi pola dan tren</strong> konsentrasi polutan dari waktu ke waktu (24 Agustus 2025 – 24 Agustus 2026) untuk melihat apakah ada musim, periode, atau kejadian tertentu dengan tingkat polusi yang menonjol.</p></li>
+<li><p><strong>Mendeteksi anomali/outlier</strong> pada data deret waktu polutan, yang dapat mengindikasikan kejadian pencemaran tidak biasa (mis. kebakaran, lonjakan aktivitas industri, atau justru artefak/gangguan pada data satelit itu sendiri).</p></li>
+<li><p><strong>Menyediakan visualisasi yang mudah dipahami</strong> (peta interaktif dan grafik deret waktu) sebagai dasar edukasi publik maupun bahan pertimbangan awal untuk pemangku kepentingan terkait kualitas udara di Lamongan.</p></li>
+<li><p><strong>Menerapkan alur kerja Data Science yang terstruktur</strong> (CRISP-DM: Business Understanding → Data Understanding → Data Preparation → dst.) sebagai bagian dari pembelajaran mata kuliah.</p></li>
+</ol>
+<blockquote>
+<div><p><strong>Catatan:</strong> Proyek ini bersifat akademis/edukatif dan menggunakan data penginderaan jauh (satelit), bukan pengukuran langsung di permukaan tanah (<em>ground station</em>). Hasil analisis sebaiknya tidak dijadikan satu-satunya dasar pengambilan keputusan resmi terkait kebijakan lingkungan.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="mengamati-kualitas-udara">
+<h2>3. Mengamati Kualitas Udara<a class="headerlink" href="#mengamati-kualitas-udara" title="Link to this heading">#</a></h2>
+<section id="apa-itu-indeks-kualitas-udara-aqi">
+<h3>Apa itu Indeks Kualitas Udara (AQI)?<a class="headerlink" href="#apa-itu-indeks-kualitas-udara-aqi" title="Link to this heading">#</a></h3>
+<p><strong>Indeks Kualitas Udara (Air Quality Index / AQI)</strong> adalah standar pengukuran yang digunakan untuk melaporkan seberapa bersih atau tercemarnya udara di suatu wilayah. AQI mengubah konsentrasi polutan udara utama menjadi angka pada skala 0–500, di mana angka yang lebih rendah menunjukkan kualitas udara yang lebih baik dan angka yang lebih tinggi menunjukkan tingkat polusi yang lebih berbahaya.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Rentang AQI</p></th>
+<th class="head text-center"><p>Kategori</p></th>
+<th class="head text-left"><p>Dampak Kesehatan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>0 – 50</p></td>
+<td class="text-center"><p>Baik</p></td>
+<td class="text-left"><p>Kualitas udara memuaskan, risiko polusi rendah</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>51 – 100</p></td>
+<td class="text-center"><p>Sedang</p></td>
+<td class="text-left"><p>Kualitas udara dapat diterima</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>101 – 150</p></td>
+<td class="text-center"><p>Tidak Sehat bagi Kelompok Sensitif</p></td>
+<td class="text-left"><p>Kelompok sensitif (anak, lansia, penderita asma) mulai terdampak</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>151 – 200</p></td>
+<td class="text-center"><p>Tidak Sehat</p></td>
+<td class="text-left"><p>Seluruh populasi mulai mengalami efek kesehatan</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>201 – 300</p></td>
+<td class="text-center"><p>Sangat Tidak Sehat</p></td>
+<td class="text-left"><p>Peringatan kesehatan untuk seluruh populasi</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>301 – 500</p></td>
+<td class="text-center"><p>Berbahaya</p></td>
+<td class="text-left"><p>Kondisi darurat kesehatan masyarakat</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>Catatan: Sentinel-5P mengukur <strong>kolom konsentrasi gas di atmosfer</strong> (mol/m² atau serupa), bukan langsung nilai AQI 0–500. Tabel AQI di atas disertakan sebagai kerangka konseptual untuk memahami tingkat bahaya polutan secara umum, bukan hasil konversi langsung dari data satelit pada proyek ini.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="unsur-polutan-yang-dianalisis">
+<h2>4. Unsur Polutan yang Dianalisis<a class="headerlink" href="#unsur-polutan-yang-dianalisis" title="Link to this heading">#</a></h2>
+<section id="no2-nitrogen-dioksida">
+<h3>4.1 NO₂ (Nitrogen Dioksida)<a class="headerlink" href="#no2-nitrogen-dioksida" title="Link to this heading">#</a></h3>
+<p>Gas berwarna coklat kemerahan dengan bau menyengat. Sumber utama:</p>
+<ul class="simple">
+<li><p><strong>Emisi kendaraan bermotor</strong> — pembakaran bahan bakar fosil pada mesin kendaraan, relevan terutama di jalur Pantura dan koridor Surabaya–Babat–Jombang.</p></li>
+<li><p><strong>Aktivitas pelabuhan/logistik</strong> — lalu lintas kapal dan alat berat di kawasan Lamongan Integrated Shorebase (Paciran).</p></li>
+<li><p><strong>Aktivitas industri</strong> — pabrik yang menggunakan proses pembakaran, termasuk pabrik pengolahan kayu di jalur Babat–Jombang.</p></li>
+</ul>
+<p><strong>Dampak kesehatan:</strong> iritasi saluran pernapasan, peningkatan risiko infeksi pernapasan, dan memperburuk kondisi asma.</p>
+</section>
+<section id="co-karbon-monoksida">
+<h3>4.2 CO (Karbon Monoksida)<a class="headerlink" href="#co-karbon-monoksida" title="Link to this heading">#</a></h3>
+<p>Gas tidak berwarna dan tidak berbau yang sangat berbahaya. Sumber utama:</p>
+<ul class="simple">
+<li><p><strong>Pembakaran tidak sempurna</strong> bahan bakar kendaraan bermotor dan kapal.</p></li>
+<li><p><strong>Asap pabrik</strong> — termasuk cerobong industri kayu lapis yang pernah dikeluhkan warga sekitar Babat–Jombang.</p></li>
+<li><p><strong>Boiler dan genset industri</strong> — banyak digunakan pada industri pengolahan hasil laut di kawasan pesisir Lamongan.</p></li>
+</ul>
+<p><strong>Dampak kesehatan:</strong> mengikat hemoglobin dalam darah lebih kuat dari oksigen, menyebabkan kekurangan oksigen pada organ tubuh, pusing, mual, dan pada paparan tinggi dapat menyebabkan kematian.</p>
+</section>
+<section id="so2-sulfur-dioksida">
+<h3>4.3 SO₂ (Sulfur Dioksida)<a class="headerlink" href="#so2-sulfur-dioksida" title="Link to this heading">#</a></h3>
+<p>Gas tak berwarna dengan bau tajam dan mengganggu. Sumber utama:</p>
+<ul class="simple">
+<li><p><strong>Pembakaran batu bara</strong> — dipakai sebagian industri pengolahan ikan (boiler) di kawasan pesisir Lamongan.</p></li>
+<li><p><strong>Proses industri</strong> — peleburan logam dan proses manufaktur skala menengah.</p></li>
+<li><p><strong>Emisi kapal/kendaraan</strong> yang menggunakan bahan bakar mengandung sulfur, relevan di kawasan pelabuhan Paciran.</p></li>
+</ul>
+<p><strong>Dampak kesehatan:</strong> iritasi mata dan tenggorokan, memperburuk penyakit asma dan bronkitis, serta berkontribusi terhadap terbentuknya <strong>asam sulfat</strong> yang menyebabkan hujan asam.</p>
+</section>
+<section id="ch4-metana">
+<h3>4.4 CH₄ (Metana)<a class="headerlink" href="#ch4-metana" title="Link to this heading">#</a></h3>
+<p>Gas rumah kaca yang sangat efektif dalam memerangkap panas. Sumber utama:</p>
+<ul class="simple">
+<li><p><strong>Aktivitas pertanian</strong> — sawah dan pencernaan hewan ternak, sangat relevan mengingat Lamongan adalah salah satu daerah lumbung padi Jawa Timur.</p></li>
+<li><p><strong>Limbah organik</strong> — pembusukan sampah di Tempat Pembuangan Akhir (TPA) dan limbah hasil pengolahan ikan.</p></li>
+<li><p><strong>Emisi industri</strong> — kebocoran gas alam dan proses industri, termasuk potensi dari aktivitas migas di sekitar kawasan shorebase.</p></li>
+</ul>
+<p><strong>Dampak lingkungan:</strong> CH₄ merupakan gas rumah kaca yang <strong>80 kali lebih kuat</strong> dari CO₂ dalam jangka pendek, berkontribusi signifikan terhadap perubahan iklim dan pemanasan global.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ringkasan">
+<h2>5. Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Polutan</p></th>
+<th class="head text-left"><p>Sumber Dominan di Lamongan</p></th>
+<th class="head text-left"><p>Dampak Utama</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>NO₂</p></td>
+<td class="text-left"><p>Transportasi Pantura, aktivitas pelabuhan Paciran</p></td>
+<td class="text-left"><p>Gangguan pernapasan</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>CO</p></td>
+<td class="text-left"><p>Asap industri kayu, boiler industri pengolahan ikan</p></td>
+<td class="text-left"><p>Keracunan oksigen darah</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>SO₂</p></td>
+<td class="text-left"><p>Boiler batu bara industri perikanan, emisi kapal</p></td>
+<td class="text-left"><p>Iritasi &amp; hujan asam</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>CH₄</p></td>
+<td class="text-left"><p>Pertanian (sawah), limbah organik, aktivitas migas</p></td>
+<td class="text-left"><p>Pemanasan global</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Pemahaman di atas menjadi dasar untuk tahap berikutnya, yaitu <strong>Data Understanding</strong>, di mana kita akan mengumpulkan dan mengeksplorasi data satelit Sentinel-5P untuk keempat polutan tersebut di wilayah Kabupaten Lamongan.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latar-belakang-masalah">1. Latar Belakang Masalah</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konteks-kabupaten-lamongan">Konteks Kabupaten Lamongan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-analisis">2. Tujuan Analisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengamati-kualitas-udara">3. Mengamati Kualitas Udara</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-indeks-kualitas-udara-aqi">Apa itu Indeks Kualitas Udara (AQI)?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsur-polutan-yang-dianalisis">4. Unsur Polutan yang Dianalisis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no2-nitrogen-dioksida">4.1 NO₂ (Nitrogen Dioksida)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#co-karbon-monoksida">4.2 CO (Karbon Monoksida)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so2-sulfur-dioksida">4.3 SO₂ (Sulfur Dioksida)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ch4-metana">4.4 CH₄ (Metana)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">5. Ringkasan</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
