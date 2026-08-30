@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Analisis Data Kualitas Udara — Kabupaten Lamongan &#8212; My sample book</title>
+    <title>Analisis Data Kualitas Udara — Kabupaten Lamongan &#8212; My sample book</title>
   
   
   
@@ -60,7 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'analisis_lamongan';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="1. Ekstraksi Data Kualitas Udara — Kabupaten Lamongan" href="ekstraksi_data.html" />
+    <link rel="next" title="Business Understanding" href="business-understanding.html" />
+    <link rel="prev" title="Ekstraksi Data Kualitas Udara — Kabupaten Lamongan" href="ekstraksi_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,8 +181,13 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="psd.html">Proyek Sains Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ekstraksi_data.html">1. Ekstraksi Data Kualitas Udara — Kabupaten Lamongan</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Analisis Data Kualitas Udara — Kabupaten Lamongan</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="analisis-polutan-lamongan.html">Pengantar Analisis Polutan Kabupaten Lamongan</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ekstraksi_data.html">Ekstraksi Data Kualitas Udara — Kabupaten Lamongan</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Analisis Data Kualitas Udara — Kabupaten Lamongan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="business-understanding.html">Business Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-understanding.html">Data Understanding</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -367,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>2. Analisis Data Kualitas Udara — Kabupaten Lamongan</h1>
+    <h1>Analisis Data Kualitas Udara — Kabupaten Lamongan</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -398,7 +404,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="analisis-data-kualitas-udara-kabupaten-lamongan">
-<h1>2. Analisis Data Kualitas Udara — Kabupaten Lamongan<a class="headerlink" href="#analisis-data-kualitas-udara-kabupaten-lamongan" title="Link to this heading">#</a></h1>
+<h1>Analisis Data Kualitas Udara — Kabupaten Lamongan<a class="headerlink" href="#analisis-data-kualitas-udara-kabupaten-lamongan" title="Link to this heading">#</a></h1>
 <p><strong>Mata Kuliah:</strong> Proyek Sains Data — Semester 5
 <strong>Input:</strong> File CSV hasil ekstraksi polutan (NO₂, CO, SO₂, CH₄) di <code class="docutils literal notranslate"><span class="pre">../data/csv/</span></code>
 <strong>Wilayah:</strong> Kabupaten Lamongan, Jawa Timur</p>
@@ -896,7 +902,7 @@ via <code class="docutils literal notranslate"><span class="pre">geopandas</span
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
             &lt;style&gt;
-                #map_b0b09d1e26964d9ca3c3c01407b7e0e8 {
+                #map_4db30e091a38875930c20989e0c0577b {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -933,14 +939,14 @@ via <code class="docutils literal notranslate"><span class="pre">geopandas</span
 &lt;body&gt;
     
     
-            &lt;div class=&quot;folium-map&quot; id=&quot;map_b0b09d1e26964d9ca3c3c01407b7e0e8&quot; &gt;&lt;/div&gt;
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_4db30e091a38875930c20989e0c0577b&quot; &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_b0b09d1e26964d9ca3c3c01407b7e0e8 = L.map(
-                &quot;map_b0b09d1e26964d9ca3c3c01407b7e0e8&quot;,
+            var map_4db30e091a38875930c20989e0c0577b = L.map(
+                &quot;map_4db30e091a38875930c20989e0c0577b&quot;,
                 {
                     center: [-7.1201, 112.4147],
                     crs: L.CRS.EPSG3857,
@@ -957,7 +963,7 @@ via <code class="docutils literal notranslate"><span class="pre">geopandas</span
 
         
     
-            var tile_layer_220e377dc362daf52594a66238402bd6 = L.tileLayer(
+            var tile_layer_69250c52b3c435ebda6ee3bc7b686a20 = L.tileLayer(
                 &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
                 {
   &quot;minZoom&quot;: 0,
@@ -974,17 +980,17 @@ via <code class="docutils literal notranslate"><span class="pre">geopandas</span
             );
         
     
-            tile_layer_220e377dc362daf52594a66238402bd6.addTo(map_b0b09d1e26964d9ca3c3c01407b7e0e8);
+            tile_layer_69250c52b3c435ebda6ee3bc7b686a20.addTo(map_4db30e091a38875930c20989e0c0577b);
         
     
-            var marker_e385f63596e77638595eec0e2a003716 = L.marker(
+            var marker_70d2875ccb5882bb619144b4503922f3 = L.marker(
                 [-7.1201, 112.4147],
                 {
 }
-            ).addTo(map_b0b09d1e26964d9ca3c3c01407b7e0e8);
+            ).addTo(map_4db30e091a38875930c20989e0c0577b);
         
     
-            var icon_0c2caa3f38abc3344c3711451f2820c2 = L.AwesomeMarkers.icon(
+            var icon_cfbd5e1d293fc950e6c55a4fb8b844c5 = L.AwesomeMarkers.icon(
                 {
   &quot;markerColor&quot;: &quot;red&quot;,
   &quot;iconColor&quot;: &quot;white&quot;,
@@ -995,44 +1001,44 @@ via <code class="docutils literal notranslate"><span class="pre">geopandas</span
             );
         
     
-        var popup_5d082ecc82d3ed49fed81ac55a921827 = L.popup({
+        var popup_a5cb0e299e01bb666704cf0d55f95f9b = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_bb75615bfe8485e0138281d31e6d7f43 = $(`&lt;div id=&quot;html_bb75615bfe8485e0138281d31e6d7f43&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Pusat Kabupaten Lamongan&lt;/div&gt;`)[0];
-                popup_5d082ecc82d3ed49fed81ac55a921827.setContent(html_bb75615bfe8485e0138281d31e6d7f43);
+                var html_45495065a84d2fc9ae826dae5c519268 = $(`&lt;div id=&quot;html_45495065a84d2fc9ae826dae5c519268&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Pusat Kabupaten Lamongan&lt;/div&gt;`)[0];
+                popup_a5cb0e299e01bb666704cf0d55f95f9b.setContent(html_45495065a84d2fc9ae826dae5c519268);
             
         
 
-        marker_e385f63596e77638595eec0e2a003716.bindPopup(popup_5d082ecc82d3ed49fed81ac55a921827)
+        marker_70d2875ccb5882bb619144b4503922f3.bindPopup(popup_a5cb0e299e01bb666704cf0d55f95f9b)
         ;
 
         
     
     
-                marker_e385f63596e77638595eec0e2a003716.setIcon(icon_0c2caa3f38abc3344c3711451f2820c2);
+                marker_70d2875ccb5882bb619144b4503922f3.setIcon(icon_cfbd5e1d293fc950e6c55a4fb8b844c5);
             
     
-            var polygon_74ffdd7999254bea95ed2145b27bf551 = L.polygon(
+            var polygon_613dbff1a93a5569399a926efc6b3bd9 = L.polygon(
                 [[-7.0, 112.0], [-7.3, 112.1], [-7.35, 112.25], [-7.25, 112.4], [-7.15, 112.55], [-7.0, 112.6], [-6.88, 112.5], [-6.85, 112.3], [-6.9, 112.1], [-7.0, 112.0]],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.15, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 2}
-            ).addTo(map_b0b09d1e26964d9ca3c3c01407b7e0e8);
+            ).addTo(map_4db30e091a38875930c20989e0c0577b);
         
     
-        var popup_3733206533599c9dc2e62a5e3fc8dcc0 = L.popup({
+        var popup_8ef7a8edf4f051645cf44d8c99552b70 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_f9c9028ab50de369cf69abd14149cd6b = $(`&lt;div id=&quot;html_f9c9028ab50de369cf69abd14149cd6b&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Area Kajian Kabupaten Lamongan&lt;/div&gt;`)[0];
-                popup_3733206533599c9dc2e62a5e3fc8dcc0.setContent(html_f9c9028ab50de369cf69abd14149cd6b);
+                var html_c95a1c8df1e4f26632a7c57e9f265aed = $(`&lt;div id=&quot;html_c95a1c8df1e4f26632a7c57e9f265aed&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Area Kajian Kabupaten Lamongan&lt;/div&gt;`)[0];
+                popup_8ef7a8edf4f051645cf44d8c99552b70.setContent(html_c95a1c8df1e4f26632a7c57e9f265aed);
             
         
 
-        polygon_74ffdd7999254bea95ed2145b27bf551.bindPopup(popup_3733206533599c9dc2e62a5e3fc8dcc0)
+        polygon_613dbff1a93a5569399a926efc6b3bd9.bindPopup(popup_8ef7a8edf4f051645cf44d8c99552b70)
         ;
 
         
@@ -1295,7 +1301,9 @@ setiap polutan, sebagai penutup tahap analisis pada notebook ini.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NO2  : 0 outlier terdeteksi dari 341 data (0.0%)
-CO   : 0 outlier terdeteksi dari 341 data (0.0%)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CO   : 0 outlier terdeteksi dari 341 data (0.0%)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SO2  : 0 outlier terdeteksi dari 341 data (0.0%)
@@ -1435,8 +1443,17 @@ CH4  : 0 outlier terdeteksi dari 341 data (0.0%)
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1. Ekstraksi Data Kualitas Udara — Kabupaten Lamongan</p>
+        <p class="prev-next-title">Ekstraksi Data Kualitas Udara — Kabupaten Lamongan</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="business-understanding.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Business Understanding</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
