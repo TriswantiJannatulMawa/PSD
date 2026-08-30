@@ -1,0 +1,1520 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2. Analisis Data Kualitas Udara — Kabupaten Lamongan &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'analisis_lamongan';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="1. Ekstraksi Data Kualitas Udara — Kabupaten Lamongan" href="ekstraksi_data.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="psd.html">Proyek Sains Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ekstraksi_data.html">1. Ekstraksi Data Kualitas Udara — Kabupaten Lamongan</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Analisis Data Kualitas Udara — Kabupaten Lamongan</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fanalisis_lamongan.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/analisis_lamongan.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>2. Analisis Data Kualitas Udara — Kabupaten Lamongan</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-notebook">Tujuan Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-pustaka">2. Import Pustaka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memuat-data-csv-hasil-ekstraksi">3. Memuat Data CSV Hasil Ekstraksi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengecekan-missing-values-nan">4. Pengecekan Missing Values (NaN)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penanganan-missing-values">5. Penanganan Missing Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-peta-interaktif-folium">6. Visualisasi Peta Interaktif (Folium)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-anomali-outlier-dengan-isolation-forest">7. Deteksi Anomali/Outlier dengan Isolation Forest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-normal-vs-outlier">8. Visualisasi Data Normal vs Outlier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-deteksi-outlier">9. Ringkasan Deteksi Outlier</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analisis-data-kualitas-udara-kabupaten-lamongan">
+<h1>2. Analisis Data Kualitas Udara — Kabupaten Lamongan<a class="headerlink" href="#analisis-data-kualitas-udara-kabupaten-lamongan" title="Link to this heading">#</a></h1>
+<p><strong>Mata Kuliah:</strong> Proyek Sains Data — Semester 5
+<strong>Input:</strong> File CSV hasil ekstraksi polutan (NO₂, CO, SO₂, CH₄) di <code class="docutils literal notranslate"><span class="pre">../data/csv/</span></code>
+<strong>Wilayah:</strong> Kabupaten Lamongan, Jawa Timur</p>
+<section id="tujuan-notebook">
+<h2>Tujuan Notebook<a class="headerlink" href="#tujuan-notebook" title="Link to this heading">#</a></h2>
+<p>Notebook ini melakukan <strong>tahap analisis data</strong> lanjutan dari hasil ekstraksi pada
+Notebook 1 (<code class="docutils literal notranslate"><span class="pre">1-ekstraksi-data.ipynb</span></code>):</p>
+<ol class="arabic simple">
+<li><p>Memuat data CSV hasil ekstraksi polutan Lamongan.</p></li>
+<li><p>Menampilkan <strong>peta interaktif (folium)</strong> dengan titik pusat dan polygon wilayah Lamongan.</p></li>
+<li><p>Memeriksa dan menangani <strong>missing values (NaN)</strong> pada data deret waktu.</p></li>
+<li><p>Mendeteksi <strong>anomali/outlier</strong> menggunakan <code class="docutils literal notranslate"><span class="pre">IsolationForest</span></code> (<code class="docutils literal notranslate"><span class="pre">contamination=0.05</span></code>).</p></li>
+<li><p>Memvisualisasikan data normal vs outlier dalam plot garis/sebar.</p></li>
+</ol>
+<blockquote>
+<div><p><strong>Catatan path:</strong> Notebook ini diasumsikan berada dalam folder <code class="docutils literal notranslate"><span class="pre">notebooks/</span></code>, sehingga
+path data relatif menggunakan <code class="docutils literal notranslate"><span class="pre">../data/csv/</span></code>. Nama file CSV mengikuti hasil Notebook 1
+(mis. <code class="docutils literal notranslate"><span class="pre">no2_lamongan.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">co_lamongan.csv</span></code>, dst).</p>
+</div></blockquote>
+</section>
+<section id="import-pustaka">
+<h2>2. Import Pustaka<a class="headerlink" href="#import-pustaka" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> — manipulasi data tabular dan numerik.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">glob</span></code>, <code class="docutils literal notranslate"><span class="pre">os</span></code> — mencari &amp; memuat banyak file CSV sekaligus.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">folium</span></code> — membuat peta interaktif (HTML) untuk visualisasi lokasi wilayah kajian.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> — visualisasi plot garis/sebar deret waktu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sklearn.ensemble.IsolationForest</span></code> — algoritma deteksi anomali berbasis <em>isolation tree</em>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">folium</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">IsolationForest</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+
+<span class="n">CSV_DIR</span> <span class="o">=</span> <span class="s2">&quot;../data/csv/&quot;</span>
+
+<span class="c1"># Cek folder ada / tidak</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Folder tidak ditemukan: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">)</span><span class="si">}</span><span class="s2">. &quot;</span>
+        <span class="s2">&quot;Cek working directory VS Code (biasanya harus dijalankan dari dalam folder notebooks/).&quot;</span>
+    <span class="p">)</span>
+
+<span class="n">POLLUTANT_FILES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;no2&quot;</span><span class="p">:</span> <span class="s2">&quot;no2_lamongan.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;co&quot;</span><span class="p">:</span> <span class="s2">&quot;co_lamongan.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;so2&quot;</span><span class="p">:</span> <span class="s2">&quot;so2_lamongan.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ch4&quot;</span><span class="p">:</span> <span class="s2">&quot;ch4_lamongan.csv&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">find_date_column</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Mencari kolom yang kemungkinan berisi tanggal/waktu, apapun namanya.&quot;&quot;&quot;</span>
+    <span class="n">candidates</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">k</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;t &quot;</span><span class="p">])</span> <span class="ow">or</span> <span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;t&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">candidates</span> <span class="k">else</span> <span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># fallback: kolom pertama</span>
+
+<span class="n">df_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">pollutant</span><span class="p">,</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">POLLUTANT_FILES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PERINGATAN] File tidak ditemukan: </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
+
+    <span class="n">temp_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">[</span><span class="si">{</span><span class="n">pollutant</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">] Kolom asli di file: </span><span class="si">{</span><span class="n">temp_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">date_col</span> <span class="o">=</span> <span class="n">find_date_column</span><span class="p">(</span><span class="n">temp_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">value_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">temp_df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="n">date_col</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">value_cols</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PERINGATAN] Tidak ada kolom nilai selain &#39;</span><span class="si">{</span><span class="n">date_col</span><span class="si">}</span><span class="s2">&#39;, file dilewati.&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
+
+    <span class="n">value_col</span> <span class="o">=</span> <span class="n">value_cols</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># ambil kolom nilai terakhir</span>
+    <span class="n">temp_df</span> <span class="o">=</span> <span class="n">temp_df</span><span class="p">[[</span><span class="n">date_col</span><span class="p">,</span> <span class="n">value_col</span><span class="p">]]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">date_col</span><span class="p">:</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">value_col</span><span class="p">:</span> <span class="n">pollutant</span><span class="p">})</span>
+    <span class="n">temp_df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">temp_df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
+
+    <span class="n">df_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp_df</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">df_list</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+        <span class="s2">&quot;Tidak ada satupun file CSV yang berhasil dimuat. &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Isi folder saat ini: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="n">df_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Data gabungan berhasil dibuat: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> baris, </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> kolom&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[NO2] Kolom asli di file: [&#39;t&#39;, &#39;feature&#39;, &#39;NO2&#39;, &#39;lat&#39;, &#39;lon&#39;, &#39;feature_names&#39;]
+
+[CO] Kolom asli di file: [&#39;t&#39;, &#39;feature&#39;, &#39;CO&#39;, &#39;lat&#39;, &#39;lon&#39;, &#39;feature_names&#39;]
+
+[SO2] Kolom asli di file: [&#39;t&#39;, &#39;feature&#39;, &#39;SO2&#39;, &#39;lat&#39;, &#39;lon&#39;, &#39;feature_names&#39;]
+
+[CH4] Kolom asli di file: [&#39;t&#39;, &#39;feature&#39;, &#39;CH4&#39;, &#39;lat&#39;, &#39;lon&#39;, &#39;feature_names&#39;]
+
+Data gabungan berhasil dibuat: 341 baris, 5 kolom
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>no2</th>
+      <th>co</th>
+      <th>so2</th>
+      <th>ch4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-08-24</td>
+      <td>feature_0</td>
+      <td>feature_0</td>
+      <td>feature_0</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-08-25</td>
+      <td>feature_0</td>
+      <td>feature_0</td>
+      <td>feature_0</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-08-26</td>
+      <td>feature_0</td>
+      <td>feature_0</td>
+      <td>feature_0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-08-27</td>
+      <td>feature_0</td>
+      <td>feature_0</td>
+      <td>feature_0</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-08-28</td>
+      <td>feature_0</td>
+      <td>feature_0</td>
+      <td>feature_0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="memuat-data-csv-hasil-ekstraksi">
+<h2>3. Memuat Data CSV Hasil Ekstraksi<a class="headerlink" href="#memuat-data-csv-hasil-ekstraksi" title="Link to this heading">#</a></h2>
+<p>Setiap polutan tersimpan pada file CSV terpisah (hasil Notebook 1), masing-masing memiliki
+kolom <code class="docutils literal notranslate"><span class="pre">date</span></code> dan satu kolom nilai konsentrasi. Pada sel di bawah, tiap file dimuat lalu
+digabung (<code class="docutils literal notranslate"><span class="pre">merge</span></code>) berdasarkan kolom <code class="docutils literal notranslate"><span class="pre">date</span></code> menjadi satu <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> gabungan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">CSV_DIR</span> <span class="o">=</span> <span class="s2">&quot;../data/csv/&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Working dir sekarang:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Isi folder CSV:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">)</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;FOLDER TIDAK DITEMUKAN&quot;</span><span class="p">)</span>
+
+<span class="c1"># Cek isi salah satu file CSV asli (ganti nama file sesuai yang benar-benar ada)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Working dir sekarang: D:\Semester 5\Proyek sain data\PSD\materi
+Isi folder CSV: [&#39;ch4_lamongan.csv&#39;, &#39;co_lamongan.csv&#39;, &#39;no2_lamongan.csv&#39;, &#39;so2_lamongan.csv&#39;]
+[&#39;t&#39;, &#39;feature&#39;, &#39;CH4&#39;, &#39;lat&#39;, &#39;lon&#39;, &#39;feature_names&#39;]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>t</th>
+      <th>feature</th>
+      <th>CH4</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>feature_names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-08-24</td>
+      <td>0</td>
+      <td>1894.733118</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-08-25</td>
+      <td>0</td>
+      <td>1847.136536</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-08-27</td>
+      <td>0</td>
+      <td>1880.886108</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-08-29</td>
+      <td>0</td>
+      <td>1871.754028</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-09-03</td>
+      <td>0</td>
+      <td>1858.547921</td>
+      <td>-7.075</td>
+      <td>112.3</td>
+      <td>feature_0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="pengecekan-missing-values-nan">
+<h2>4. Pengecekan Missing Values (NaN)<a class="headerlink" href="#pengecekan-missing-values-nan" title="Link to this heading">#</a></h2>
+<p>Data satelit sering memiliki nilai kosong (NaN) akibat tutupan awan atau kegagalan
+observasi pada hari tertentu. Sebelum dianalisis lebih lanjut, kita periksa jumlah dan
+proporsi missing value pada tiap kolom polutan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">CSV_DIR</span> <span class="o">=</span> <span class="s2">&quot;../data/csv/&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Working dir:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Isi folder CSV:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">)</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;FOLDER TIDAK ADA&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Working dir: D:\Semester 5\Proyek sain data\PSD\materi
+Isi folder CSV: [&#39;ch4_lamongan.csv&#39;, &#39;co_lamongan.csv&#39;, &#39;no2_lamongan.csv&#39;, &#39;so2_lamongan.csv&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualisasi pola missing value di sepanjang deret waktu</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;rocket_r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Pola Missing Value pada Data Deret Waktu Polutan (Lamongan)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Indeks waktu (hari)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e61aa93a30ef0c4c3015638b255e32c64fddb112c46e5231eaa49d60942d102c.png" src="_images/e61aa93a30ef0c4c3015638b255e32c64fddb112c46e5231eaa49d60942d102c.png" />
+</div>
+</div>
+</section>
+<section id="penanganan-missing-values">
+<h2>5. Penanganan Missing Values<a class="headerlink" href="#penanganan-missing-values" title="Link to this heading">#</a></h2>
+<p>Missing value ditangani dengan <strong>interpolasi linear</strong> berdasarkan waktu
+(<code class="docutils literal notranslate"><span class="pre">method=&quot;time&quot;</span></code>), karena konsentrasi polutan cenderung berubah secara gradual dari hari
+ke hari. Nilai kosong di ujung awal/akhir deret waktu (yang tidak bisa diinterpolasi)
+ditangani dengan <code class="docutils literal notranslate"><span class="pre">bfill</span></code>/<code class="docutils literal notranslate"><span class="pre">ffill</span></code> sebagai langkah terakhir.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pastikan kolom &#39;date&#39; benar-benar bertipe datetime (bukan string)</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
+
+<span class="c1"># Hapus duplikat tanggal jika ada (ambil rata-rata jika ada baris dengan tanggal sama)</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Urutkan berdasarkan tanggal (wajib untuk interpolasi berbasis waktu)</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set index datetime -&gt; syarat wajib untuk method=&quot;time&quot;</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span>
+
+<span class="n">pollutant_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+
+<span class="c1"># Interpolasi linear berbasis waktu untuk mengisi celah data akibat tutupan awan, dsb.</span>
+<span class="n">df_clean</span><span class="p">[</span><span class="n">pollutant_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">pollutant_cols</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+
+<span class="c1"># Menangani sisa NaN di ujung deret waktu (jika ada) dengan forward/backward fill</span>
+<span class="n">df_clean</span><span class="p">[</span><span class="n">pollutant_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">pollutant_cols</span><span class="p">]</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span><span class="o">.</span><span class="n">bfill</span><span class="p">()</span>
+
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sisa missing value setelah penanganan:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="n">pollutant_cols</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="n">df_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sisa missing value setelah penanganan:
+Series([], dtype: float64)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-08-24</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-08-25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-08-27</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-08-28</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="visualisasi-peta-interaktif-folium">
+<h2>6. Visualisasi Peta Interaktif (Folium)<a class="headerlink" href="#visualisasi-peta-interaktif-folium" title="Link to this heading">#</a></h2>
+<p>Peta interaktif menampilkan:</p>
+<ul class="simple">
+<li><p><strong>Marker</strong> di titik pusat (centroid) Kabupaten Lamongan.</p></li>
+<li><p><strong>Polygon</strong> batas wilayah kajian — <strong>sama persis</strong> dengan geometry (<code class="docutils literal notranslate"><span class="pre">LAMONGAN_POLYGON</span></code>)
+yang digunakan pada tahap ekstraksi (<code class="docutils literal notranslate"><span class="pre">aggregate_spatial</span></code>) di Notebook 1, sehingga peta
+ini merepresentasikan wilayah yang benar-benar dipakai untuk menghitung nilai polutan.</p></li>
+</ul>
+<blockquote>
+<div><p>Polygon di bawah adalah <strong>perkiraan sederhana</strong>, identik dengan yang dipakai di
+Notebook 1. Untuk akurasi administratif, gunakan geometri resmi (mis. dari GADM/BIG)
+via <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>, lalu terapkan geometri yang sama di kedua notebook.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Titik pusat (centroid) Kabupaten Lamongan</span>
+<span class="n">LAMONGAN_CENTER</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">7.1201</span><span class="p">,</span> <span class="mf">112.4147</span><span class="p">]</span>  <span class="c1"># [lat, lon]</span>
+
+<span class="c1"># Polygon sederhana (perkiraan) batas wilayah Kabupaten Lamongan, format [lat, lon]</span>
+<span class="c1"># Catatan: koordinat ini sama dengan LAMONGAN_POLYGON pada Notebook 1 (format lon,lat</span>
+<span class="c1"># di sana; di sini dibalik menjadi lat,lon karena folium menggunakan urutan [lat, lon]).</span>
+<span class="n">LAMONGAN_POLYGON_COORDS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">7.00</span><span class="p">,</span> <span class="mf">112.00</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">7.30</span><span class="p">,</span> <span class="mf">112.10</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">7.35</span><span class="p">,</span> <span class="mf">112.25</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">7.25</span><span class="p">,</span> <span class="mf">112.40</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">7.15</span><span class="p">,</span> <span class="mf">112.55</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">7.00</span><span class="p">,</span> <span class="mf">112.60</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">6.88</span><span class="p">,</span> <span class="mf">112.50</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">6.85</span><span class="p">,</span> <span class="mf">112.30</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">6.90</span><span class="p">,</span> <span class="mf">112.10</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">7.00</span><span class="p">,</span> <span class="mf">112.00</span><span class="p">],</span>
+<span class="p">]</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">LAMONGAN_CENTER</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="s2">&quot;OpenStreetMap&quot;</span><span class="p">)</span>
+
+<span class="c1"># Marker titik pusat wilayah</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+    <span class="n">location</span><span class="o">=</span><span class="n">LAMONGAN_CENTER</span><span class="p">,</span>
+    <span class="n">popup</span><span class="o">=</span><span class="s2">&quot;Pusat Kabupaten Lamongan&quot;</span><span class="p">,</span>
+    <span class="n">icon</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">Icon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;info-sign&quot;</span><span class="p">),</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># Polygon batas wilayah kajian (identik dengan geometry di Notebook 1)</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span>
+    <span class="n">locations</span><span class="o">=</span><span class="n">LAMONGAN_POLYGON_COORDS</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+    <span class="n">weight</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">fill_color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+    <span class="n">fill_opacity</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span>
+    <span class="n">popup</span><span class="o">=</span><span class="s2">&quot;Area Kajian Kabupaten Lamongan&quot;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    
+    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/&gt;
+    
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
+            &lt;style&gt;
+                #map_b0b09d1e26964d9ca3c3c01407b7e0e8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            &lt;/style&gt;
+
+            &lt;style&gt;html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            &lt;/style&gt;
+
+            &lt;style&gt;#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            &lt;/style&gt;
+
+            &lt;script&gt;
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            &lt;/script&gt;
+
+        
+&lt;/head&gt;
+&lt;body&gt;
+    
+    
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_b0b09d1e26964d9ca3c3c01407b7e0e8&quot; &gt;&lt;/div&gt;
+        
+&lt;/body&gt;
+&lt;script&gt;
+    
+    
+            var map_b0b09d1e26964d9ca3c3c01407b7e0e8 = L.map(
+                &quot;map_b0b09d1e26964d9ca3c3c01407b7e0e8&quot;,
+                {
+                    center: [-7.1201, 112.4147],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  &quot;zoom&quot;: 10,
+  &quot;zoomControl&quot;: true,
+  &quot;preferCanvas&quot;: false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_220e377dc362daf52594a66238402bd6 = L.tileLayer(
+                &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
+                {
+  &quot;minZoom&quot;: 0,
+  &quot;maxZoom&quot;: 19,
+  &quot;maxNativeZoom&quot;: 19,
+  &quot;noWrap&quot;: false,
+  &quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors&quot;,
+  &quot;subdomains&quot;: &quot;abc&quot;,
+  &quot;detectRetina&quot;: false,
+  &quot;tms&quot;: false,
+  &quot;opacity&quot;: 1,
+}
+
+            );
+        
+    
+            tile_layer_220e377dc362daf52594a66238402bd6.addTo(map_b0b09d1e26964d9ca3c3c01407b7e0e8);
+        
+    
+            var marker_e385f63596e77638595eec0e2a003716 = L.marker(
+                [-7.1201, 112.4147],
+                {
+}
+            ).addTo(map_b0b09d1e26964d9ca3c3c01407b7e0e8);
+        
+    
+            var icon_0c2caa3f38abc3344c3711451f2820c2 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;info-sign&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+        var popup_5d082ecc82d3ed49fed81ac55a921827 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+});
+
+        
+            
+                var html_bb75615bfe8485e0138281d31e6d7f43 = $(`&lt;div id=&quot;html_bb75615bfe8485e0138281d31e6d7f43&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Pusat Kabupaten Lamongan&lt;/div&gt;`)[0];
+                popup_5d082ecc82d3ed49fed81ac55a921827.setContent(html_bb75615bfe8485e0138281d31e6d7f43);
+            
+        
+
+        marker_e385f63596e77638595eec0e2a003716.bindPopup(popup_5d082ecc82d3ed49fed81ac55a921827)
+        ;
+
+        
+    
+    
+                marker_e385f63596e77638595eec0e2a003716.setIcon(icon_0c2caa3f38abc3344c3711451f2820c2);
+            
+    
+            var polygon_74ffdd7999254bea95ed2145b27bf551 = L.polygon(
+                [[-7.0, 112.0], [-7.3, 112.1], [-7.35, 112.25], [-7.25, 112.4], [-7.15, 112.55], [-7.0, 112.6], [-6.88, 112.5], [-6.85, 112.3], [-6.9, 112.1], [-7.0, 112.0]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.15, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 2}
+            ).addTo(map_b0b09d1e26964d9ca3c3c01407b7e0e8);
+        
+    
+        var popup_3733206533599c9dc2e62a5e3fc8dcc0 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+});
+
+        
+            
+                var html_f9c9028ab50de369cf69abd14149cd6b = $(`&lt;div id=&quot;html_f9c9028ab50de369cf69abd14149cd6b&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Area Kajian Kabupaten Lamongan&lt;/div&gt;`)[0];
+                popup_3733206533599c9dc2e62a5e3fc8dcc0.setContent(html_f9c9028ab50de369cf69abd14149cd6b);
+            
+        
+
+        polygon_74ffdd7999254bea95ed2145b27bf551.bindPopup(popup_3733206533599c9dc2e62a5e3fc8dcc0)
+        ;
+
+        
+    
+&lt;/script&gt;
+&lt;/html&gt;" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div></div></div>
+</div>
+</section>
+<section id="deteksi-anomali-outlier-dengan-isolation-forest">
+<h2>7. Deteksi Anomali/Outlier dengan Isolation Forest<a class="headerlink" href="#deteksi-anomali-outlier-dengan-isolation-forest" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">IsolationForest</span></code> mendeteksi outlier dengan cara “mengisolasi” titik data melalui
+pemisahan acak berulang — titik anomali lebih cepat terisolasi karena posisinya jauh dari
+data mayoritas. Parameter <code class="docutils literal notranslate"><span class="pre">contamination=0.05</span></code> berarti kita mengasumsikan sekitar <strong>5%</strong>
+dari data adalah anomali.</p>
+<p>Deteksi dilakukan <strong>per kolom polutan</strong> (univariat), agar hasil outlier mencerminkan
+karakteristik masing-masing polutan secara terpisah (bukan tercampur antar polutan).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">detect_outliers_isolation_forest</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">contamination</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mendeteksi outlier pada satu kolom deret waktu numerik menggunakan IsolationForest.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.Series (bool)</span>
+<span class="sd">        True jika baris terdeteksi sebagai outlier, False jika normal.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">IsolationForest</span><span class="p">(</span><span class="n">contamination</span><span class="o">=</span><span class="n">contamination</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+    <span class="c1"># IsolationForest mengembalikan -1 untuk outlier, 1 untuk data normal</span>
+    <span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">preds</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+
+
+<span class="n">df_result</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">pollutant</span> <span class="ow">in</span> <span class="n">pollutant_cols</span><span class="p">:</span>
+    <span class="n">outlier_flags</span> <span class="o">=</span> <span class="n">detect_outliers_isolation_forest</span><span class="p">(</span><span class="n">df_result</span><span class="p">[</span><span class="n">pollutant</span><span class="p">],</span> <span class="n">contamination</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">df_result</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pollutant</span><span class="si">}</span><span class="s2">_outlier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">outlier_flags</span>
+
+    <span class="n">n_outlier</span> <span class="o">=</span> <span class="n">outlier_flags</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pollutant</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;5</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">n_outlier</span><span class="si">}</span><span class="s2"> outlier terdeteksi dari </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_result</span><span class="p">)</span><span class="si">}</span><span class="s2"> data &quot;</span>
+          <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">n_outlier</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">df_result</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+
+<span class="n">df_result</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-08-24</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-08-25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-08-27</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-08-28</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="visualisasi-data-normal-vs-outlier">
+<h2>8. Visualisasi Data Normal vs Outlier<a class="headerlink" href="#visualisasi-data-normal-vs-outlier" title="Link to this heading">#</a></h2>
+<p>Untuk tiap polutan, kita buat plot garis (deret waktu keseluruhan) yang ditumpangi dengan
+titik sebar (<em>scatter</em>): titik <strong>biru</strong> untuk data normal dan titik <strong>merah</strong> untuk data
+yang terdeteksi sebagai outlier oleh IsolationForest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1) Load &amp; gabungkan CSV (seperti sebelumnya)</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
+
+<span class="n">value_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="s2">&quot;date&quot;</span><span class="p">]</span>
+
+<span class="c1"># --- DEBUG: cek tipe data sebelum konversi ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tipe data sebelum konversi:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="n">value_cols</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+
+<span class="c1"># 2) Paksa semua kolom polutan jadi numerik; nilai yang gagal dikonversi -&gt; NaN</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">value_cols</span><span class="p">:</span>
+    <span class="n">df_clean</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tipe data setelah konversi:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="n">value_cols</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+
+<span class="c1"># 3) Baru sekarang aman melakukan groupby + mean</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="n">value_cols</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span>
+
+<span class="n">pollutant_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+
+<span class="c1"># Guard: hentikan dengan pesan jelas kalau ternyata masih kosong</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">pollutant_cols</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span>
+    <span class="s2">&quot;pollutant_cols kosong! Cek ulang isi CSV — kemungkinan kolom nilai berisi &quot;</span>
+    <span class="s2">&quot;teks/karakter aneh yang gagal dikonversi ke angka (lihat print dtypes di atas).&quot;</span>
+<span class="p">)</span>
+
+<span class="n">df_clean</span><span class="p">[</span><span class="n">pollutant_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">pollutant_cols</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+<span class="n">df_clean</span><span class="p">[</span><span class="n">pollutant_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">pollutant_cols</span><span class="p">]</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span><span class="o">.</span><span class="n">bfill</span><span class="p">()</span>
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Sisa missing value setelah penanganan:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="n">pollutant_cols</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="n">df_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tipe data sebelum konversi:
+no2    object
+co     object
+so2    object
+ch4    object
+dtype: object
+
+Tipe data setelah konversi:
+no2    float64
+co     float64
+so2    float64
+ch4    float64
+dtype: object
+
+Sisa missing value setelah penanganan:
+no2    341
+co     341
+so2    341
+ch4    341
+dtype: int64
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>no2</th>
+      <th>co</th>
+      <th>so2</th>
+      <th>ch4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-08-24</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-08-25</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-08-26</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-08-27</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-08-28</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="ringkasan-deteksi-outlier">
+<h2>9. Ringkasan Deteksi Outlier<a class="headerlink" href="#ringkasan-deteksi-outlier" title="Link to this heading">#</a></h2>
+<p>Tabel ringkasan berikut menampilkan jumlah dan persentase outlier yang terdeteksi untuk
+setiap polutan, sebagai penutup tahap analisis pada notebook ini.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_result</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">pollutant</span> <span class="ow">in</span> <span class="n">pollutant_cols</span><span class="p">:</span>
+    <span class="n">outlier_flags</span> <span class="o">=</span> <span class="n">detect_outliers_isolation_forest</span><span class="p">(</span><span class="n">df_result</span><span class="p">[</span><span class="n">pollutant</span><span class="p">],</span> <span class="n">contamination</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">df_result</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pollutant</span><span class="si">}</span><span class="s2">_outlier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">outlier_flags</span>
+    <span class="n">n_outlier</span> <span class="o">=</span> <span class="n">outlier_flags</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pollutant</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;5</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">n_outlier</span><span class="si">}</span><span class="s2"> outlier terdeteksi dari </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_result</span><span class="p">)</span><span class="si">}</span><span class="s2"> data &quot;</span>
+          <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">n_outlier</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">df_result</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Guard: pastikan semua kolom outlier benar-benar ada sebelum lanjut ke sel berikutnya</span>
+<span class="n">expected_cols</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">_outlier&quot;</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pollutant_cols</span><span class="p">]</span>
+<span class="n">missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">expected_cols</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df_result</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">missing</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Kolom outlier belum lengkap: </span><span class="si">{</span><span class="n">missing</span><span class="si">}</span><span class="s2">. Jalankan ulang sel ini.&quot;</span>
+
+<span class="n">df_result</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NO2  : 0 outlier terdeteksi dari 341 data (0.0%)
+CO   : 0 outlier terdeteksi dari 341 data (0.0%)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SO2  : 0 outlier terdeteksi dari 341 data (0.0%)
+CH4  : 0 outlier terdeteksi dari 341 data (0.0%)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>no2</th>
+      <th>co</th>
+      <th>so2</th>
+      <th>ch4</th>
+      <th>no2_outlier</th>
+      <th>co_outlier</th>
+      <th>so2_outlier</th>
+      <th>ch4_outlier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-08-24</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-08-25</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-08-26</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-08-27</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-08-28</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ekstraksi_data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1. Ekstraksi Data Kualitas Udara — Kabupaten Lamongan</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-notebook">Tujuan Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-pustaka">2. Import Pustaka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memuat-data-csv-hasil-ekstraksi">3. Memuat Data CSV Hasil Ekstraksi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengecekan-missing-values-nan">4. Pengecekan Missing Values (NaN)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penanganan-missing-values">5. Penanganan Missing Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-peta-interaktif-folium">6. Visualisasi Peta Interaktif (Folium)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-anomali-outlier-dengan-isolation-forest">7. Deteksi Anomali/Outlier dengan Isolation Forest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-normal-vs-outlier">8. Visualisasi Data Normal vs Outlier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-deteksi-outlier">9. Ringkasan Deteksi Outlier</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
