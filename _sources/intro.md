@@ -1,6 +1,6 @@
 # Proyek Sains Data
 
-Nama : Trisewanti Jannatul Ma'wa
+Nama : Triswanti Jannatul Ma'wa
 
 NIM : 240411100125
 
