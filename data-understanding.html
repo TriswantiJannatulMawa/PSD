@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -404,7 +404,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-kualitas-data">4. Identifikasi Kualitas Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-values">4.1 Missing Values</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outliers">4.2 Outliers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#noise">4.3 Noise</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-data-understanding">5. Ringkasan Data Understanding</a></li>
@@ -737,7 +736,7 @@ Authenticated using device code flow.
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
             &lt;style&gt;
-                #map_22a467e6771e713517dca75923af6349 {
+                #map_096a3d7d92f5e4992472071eb8089afd {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -774,14 +773,14 @@ Authenticated using device code flow.
 &lt;body&gt;
     
     
-            &lt;div class=&quot;folium-map&quot; id=&quot;map_22a467e6771e713517dca75923af6349&quot; &gt;&lt;/div&gt;
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_096a3d7d92f5e4992472071eb8089afd&quot; &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_22a467e6771e713517dca75923af6349 = L.map(
-                &quot;map_22a467e6771e713517dca75923af6349&quot;,
+            var map_096a3d7d92f5e4992472071eb8089afd = L.map(
+                &quot;map_096a3d7d92f5e4992472071eb8089afd&quot;,
                 {
                     center: [-7.1, 112.3],
                     crs: L.CRS.EPSG3857,
@@ -798,7 +797,7 @@ Authenticated using device code flow.
 
         
     
-            var tile_layer_ddc4586d85a7e046153d298bcb21146b = L.tileLayer(
+            var tile_layer_16d600cdbf565cd95911782a589e6a0a = L.tileLayer(
                 &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
                 {
   &quot;minZoom&quot;: 0,
@@ -815,10 +814,10 @@ Authenticated using device code flow.
             );
         
     
-            tile_layer_ddc4586d85a7e046153d298bcb21146b.addTo(map_22a467e6771e713517dca75923af6349);
+            tile_layer_16d600cdbf565cd95911782a589e6a0a.addTo(map_096a3d7d92f5e4992472071eb8089afd);
         
     
-            var tile_layer_74779f27b5203321382c0d1d6c4994dd = L.tileLayer(
+            var tile_layer_cc3ca5bd36148868300a792f2ca3c1ac = L.tileLayer(
                 &quot;https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png&quot;,
                 {
   &quot;minZoom&quot;: 0,
@@ -835,16 +834,16 @@ Authenticated using device code flow.
             );
         
     
-            tile_layer_74779f27b5203321382c0d1d6c4994dd.addTo(map_22a467e6771e713517dca75923af6349);
+            tile_layer_cc3ca5bd36148868300a792f2ca3c1ac.addTo(map_096a3d7d92f5e4992472071eb8089afd);
         
     
-            var polygon_797f2726b28a231699115e422095bc24 = L.polygon(
+            var polygon_3dacd13a7708e3daa47dc920c3c658c0 = L.polygon(
                 [[-7.0, 112.0], [-7.3, 112.1], [-7.35, 112.25], [-7.25, 112.4], [-7.15, 112.55], [-7.0, 112.6], [-6.88, 112.5], [-6.85, 112.3], [-6.9, 112.1], [-7.0, 112.0]],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.12, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 2}
-            ).addTo(map_22a467e6771e713517dca75923af6349);
+            ).addTo(map_096a3d7d92f5e4992472071eb8089afd);
         
     
-            polygon_797f2726b28a231699115e422095bc24.bindTooltip(
+            polygon_3dacd13a7708e3daa47dc920c3c658c0.bindTooltip(
                 `&lt;div&gt;
                      Area of Interest (AOI) — Kabupaten Lamongan
                  &lt;/div&gt;`,
@@ -854,13 +853,13 @@ Authenticated using device code flow.
             );
         
     
-            var rectangle_1cc76c985402d9449ec7b5d0c295a45e = L.rectangle(
+            var rectangle_ed84ab3934619a66632b0235cdc0bf87 = L.rectangle(
                 [[-7.35, 112.0], [-6.85, 112.6]],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;gray&quot;, &quot;dashArray&quot;: &quot;5,5&quot;, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;gray&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 1}
-            ).addTo(map_22a467e6771e713517dca75923af6349);
+            ).addTo(map_096a3d7d92f5e4992472071eb8089afd);
         
     
-            rectangle_1cc76c985402d9449ec7b5d0c295a45e.bindTooltip(
+            rectangle_ed84ab3934619a66632b0235cdc0bf87.bindTooltip(
                 `&lt;div&gt;
                      Bounding Box (spatial_extent load_collection)
                  &lt;/div&gt;`,
@@ -870,14 +869,14 @@ Authenticated using device code flow.
             );
         
     
-            var marker_af246a2b5526071b8b8861e68eb5f93f = L.marker(
+            var marker_42d443b9745b1bf50f90805a322e4138 = L.marker(
                 [-7.1201, 112.4147],
                 {
 }
-            ).addTo(map_22a467e6771e713517dca75923af6349);
+            ).addTo(map_096a3d7d92f5e4992472071eb8089afd);
         
     
-            var icon_fddc0ccd95b03f87ed28968475a2fb50 = L.AwesomeMarkers.icon(
+            var icon_52f219096bc04aff190c1af8ffd81178 = L.AwesomeMarkers.icon(
                 {
   &quot;markerColor&quot;: &quot;blue&quot;,
   &quot;iconColor&quot;: &quot;white&quot;,
@@ -888,24 +887,24 @@ Authenticated using device code flow.
             );
         
     
-        var popup_3ed23fd46669d8e4980aba4085ec6150 = L.popup({
+        var popup_5e5e60aa67a59210dce49a497971fb98 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_067f4765870276115f7db2e45abed7ce = $(`&lt;div id=&quot;html_067f4765870276115f7db2e45abed7ce&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Pusat Kota Lamongan&lt;/div&gt;`)[0];
-                popup_3ed23fd46669d8e4980aba4085ec6150.setContent(html_067f4765870276115f7db2e45abed7ce);
+                var html_74528973bf53ca687411de6db43ca1d6 = $(`&lt;div id=&quot;html_74528973bf53ca687411de6db43ca1d6&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Pusat Kota Lamongan&lt;/div&gt;`)[0];
+                popup_5e5e60aa67a59210dce49a497971fb98.setContent(html_74528973bf53ca687411de6db43ca1d6);
             
         
 
-        marker_af246a2b5526071b8b8861e68eb5f93f.bindPopup(popup_3ed23fd46669d8e4980aba4085ec6150)
+        marker_42d443b9745b1bf50f90805a322e4138.bindPopup(popup_5e5e60aa67a59210dce49a497971fb98)
         ;
 
         
     
     
-            marker_af246a2b5526071b8b8861e68eb5f93f.bindTooltip(
+            marker_42d443b9745b1bf50f90805a322e4138.bindTooltip(
                 `&lt;div&gt;
                      Pusat Kota Lamongan
                  &lt;/div&gt;`,
@@ -915,17 +914,17 @@ Authenticated using device code flow.
             );
         
     
-                marker_af246a2b5526071b8b8861e68eb5f93f.setIcon(icon_fddc0ccd95b03f87ed28968475a2fb50);
+                marker_42d443b9745b1bf50f90805a322e4138.setIcon(icon_52f219096bc04aff190c1af8ffd81178);
             
     
-            var marker_7aef7be29d4b0c4f514fad487066e7ed = L.marker(
+            var marker_8e5ed1e7ca976a6d8619cadcdcb4cdfb = L.marker(
                 [-6.8767, 112.3735],
                 {
 }
-            ).addTo(map_22a467e6771e713517dca75923af6349);
+            ).addTo(map_096a3d7d92f5e4992472071eb8089afd);
         
     
-            var icon_16c45605ca2f0b5d1e102f88726160d7 = L.AwesomeMarkers.icon(
+            var icon_1c288a48aa6cefd34ea12eb5c27dfaf4 = L.AwesomeMarkers.icon(
                 {
   &quot;markerColor&quot;: &quot;red&quot;,
   &quot;iconColor&quot;: &quot;white&quot;,
@@ -936,24 +935,24 @@ Authenticated using device code flow.
             );
         
     
-        var popup_813f781e369ed9d3ae16f5fc12b870a8 = L.popup({
+        var popup_ad088846e24f42b20eecaa98eb9f677c = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_51db986a60ed2314913c6c5bdb6957c9 = $(`&lt;div id=&quot;html_51db986a60ed2314913c6c5bdb6957c9&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Lamongan Integrated Shorebase (LIS) — Kec. Paciran&lt;br&gt;Aktivitas logistik &amp; shorebase migas lepas pantai&lt;/div&gt;`)[0];
-                popup_813f781e369ed9d3ae16f5fc12b870a8.setContent(html_51db986a60ed2314913c6c5bdb6957c9);
+                var html_4c415f6e2e51d56d39205b24f27674ce = $(`&lt;div id=&quot;html_4c415f6e2e51d56d39205b24f27674ce&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Lamongan Integrated Shorebase (LIS) — Kec. Paciran&lt;br&gt;Aktivitas logistik &amp; shorebase migas lepas pantai&lt;/div&gt;`)[0];
+                popup_ad088846e24f42b20eecaa98eb9f677c.setContent(html_4c415f6e2e51d56d39205b24f27674ce);
             
         
 
-        marker_7aef7be29d4b0c4f514fad487066e7ed.bindPopup(popup_813f781e369ed9d3ae16f5fc12b870a8)
+        marker_8e5ed1e7ca976a6d8619cadcdcb4cdfb.bindPopup(popup_ad088846e24f42b20eecaa98eb9f677c)
         ;
 
         
     
     
-            marker_7aef7be29d4b0c4f514fad487066e7ed.bindTooltip(
+            marker_8e5ed1e7ca976a6d8619cadcdcb4cdfb.bindTooltip(
                 `&lt;div&gt;
                      Lamongan Integrated Shorebase (Paciran)
                  &lt;/div&gt;`,
@@ -963,17 +962,17 @@ Authenticated using device code flow.
             );
         
     
-                marker_7aef7be29d4b0c4f514fad487066e7ed.setIcon(icon_16c45605ca2f0b5d1e102f88726160d7);
+                marker_8e5ed1e7ca976a6d8619cadcdcb4cdfb.setIcon(icon_1c288a48aa6cefd34ea12eb5c27dfaf4);
             
     
-            var marker_97d9efd29697b56265709405d4bddf4d = L.marker(
+            var marker_55aa5a08b01d7c20ad33e4bd6779af7d = L.marker(
                 [-7.1, 112.1833],
                 {
 }
-            ).addTo(map_22a467e6771e713517dca75923af6349);
+            ).addTo(map_096a3d7d92f5e4992472071eb8089afd);
         
     
-            var icon_1b3fd16590662de4a89f682279915c94 = L.AwesomeMarkers.icon(
+            var icon_5b8ff2ed96329b7ea1b4369f331ed680 = L.AwesomeMarkers.icon(
                 {
   &quot;markerColor&quot;: &quot;orange&quot;,
   &quot;iconColor&quot;: &quot;white&quot;,
@@ -984,24 +983,24 @@ Authenticated using device code flow.
             );
         
     
-        var popup_575dd5c572a21e3d08d2792b45e958fd = L.popup({
+        var popup_604f27e6dc549920c04b5afdf39cbee8 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_7b75d366d5f6303b80f91e549d070a00 = $(`&lt;div id=&quot;html_7b75d366d5f6303b80f91e549d070a00&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Kawasan Industri Kayu — Jalur Babat–Jombang&lt;br&gt;Pabrik kayu lapis, dilaporkan mengeluarkan asap cerobong&lt;/div&gt;`)[0];
-                popup_575dd5c572a21e3d08d2792b45e958fd.setContent(html_7b75d366d5f6303b80f91e549d070a00);
+                var html_e9a8728f82ef1cb85b9bd3f5fd3700f6 = $(`&lt;div id=&quot;html_e9a8728f82ef1cb85b9bd3f5fd3700f6&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Kawasan Industri Kayu — Jalur Babat–Jombang&lt;br&gt;Pabrik kayu lapis, dilaporkan mengeluarkan asap cerobong&lt;/div&gt;`)[0];
+                popup_604f27e6dc549920c04b5afdf39cbee8.setContent(html_e9a8728f82ef1cb85b9bd3f5fd3700f6);
             
         
 
-        marker_97d9efd29697b56265709405d4bddf4d.bindPopup(popup_575dd5c572a21e3d08d2792b45e958fd)
+        marker_55aa5a08b01d7c20ad33e4bd6779af7d.bindPopup(popup_604f27e6dc549920c04b5afdf39cbee8)
         ;
 
         
     
     
-            marker_97d9efd29697b56265709405d4bddf4d.bindTooltip(
+            marker_55aa5a08b01d7c20ad33e4bd6779af7d.bindTooltip(
                 `&lt;div&gt;
                      Kawasan Industri Babat
                  &lt;/div&gt;`,
@@ -1011,26 +1010,26 @@ Authenticated using device code flow.
             );
         
     
-                marker_97d9efd29697b56265709405d4bddf4d.setIcon(icon_1b3fd16590662de4a89f682279915c94);
+                marker_55aa5a08b01d7c20ad33e4bd6779af7d.setIcon(icon_5b8ff2ed96329b7ea1b4369f331ed680);
             
     
-            var layer_control_f2f9cbb65e741232ea1b9e0df36e1364_layers = {
+            var layer_control_75ffa789a7198b1c1cac13287c02d251_layers = {
                 base_layers : {
-                    &quot;openstreetmap&quot; : tile_layer_ddc4586d85a7e046153d298bcb21146b,
-                    &quot;Topografi&quot; : tile_layer_74779f27b5203321382c0d1d6c4994dd,
+                    &quot;openstreetmap&quot; : tile_layer_16d600cdbf565cd95911782a589e6a0a,
+                    &quot;Topografi&quot; : tile_layer_cc3ca5bd36148868300a792f2ca3c1ac,
                 },
                 overlays :  {
                 },
             };
-            let layer_control_f2f9cbb65e741232ea1b9e0df36e1364 = L.control.layers(
-                layer_control_f2f9cbb65e741232ea1b9e0df36e1364_layers.base_layers,
-                layer_control_f2f9cbb65e741232ea1b9e0df36e1364_layers.overlays,
+            let layer_control_75ffa789a7198b1c1cac13287c02d251 = L.control.layers(
+                layer_control_75ffa789a7198b1c1cac13287c02d251_layers.base_layers,
+                layer_control_75ffa789a7198b1c1cac13287c02d251_layers.overlays,
                 {
   &quot;position&quot;: &quot;topright&quot;,
   &quot;collapsed&quot;: true,
   &quot;autoZIndex&quot;: true,
 }
-            ).addTo(map_22a467e6771e713517dca75923af6349);
+            ).addTo(map_096a3d7d92f5e4992472071eb8089afd);
 
         
 &lt;/script&gt;
@@ -1572,7 +1571,7 @@ Jumlah data terisi (valid) pada data CH4 : 57
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">~\AppData\Local\Temp\ipykernel_15472\3016548306.py</span> in <span class="ni">?</span><span class="nt">()</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_14472\3016548306.py</span> in <span class="ni">?</span><span class="nt">()</span>
 <span class="ne">---&gt; </span><span class="mi">10</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">IsolationForest</span>
 <span class="g g-Whitespace">     </span><span class="mi">12</span> 
@@ -1756,12 +1755,7 @@ Jumlah data terisi (valid) pada data CH4 : 57
 </details>
 </div>
 </section>
-<section id="noise">
-<h3>4.3 Noise<a class="headerlink" href="#noise" title="Link to this heading">#</a></h3>
-<p><em>(Akan dibahas pada iterasi berikutnya — belum dianalisis pada versi ini.)</em></p>
 </section>
-</section>
-<hr class="docutils" />
 <section id="ringkasan-data-understanding">
 <h2>5. Ringkasan Data Understanding<a class="headerlink" href="#ringkasan-data-understanding" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -1851,7 +1845,6 @@ Jumlah data terisi (valid) pada data CH4 : 57
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-kualitas-data">4. Identifikasi Kualitas Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-values">4.1 Missing Values</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outliers">4.2 Outliers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#noise">4.3 Noise</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-data-understanding">5. Ringkasan Data Understanding</a></li>

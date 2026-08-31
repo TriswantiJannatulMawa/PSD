@@ -451,11 +451,6 @@ plt.grid(True)
 plt.show()
 ```
 
-### 4.3 Noise
-
-*(Akan dibahas pada iterasi berikutnya — belum dianalisis pada versi ini.)*
-
----
 
 ## 5. Ringkasan Data Understanding
 
