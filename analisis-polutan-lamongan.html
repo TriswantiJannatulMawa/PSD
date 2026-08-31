@@ -385,13 +385,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentang-proyek">Tentang Proyek</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latar-belakang">Latar Belakang</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">Sumber Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-analisis">Struktur Analisis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#business-data-understanding">1. Business &amp; Data Understanding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-data">2. Ekstraksi Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-data-lamongan">3. Analisis Data (Lamongan)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#susunan-daftar-isi-toc-yml">Susunan Daftar Isi (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)</a></li>
 </ul>
             </nav>
         </div>
@@ -420,42 +413,6 @@ document.write(`
 <li><p><strong>Mulai:</strong> 24 Agustus 2025</p></li>
 <li><p><strong>Selesai:</strong> 24 Agustus 2026</p></li>
 </ul>
-</section>
-<section id="struktur-analisis">
-<h2>Struktur Analisis<a class="headerlink" href="#struktur-analisis" title="Link to this heading">#</a></h2>
-<p>Analisis pada buku ini disusun mengikuti alur kerja <strong>CRISP-DM</strong>, terbagi ke dalam tiga bagian utama:</p>
-<section id="business-data-understanding">
-<h3>1. Business &amp; Data Understanding<a class="headerlink" href="#business-data-understanding" title="Link to this heading">#</a></h3>
-<p>Pemahaman awal mengenai indeks kualitas udara (AQI), karakteristik masing-masing polutan (NO₂, CO, SO₂, CH₄) beserta sumber dan dampak kesehatannya, konteks spesifik Kabupaten Lamongan, serta proses pengumpulan dan eksplorasi data satelit — termasuk peta wilayah kajian, pratinjau data, dan identifikasi awal missing values/outlier.</p>
-<p>📄 Berkas: <code class="docutils literal notranslate"><span class="pre">business-understanding.md</span></code>, <code class="docutils literal notranslate"><span class="pre">data-understanding.md</span></code></p>
-</section>
-<section id="ekstraksi-data">
-<h3>2. Ekstraksi Data<a class="headerlink" href="#ekstraksi-data" title="Link to this heading">#</a></h3>
-<p>Proses teknis penarikan data satelit Sentinel-5P dari server openEO Copernicus Data Space untuk wilayah Kabupaten Lamongan — mencakup otentikasi, penentuan area kajian, agregasi temporal &amp; spasial per polutan, hingga ekspor hasil ke format NetCDF dan CSV.</p>
-<p>📄 Berkas: <code class="docutils literal notranslate"><span class="pre">1-ekstraksi-data.ipynb</span></code></p>
-</section>
-<section id="analisis-data-lamongan">
-<h3>3. Analisis Data (Lamongan)<a class="headerlink" href="#analisis-data-lamongan" title="Link to this heading">#</a></h3>
-<p>Pengolahan lanjutan atas data hasil ekstraksi — pemeriksaan dan penanganan missing values, deteksi anomali/outlier menggunakan Isolation Forest, serta visualisasi deret waktu untuk melihat pola konsentrasi tiap polutan di Kabupaten Lamongan.</p>
-<p>📄 Berkas: <code class="docutils literal notranslate"><span class="pre">2-analisis-lamongan.ipynb</span></code></p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="susunan-daftar-isi-toc-yml">
-<h2>Susunan Daftar Isi (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)<a class="headerlink" href="#susunan-daftar-isi-toc-yml" title="Link to this heading">#</a></h2>
-<p>Contoh struktur <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> Jupyter Book v1 yang sesuai dengan urutan di atas:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jb-book</span>
-<span class="nt">root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pengantar-analisis-polutan-lamongan</span>
-<span class="nt">chapters</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">business-understanding</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data-understanding</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1-ekstraksi-data</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2-analisis-lamongan</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p>Sesuaikan nama file dengan lokasi sebenarnya di struktur folder proyekmu (mis. jika notebook disimpan dalam subfolder <code class="docutils literal notranslate"><span class="pre">notebooks/</span></code>, tulis <code class="docutils literal notranslate"><span class="pre">notebooks/1-ekstraksi-data</span></code>).</p>
-</div></blockquote>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -528,13 +485,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentang-proyek">Tentang Proyek</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latar-belakang">Latar Belakang</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">Sumber Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-analisis">Struktur Analisis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#business-data-understanding">1. Business &amp; Data Understanding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-data">2. Ekstraksi Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-data-lamongan">3. Analisis Data (Lamongan)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#susunan-daftar-isi-toc-yml">Susunan Daftar Isi (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)</a></li>
 </ul>
   </nav></div>
 
