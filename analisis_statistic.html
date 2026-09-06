@@ -1,0 +1,822 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Analisis Statistik Data Menggunakan Aiven dan KNIME &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'analisis_statistic';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Analisis Data Kualitas Udara — Kabupaten Lamongan" href="analisis_lamongan.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Proyek Sains Data
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="analisis-polutan-lamongan.html">Pengantar Analisis Polutan Kabupaten Lamongan</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="business-understanding.html">Business Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-understanding.html">Data Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ekstraksi_data.html">Ekstraksi Data Kualitas Udara — Kabupaten Lamongan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analisis_lamongan.html">Analisis Data Kualitas Udara — Kabupaten Lamongan</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Analisis Statistik Data Menggunakan Aiven dan KNIME</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fanalisis_statistic.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/analisis_statistic.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Analisis Statistik Data Menggunakan Aiven dan KNIME</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memindahkan-data-csv-ke-aiven">1. Memindahkan Data CSV ke Aiven</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-tabel-pada-aiven">1.1 Membuat Tabel pada Aiven</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memasukkan-data-ke-aiven">1.2 Memasukkan Data ke Aiven</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengecek-data">1.3 Mengecek Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-sari-aiven-ke-knime">2. Mengambil Data sari Aiven ke KNIME</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-connector">2.1 PostgreSQL Connector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#db-table-selector">2.2 DB Table Selector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#db-reader">2.3 DB Reader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">2.4 Statistics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properti-statistik">3. Properti Statistik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min">3.1 Min</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean">3.2 Mean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max">3.3 Max</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#std-dev">3.4 Std.Dev</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kurtosis">3.5 Kurtosis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness">3.6 Skewness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-missing">3.8 No.Missing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-unlimited">3.9 No. +unlimited</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-nans">3.10 No. NaNs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-sum">3.11 Overall Sum</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-hasil-statistik">4. Analisis Hasil Statistik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">5. Kesimpulan</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analisis-statistik-data-menggunakan-aiven-dan-knime">
+<h1>Analisis Statistik Data Menggunakan Aiven dan KNIME<a class="headerlink" href="#analisis-statistik-data-menggunakan-aiven-dan-knime" title="Link to this heading">#</a></h1>
+<p>Proses pemindahan data dari file CSV ke cloud database menggunakan Aiven. Data yang telah disimpan pada Aiven kemudian dihubungkan ke KNIME untuk dilakukan analisis statistik.</p>
+<p>Tahapan yang dilakukan meliputi:</p>
+<ol class="arabic simple">
+<li><p>Memindahkan data CSV ke Aiven.</p></li>
+<li><p>Mengambil data dari Aiven ke KNIME.</p></li>
+<li><p>Menampilkan statistik menggunakan KNIME.</p></li>
+<li><p>Menjelaskan properti statistik yang dihasilkan.</p></li>
+<li><p>Memberikan contoh perhitungan dari setiap properti statistik.</p></li>
+<li><p>Menyimpulkan hasil analisis.</p></li>
+</ol>
+<section id="memindahkan-data-csv-ke-aiven">
+<h2>1. Memindahkan Data CSV ke Aiven<a class="headerlink" href="#memindahkan-data-csv-ke-aiven" title="Link to this heading">#</a></h2>
+<p>Data yang digunakan merupakan data yang disimpan dalam format CSV. Data tersebut kemudian dipindahkan ke database PostgreSQL yang tersedia pada Aiven. Aiven digunakan sebagai cloud database untuk menyimpan dataset sehingga data dapat diakses melalui koneksi database dari KNIME.</p>
+<section id="membuat-tabel-pada-aiven">
+<h3>1.1 Membuat Tabel pada Aiven<a class="headerlink" href="#membuat-tabel-pada-aiven" title="Link to this heading">#</a></h3>
+<p>Langkah pertama adalah membuat tabel pada database PostgreSQL Aiven. Tabel yang digunakan diberi nama <code class="docutils literal notranslate"><span class="pre">ch4_lamongan</span></code>.</p>
+<p><img alt="alt text" src="_images/img1.png" /></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Kolom</p></th>
+<th class="head"><p>Keterangan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">t</span></code></p></td>
+<td><p>Menyimpan tanggal pengamatan</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">feature</span></code></p></td>
+<td><p>Menyimpan nilai fitur</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CH4</span></code></p></td>
+<td><p>Menyimpan nilai CH4</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">lat</span></code></p></td>
+<td><p>Menyimpan latitude</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">lon</span></code></p></td>
+<td><p>Menyimpan longitude</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">feature_names</span></code></p></td>
+<td><p>Menyimpan nama fitur</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="memasukkan-data-ke-aiven">
+<h3>1.2 Memasukkan Data ke Aiven<a class="headerlink" href="#memasukkan-data-ke-aiven" title="Link to this heading">#</a></h3>
+<p>Setelah tabel berhasil dibuat, seluruh data dari file CSV dimasukkan ke dalam tabel ch4_lamongan.</p>
+<p>Data dimasukkan menggunakan perintah INSERT. Setiap baris pada dataset dimasukkan sebagai satu record ke dalam database.</p>
+<p>Contoh perintah yang digunakan:</p>
+<p><img alt="alt text" src="_images/img2.png" /></p>
+</section>
+<section id="mengecek-data">
+<h3>1.3 Mengecek Data<a class="headerlink" href="#mengecek-data" title="Link to this heading">#</a></h3>
+<p>Setelah seluruh data dimasukkan, dilakukan pengecekan untuk memastikan data telah berhasil tersimpan pada database.</p>
+<p><img alt="alt text" src="_images/img3.png" /></p>
+<p>Hasil pengecekan menunjukkan bahwa data telah berhasil tersimpan pada tabel ch4_lamongan.</p>
+</section>
+</section>
+<section id="mengambil-data-sari-aiven-ke-knime">
+<h2>2. Mengambil Data sari Aiven ke KNIME<a class="headerlink" href="#mengambil-data-sari-aiven-ke-knime" title="Link to this heading">#</a></h2>
+<p>Setelah data berhasil disimpan pada Aiven, langkah selanjutnya adalah mengambil data tersebut menggunakan KNIME.</p>
+<p>KNIME dihubungkan dengan database PostgreSQL Aiven menggunakan beberapa node.</p>
+<p><img alt="alt text" src="_images/img4.png" /></p>
+<section id="postgresql-connector">
+<h3>2.1 PostgreSQL Connector<a class="headerlink" href="#postgresql-connector" title="Link to this heading">#</a></h3>
+<p>Digunakan untuk menghubungkan KNIME dengan database PostgreSQL yang terdapat pada Aiven.</p>
+<p>Pada konfigurasi PostgreSQL Connector dimasukkan informasi koneksi dari Aiven, yaitu:</p>
+<ul class="simple">
+<li><p>Hostname</p></li>
+<li><p>Port</p></li>
+<li><p>Database Name</p></li>
+<li><p>Username</p></li>
+<li><p>Password</p></li>
+</ul>
+<p>Setelah konfigurasi selesai, koneksi dijalankan untuk memastikan KNIME dapat terhubung dengan database Aiven.</p>
+</section>
+<section id="db-table-selector">
+<h3>2.2 DB Table Selector<a class="headerlink" href="#db-table-selector" title="Link to this heading">#</a></h3>
+<p>Setelah koneksi berhasil dibuat, DB Table Selector digunakan untuk memilih tabel yang akan digunakan.</p>
+<ul class="simple">
+<li><p>Schema name : public</p></li>
+<li><p>Table name  : ch4_lamongan</p></li>
+</ul>
+<p>Dengan memilih tabel tersebut, KNIME akan mengambil data yang terdapat pada tabel ch4_lamongan.</p>
+<p><img alt="alt text" src="_images/img7.png" /></p>
+</section>
+<section id="db-reader">
+<h3>2.3 DB Reader<a class="headerlink" href="#db-reader" title="Link to this heading">#</a></h3>
+<p>DB Reader digunakan untuk membaca data dari database berdasarkan tabel yang telah dipilih pada DB Table Selector.</p>
+<p>Data yang berhasil dibaca kemudian dapat digunakan sebagai input untuk proses analisis statistik pada KNIME.</p>
+</section>
+<section id="statistics">
+<h3>2.4 Statistics<a class="headerlink" href="#statistics" title="Link to this heading">#</a></h3>
+<p>Setelah data berhasil dibaca menggunakan DB Reader, data diteruskan ke node Statistics.</p>
+<p>Node Statistics digunakan untuk menghasilkan statistik deskriptif dari dataset.</p>
+<p>Statistik deskriptif digunakan untuk mengetahui karakteristik data, seperti nilai terkecil, nilai terbesar, rata-rata, nilai tengah, penyebaran data, dan bentuk distribusi data.</p>
+<p>Beberapa statistik yang dihasilkan oleh KNIME antara lain:</p>
+<ul class="simple">
+<li><p>Min</p></li>
+<li><p>Mean</p></li>
+<li><p>Median</p></li>
+<li><p>Max</p></li>
+<li><p>Std. Dev.</p></li>
+<li><p>Kurtosis</p></li>
+<li><p>Skewness</p></li>
+<li><p>No. Missing</p></li>
+<li><p>No. NaNs</p></li>
+<li><p>No. +unlimited</p></li>
+<li><p>No. -unlimited</p></li>
+<li><p>Overall Sum</p></li>
+</ul>
+<p>sehingga hasil statisticsnya:</p>
+<p><img alt="alt text" src="_images/img5.png" />
+<img alt="alt text" src="_images/img6.png" /></p>
+</section>
+</section>
+<section id="properti-statistik">
+<h2>3. Properti Statistik<a class="headerlink" href="#properti-statistik" title="Link to this heading">#</a></h2>
+<section id="min">
+<h3>3.1 Min<a class="headerlink" href="#min" title="Link to this heading">#</a></h3>
+<p>Min atau minimum merupakan nilai terkecil yang terdapat pada suatu kolom.</p>
+<p>Contoh : Data = 2, 4, 6, 8, 10</p>
+<p>Nilai terkecil adalah : 2</p>
+</section>
+<section id="mean">
+<h3>3.2 Mean<a class="headerlink" href="#mean" title="Link to this heading">#</a></h3>
+<p>Mean atau rata-rata merupakan jumlah seluruh nilai data yang dibagi dengan jumlah data.</p>
+<div class="math notranslate nohighlight">
+\[ Mean = Σx / n \]</div>
+<p>Keterangan:</p>
+<ul class="simple">
+<li><p>Σx = jumlah seluruh nilai data</p></li>
+<li><p>n = jumlah data</p></li>
+</ul>
+<p>contoh:</p>
+<p>Σx = 2 + 4 + 6 + 8 + 10 = 30</p>
+<p>n = 5</p>
+<p>Mean = 30 / 5 = 6</p>
+</section>
+<section id="max">
+<h3>3.3 Max<a class="headerlink" href="#max" title="Link to this heading">#</a></h3>
+<p>Max atau maksimum merupakan nilai terbesar yang terdapat pada suatu kolom.</p>
+<p>contoh : Data = 2, 4, 6, 8, 10</p>
+<p>Nilai terbesar adalah: 10</p>
+</section>
+<section id="std-dev">
+<h3>3.4 Std.Dev<a class="headerlink" href="#std-dev" title="Link to this heading">#</a></h3>
+<p>Std. Dev. atau Standard Deviation menunjukkan tingkat penyebaran data terhadap nilai rata-ratanya.</p>
+<p>Semakin besar nilai standard deviation, semakin besar penyebaran data dari nilai rata-ratanya.</p>
+<p>Sebaliknya, standard deviation yang kecil menunjukkan bahwa nilai data cenderung berada dekat dengan rata-ratanya.</p>
+<p>contoh :</p>
+<p>mean = 6</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>x</p></th>
+<th class="head text-right"><p>x - Mean</p></th>
+<th class="head text-right"><p>(x - Mean)²</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>2</p></td>
+<td class="text-right"><p>-4</p></td>
+<td class="text-right"><p>16</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>4</p></td>
+<td class="text-right"><p>-2</p></td>
+<td class="text-right"><p>4</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>6</p></td>
+<td class="text-right"><p>0</p></td>
+<td class="text-right"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>8</p></td>
+<td class="text-right"><p>2</p></td>
+<td class="text-right"><p>4</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>10</p></td>
+<td class="text-right"><p>4</p></td>
+<td class="text-right"><p>16</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>Total</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p>40</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Variance = 40/5 = 8</p>
+<p>std.dev = √8 = 2,83</p>
+</section>
+<section id="kurtosis">
+<h3>3.5 Kurtosis<a class="headerlink" href="#kurtosis" title="Link to this heading">#</a></h3>
+<p>Kurtosis digunakan untuk menggambarkan karakteristik distribusi data, terutama bentuk bagian tengah dan ekor distribusi.</p>
+<p>rumus : $<span class="math notranslate nohighlight">\( Kurtosis = [ (1/n) Σ(x - μ)^4 ] / σ^4 \)</span>$</p>
+<p>Keterangan:</p>
+<ul class="simple">
+<li><p>n = jumlah data</p></li>
+<li><p>x = nilai data</p></li>
+<li><p>μ = mean</p></li>
+<li><p>σ = standard deviation</p></li>
+</ul>
+<p>Nilai kurtosis dapat berbeda tergantung metode atau koreksi statistik yang digunakan oleh perangkat lunak.</p>
+</section>
+<section id="skewness">
+<h3>3.6 Skewness<a class="headerlink" href="#skewness" title="Link to this heading">#</a></h3>
+<p>Skewness menunjukkan tingkat kemencengan atau ketidaksimetrisan distribusi data.</p>
+<p>Interpretasi secara umum:</p>
+<ul class="simple">
+<li><p>Skewness mendekati 0 menunjukkan distribusi data relatif simetris.</p></li>
+<li><p>Skewness positif menunjukkan - distribusi cenderung menceng ke kanan.</p></li>
+<li><p>Skewness negatif menunjukkan distribusi cenderung menceng ke kiri.</p></li>
+</ul>
+</section>
+<section id="no-missing">
+<h3>3.8 No.Missing<a class="headerlink" href="#no-missing" title="Link to this heading">#</a></h3>
+<p>No. Missing menunjukkan jumlah data yang kosong atau tidak memiliki nilai.</p>
+<p>Contoh : 2,4,kosong,8,10</p>
+<p>Terdapat satu nilai kosong,sehingga no,missingnya 1.</p>
+</section>
+<section id="no-unlimited">
+<h3>3.9 No. +unlimited<a class="headerlink" href="#no-unlimited" title="Link to this heading">#</a></h3>
+<p>No. +unlimited menunjukkan jumlah nilai positif tak hingga atau +∞ yang terdapat pada suatu kolom.</p>
+<p>contoh : 2, 4, 6, +∞, 10 -&gt; maka No. +unlimited = 1</p>
+<p>Jika tidak terdapat nilai +∞, maka nilai No. +unlimited adalah 0.</p>
+</section>
+<section id="no-nans">
+<h3>3.10 No. NaNs<a class="headerlink" href="#no-nans" title="Link to this heading">#</a></h3>
+<p>No. NaNs menunjukkan jumlah nilai NaN atau Not a Number yang terdapat pada suatu kolom.</p>
+<p>Nilai NaN merupakan nilai yang tidak dapat dianggap sebagai angka yang valid.</p>
+<p>contoh : 2, 4, NaN, 8, 10 -&gt; maka : No. NaNs = 1</p>
+</section>
+<section id="overall-sum">
+<h3>3.11 Overall Sum<a class="headerlink" href="#overall-sum" title="Link to this heading">#</a></h3>
+<p>Overall Sum menunjukkan jumlah keseluruhan nilai pada suatu kolom numerik.</p>
+<p>contoh :</p>
+<p>Data = 2, 4, 6, 8, 10</p>
+<p>Overall Sum = 2 + 4 + 6 + 8 + 10 = 30</p>
+</section>
+</section>
+<section id="analisis-hasil-statistik">
+<h2>4. Analisis Hasil Statistik<a class="headerlink" href="#analisis-hasil-statistik" title="Link to this heading">#</a></h2>
+<p>Berdasarkan hasil statistik yang diperoleh menggunakan KNIME, dapat diketahui karakteristik dari setiap kolom numerik pada dataset.</p>
+<p>Nilai Min dan Max menunjukkan rentang nilai yang terdapat pada setiap kolom. Mean menunjukkan nilai rata-rata, sedangkan Median menunjukkan nilai tengah dari data yang telah diurutkan.</p>
+<p>Std. Dev. digunakan untuk mengetahui tingkat penyebaran data terhadap rata-ratanya. Semakin besar nilai standard deviation, semakin menyebar data dari nilai rata-ratanya.</p>
+<p>Skewness digunakan untuk mengetahui kemencengan distribusi data, sedangkan Kurtosis digunakan untuk mengetahui karakteristik bentuk distribusi dan ekor data.</p>
+<p>Selain itu, No. Missing, No. NaNs, No. +unlimited, dan No. -unlimited digunakan untuk mengetahui kondisi data dan apakah terdapat nilai yang kosong, bukan angka, atau tak hingga.</p>
+</section>
+<section id="kesimpulan">
+<h2>5. Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<p>data berhasil dipindahkan dari file CSV ke database PostgreSQL pada Aiven. Database Aiven kemudian berhasil dihubungkan dengan KNIME menggunakan PostgreSQL Connector. Tabel ch4_lamongan dipilih menggunakan DB Table Selector, kemudian data dibaca menggunakan DB Reader.</p>
+<p>Setelah data berhasil masuk ke KNIME, node Statistics digunakan untuk menghasilkan statistik deskriptif. Statistik yang diperoleh meliputi Min, Mean, Median, Max, Std. Dev., Kurtosis, Skewness, No. Missing, No. NaNs, No. +unlimited, No. -unlimited, dan Overall Sum.</p>
+<p>Melalui proses tersebut, karakteristik dan kondisi dataset dapat diketahui dengan lebih jelas. Hasil statistik ini dapat digunakan sebagai dasar untuk memahami data sebelum dilakukan proses analisis lebih lanjut.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="analisis_lamongan.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Analisis Data Kualitas Udara — Kabupaten Lamongan</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memindahkan-data-csv-ke-aiven">1. Memindahkan Data CSV ke Aiven</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-tabel-pada-aiven">1.1 Membuat Tabel pada Aiven</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memasukkan-data-ke-aiven">1.2 Memasukkan Data ke Aiven</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengecek-data">1.3 Mengecek Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-sari-aiven-ke-knime">2. Mengambil Data sari Aiven ke KNIME</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-connector">2.1 PostgreSQL Connector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#db-table-selector">2.2 DB Table Selector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#db-reader">2.3 DB Reader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">2.4 Statistics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properti-statistik">3. Properti Statistik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min">3.1 Min</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean">3.2 Mean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max">3.3 Max</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#std-dev">3.4 Std.Dev</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kurtosis">3.5 Kurtosis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness">3.6 Skewness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-missing">3.8 No.Missing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-unlimited">3.9 No. +unlimited</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-nans">3.10 No. NaNs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-sum">3.11 Overall Sum</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-hasil-statistik">4. Analisis Hasil Statistik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">5. Kesimpulan</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
