@@ -400,14 +400,16 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properti-statistik">3. Properti Statistik</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min">3.1 Min</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean">3.2 Mean</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max">3.3 Max</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#std-dev">3.4 Std.Dev</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kurtosis">3.5 Kurtosis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness">3.6 Skewness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median">3.3 Median</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max">3.4 Max</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#std-dev">3.5 Std.Dev</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kurtosis">3.6 Kurtosis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness">3.7 Skewness</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-missing">3.8 No.Missing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-unlimited">3.9 No. +unlimited</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-nans">3.10 No. NaNs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-sum">3.11 Overall Sum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.10 No. -unlimited</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-nans">3.11 No. NaNs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-sum">3.12 Overall Sum</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-hasil-statistik">4. Analisis Hasil Statistik</a></li>
@@ -566,14 +568,20 @@ document.write(`
 <p>n = 5</p>
 <p>Mean = 30 / 5 = 6</p>
 </section>
+<section id="median">
+<h3>3.3 Median<a class="headerlink" href="#median" title="Link to this heading">#</a></h3>
+<p>Median merupakan nilai tengah setelah seluruh data diurutkan dari nilai terkecil hingga terbesar.</p>
+<p>Contoh: 2, 4, 6, 8, 10</p>
+<p>Nilai yang berada di tengah adalah 6.</p>
+</section>
 <section id="max">
-<h3>3.3 Max<a class="headerlink" href="#max" title="Link to this heading">#</a></h3>
+<h3>3.4 Max<a class="headerlink" href="#max" title="Link to this heading">#</a></h3>
 <p>Max atau maksimum merupakan nilai terbesar yang terdapat pada suatu kolom.</p>
 <p>contoh : Data = 2, 4, 6, 8, 10</p>
 <p>Nilai terbesar adalah: 10</p>
 </section>
 <section id="std-dev">
-<h3>3.4 Std.Dev<a class="headerlink" href="#std-dev" title="Link to this heading">#</a></h3>
+<h3>3.5 Std.Dev<a class="headerlink" href="#std-dev" title="Link to this heading">#</a></h3>
 <p>Std. Dev. atau Standard Deviation menunjukkan tingkat penyebaran data terhadap nilai rata-ratanya.</p>
 <p>Semakin besar nilai standard deviation, semakin besar penyebaran data dari nilai rata-ratanya.</p>
 <p>Sebaliknya, standard deviation yang kecil menunjukkan bahwa nilai data cenderung berada dekat dengan rata-ratanya.</p>
@@ -618,7 +626,7 @@ document.write(`
 <p>std.dev = √8 = 2,83</p>
 </section>
 <section id="kurtosis">
-<h3>3.5 Kurtosis<a class="headerlink" href="#kurtosis" title="Link to this heading">#</a></h3>
+<h3>3.6 Kurtosis<a class="headerlink" href="#kurtosis" title="Link to this heading">#</a></h3>
 <p>Kurtosis digunakan untuk menggambarkan karakteristik distribusi data, terutama bentuk bagian tengah dan ekor distribusi.</p>
 <p>rumus : <span class="math notranslate nohighlight">\( Kurtosis = [ (1/n) Σ(x - μ)^4 ] / σ^4 \)</span></p>
 <p>Keterangan:</p>
@@ -631,7 +639,7 @@ document.write(`
 <p>Nilai kurtosis dapat berbeda tergantung metode atau koreksi statistik yang digunakan oleh perangkat lunak.</p>
 </section>
 <section id="skewness">
-<h3>3.6 Skewness<a class="headerlink" href="#skewness" title="Link to this heading">#</a></h3>
+<h3>3.7 Skewness<a class="headerlink" href="#skewness" title="Link to this heading">#</a></h3>
 <p>Skewness menunjukkan tingkat kemencengan atau ketidaksimetrisan distribusi data.</p>
 <p>Interpretasi secara umum:</p>
 <ul class="simple">
@@ -652,14 +660,20 @@ document.write(`
 <p>contoh : 2, 4, 6, +∞, 10 -&gt; maka No. +unlimited = 1</p>
 <p>Jika tidak terdapat nilai +∞, maka nilai No. +unlimited adalah 0.</p>
 </section>
+<section id="id1">
+<h3>3.10 No. -unlimited<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>No. -unlimited menunjukkan jumlah nilai negatif tak hingga atau -∞ yang terdapat pada suatu kolom.</p>
+<p>contoh : 2, 4, 6, -∞, 10 -&gt; maka : No. -unlimited = 1</p>
+<p>Jika tidak terdapat nilai -∞, maka nilai No. -unlimited adalah 0.</p>
+</section>
 <section id="no-nans">
-<h3>3.10 No. NaNs<a class="headerlink" href="#no-nans" title="Link to this heading">#</a></h3>
+<h3>3.11 No. NaNs<a class="headerlink" href="#no-nans" title="Link to this heading">#</a></h3>
 <p>No. NaNs menunjukkan jumlah nilai NaN atau Not a Number yang terdapat pada suatu kolom.</p>
 <p>Nilai NaN merupakan nilai yang tidak dapat dianggap sebagai angka yang valid.</p>
 <p>contoh : 2, 4, NaN, 8, 10 -&gt; maka : No. NaNs = 1</p>
 </section>
 <section id="overall-sum">
-<h3>3.11 Overall Sum<a class="headerlink" href="#overall-sum" title="Link to this heading">#</a></h3>
+<h3>3.12 Overall Sum<a class="headerlink" href="#overall-sum" title="Link to this heading">#</a></h3>
 <p>Overall Sum menunjukkan jumlah keseluruhan nilai pada suatu kolom numerik.</p>
 <p>contoh :</p>
 <p>Data = 2, 4, 6, 8, 10</p>
@@ -753,14 +767,16 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properti-statistik">3. Properti Statistik</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min">3.1 Min</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean">3.2 Mean</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max">3.3 Max</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#std-dev">3.4 Std.Dev</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kurtosis">3.5 Kurtosis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness">3.6 Skewness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median">3.3 Median</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max">3.4 Max</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#std-dev">3.5 Std.Dev</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kurtosis">3.6 Kurtosis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness">3.7 Skewness</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-missing">3.8 No.Missing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-unlimited">3.9 No. +unlimited</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-nans">3.10 No. NaNs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-sum">3.11 Overall Sum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.10 No. -unlimited</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-nans">3.11 No. NaNs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-sum">3.12 Overall Sum</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-hasil-statistik">4. Analisis Hasil Statistik</a></li>
