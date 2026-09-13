@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -399,6 +399,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menyimpan-hasil-fitur">2.3 Menyimpan Hasil Fitur</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-dengan-aiven">3. Koneksi dengan Aiven</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">Ringkasan</a></li>
@@ -420,6 +421,7 @@ document.write(`
 <p><strong>Wilayah:</strong> Kecamatan Kedungpring, Kabupaten Lamongan</p>
 <p><strong>Polutan:</strong> NO₂</p>
 <p><strong>Input:</strong> <code class="docutils literal notranslate"><span class="pre">../data/csv/NO2-Kedungpring.csv</span></code> (hasil <code class="docutils literal notranslate"><span class="pre">ekstraksi-no2-kedungpring.ipynb</span></code>)</p>
+<p><img alt="alt text" src="_images/img9.png" /></p>
 <section id="import-pustaka">
 <h2>Import Pustaka<a class="headerlink" href="#import-pustaka" title="Link to this heading">#</a></h2>
 <p>Selain <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, dan <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> untuk preprocessing, notebook ini menambah
@@ -455,11 +457,7 @@ document.write(`
 </div>
 <section id="memuat-data-melengkapi-hari-yang-hilang-reindex">
 <h3>1.1 Memuat Data &amp; Melengkapi Hari yang Hilang (Reindex)<a class="headerlink" href="#memuat-data-melengkapi-hari-yang-hilang-reindex" title="Link to this heading">#</a></h3>
-<p>Data mentah hanya berisi baris untuk hari-hari yang punya observasi satelit valid
-(169 baris). Supaya deret waktu benar-benar merepresentasikan <strong>setiap hari</strong> dalam
-rentang 31 Agustus 2025 – 31 Agustus 2026, dilakukan <strong>reindex</strong> ke deret tanggal
-harian penuh — hari yang sebelumnya “tidak ada barisnya” sekarang eksplisit muncul
-dengan nilai <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, siap ditangani pada tahap imputasi.</p>
+<p>Data mentah hanya memiliki 169 baris karena observasi satelit tidak tersedia pada setiap hari. Oleh karena itu dilakukan reindex terhadap seluruh tanggal dalam periode 31 Agustus 2025 sampai 31 Agustus 2026. Proses ini menghasilkan deret waktu sebanyak 366 hari. Tanggal yang tidak memiliki observasi akan muncul sebagai nilai NaN, sehingga kondisi missing value menjadi eksplisit dan dapat ditangani pada tahap berikutnya.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">,</span> <span class="s2">&quot;NO2-Kedungpring.csv&quot;</span><span class="p">))</span>
@@ -632,6 +630,7 @@ Jumlah outlier terdeteksi: 0 dari 169 data valid
 ditandai — diisi bersamaan menggunakan interpolasi linear berbasis waktu, dilanjutkan
 forward/backward fill untuk sisa NaN di ujung deret waktu. <code class="docutils literal notranslate"><span class="pre">assert</span></code> memastikan hasil
 akhir benar-benar <strong>0 NaN</strong> sebelum lanjut ke ekstraksi fitur.</p>
+<p>Setelah proses interpolasi, forward fill, dan backward fill dilakukan pengecekan kembali terhadap missing value. Fungsi isna().sum() digunakan untuk menghitung jumlah nilai kosong yang masih tersisa. Hasil akhir harus menunjukkan 0 missing value. Selain itu, assert digunakan sebagai validasi otomatis untuk memastikan tidak ada nilai NaN sebelum data digunakan pada tahap ekstraksi fitur.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span><span class="o">.</span><span class="n">bfill</span><span class="p">()</span>
@@ -735,6 +734,7 @@ Data bersih disimpan: ../data/csv/NO2-Kedungpring-clean.csv (366 baris)
 </section>
 <section id="ekstraksi-68-fitur-dengan-tsfel">
 <h2>2. Ekstraksi 68 Fitur dengan TSFEL<a class="headerlink" href="#ekstraksi-68-fitur-dengan-tsfel" title="Link to this heading">#</a></h2>
+<p>Setelah data bersih dan tidak memiliki missing value, dilakukan ekstraksi fitur menggunakan TSFEL. Sebanyak 68 fitur diekstraksi dari sinyal NO₂ yang telah melalui preprocessing. Fitur-fitur tersebut mencakup karakteristik statistik, temporal, dan spectral. Hasil ekstraksi disimpan dalam file NO2_Kedungpring_TSFEL.csv.</p>
 <section id="menyiapkan-sinyal">
 <h3>2.1 Menyiapkan Sinyal<a class="headerlink" href="#menyiapkan-sinyal" title="Link to this heading">#</a></h3>
 <p>Data harian yang sudah bersih (366 titik, 0 NaN) diambil sebagai array 1 dimensi.
@@ -907,8 +907,12 @@ Berhasil! Jumlah fitur yang dihasilkan untuk NO2: 68
 </div>
 </section>
 </section>
+<section id="koneksi-dengan-aiven">
+<h2>3. Koneksi dengan Aiven<a class="headerlink" href="#koneksi-dengan-aiven" title="Link to this heading">#</a></h2>
+<p>Hasil ekstraksi fitur kemudian diunggah ke database PostgreSQL pada Aiven menggunakan script upload_ke_aiven.py. Sebelum upload, data diberi informasi tambahan berupa kecamatan, jenis polutan, dan tanggal ekstraksi. Data kemudian disimpan ke tabel fitur_no2_kedungpring dan dilakukan verifikasi untuk memastikan data berhasil tersimpan.</p>
+<p><img alt="alt text" src="_images/img8.png" /></p>
 </section>
-<hr class="docutils" />
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="ringkasan">
 <h1>Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h1>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -1004,6 +1008,7 @@ Berhasil! Jumlah fitur yang dihasilkan untuk NO2: 68
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menyimpan-hasil-fitur">2.3 Menyimpan Hasil Fitur</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-dengan-aiven">3. Koneksi dengan Aiven</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">Ringkasan</a></li>
