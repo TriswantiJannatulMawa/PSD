@@ -387,7 +387,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preprocessing, Ekstraksi Fitur &amp; Upload Database — NO₂ Kedungpring</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-pustaka">Import Pustaka</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-pustaka">Import Pustaka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pepocessing-data">1. Pepocessing Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memuat-data-melengkapi-hari-yang-hilang-reindex">1.1 Memuat Data &amp; Melengkapi Hari yang Hilang (Reindex)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-metode-iqr">1.2 Deteksi Outlier — Metode IQR</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputasi-hingga-0-nan">1.3 Imputasi hingga 0 NaN</a></li>
@@ -455,6 +456,9 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<section id="pepocessing-data">
+<h2>1. Pepocessing Data<a class="headerlink" href="#pepocessing-data" title="Link to this heading">#</a></h2>
 <section id="memuat-data-melengkapi-hari-yang-hilang-reindex">
 <h3>1.1 Memuat Data &amp; Melengkapi Hari yang Hilang (Reindex)<a class="headerlink" href="#memuat-data-melengkapi-hari-yang-hilang-reindex" title="Link to this heading">#</a></h3>
 <p>Data mentah hanya memiliki 169 baris karena observasi satelit tidak tersedia pada setiap hari. Oleh karena itu dilakukan reindex terhadap seluruh tanggal dalam periode 31 Agustus 2025 sampai 31 Agustus 2026. Proses ini menghasilkan deret waktu sebanyak 366 hari. Tanggal yang tidak memiliki observasi akan muncul sebagai nilai NaN, sehingga kondisi missing value menjadi eksplisit dan dapat ditangani pada tahap berikutnya.</p>
@@ -996,7 +1000,8 @@ Berhasil! Jumlah fitur yang dihasilkan untuk NO2: 68
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preprocessing, Ekstraksi Fitur &amp; Upload Database — NO₂ Kedungpring</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-pustaka">Import Pustaka</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-pustaka">Import Pustaka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pepocessing-data">1. Pepocessing Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memuat-data-melengkapi-hari-yang-hilang-reindex">1.1 Memuat Data &amp; Melengkapi Hari yang Hilang (Reindex)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-metode-iqr">1.2 Deteksi Outlier — Metode IQR</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputasi-hingga-0-nan">1.3 Imputasi hingga 0 NaN</a></li>
