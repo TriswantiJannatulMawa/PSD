@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'analisis_lamongan';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Analisis Statistik Data Menggunakan Aiven dan KNIME" href="analisis_statistic.html" />
     <link rel="prev" title="Ekstraksi Data Kualitas Udara — Kabupaten Lamongan" href="ekstraksi_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -186,6 +187,7 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Analisis Data Kualitas Udara — Kabupaten Lamongan</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="analisis_statistic.html">Analisis Statistik Data Menggunakan Aiven dan KNIME</a></li>
 </ul>
 
     </div>
@@ -611,7 +613,7 @@ digabung (<code class="docutils literal notranslate"><span class="pre">merge</sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Working dir sekarang: D:\Semester 5\Proyek sain data\PSD\materi
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Working dir sekarang: d:\Semester 5\Proyek sain data\PSD\materi
 Isi folder CSV: [&#39;ch4_lamongan.csv&#39;, &#39;co_lamongan.csv&#39;, &#39;no2_lamongan.csv&#39;, &#39;so2_lamongan.csv&#39;]
 [&#39;t&#39;, &#39;feature&#39;, &#39;CH4&#39;, &#39;lat&#39;, &#39;lon&#39;, &#39;feature_names&#39;]
 </pre></div>
@@ -708,7 +710,7 @@ proporsi missing value pada tiap kolom polutan.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Working dir: D:\Semester 5\Proyek sain data\PSD\materi
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Working dir: d:\Semester 5\Proyek sain data\PSD\materi
 Isi folder CSV: [&#39;ch4_lamongan.csv&#39;, &#39;co_lamongan.csv&#39;, &#39;no2_lamongan.csv&#39;, &#39;so2_lamongan.csv&#39;]
 </pre></div>
 </div>
@@ -900,7 +902,7 @@ via <code class="docutils literal notranslate"><span class="pre">geopandas</span
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
             &lt;style&gt;
-                #map_5626f49d08074c655f51afb9abf2cd1f {
+                #map_fb1d78ebe158e7b5a0ae315dbc826a52 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -937,14 +939,14 @@ via <code class="docutils literal notranslate"><span class="pre">geopandas</span
 &lt;body&gt;
     
     
-            &lt;div class=&quot;folium-map&quot; id=&quot;map_5626f49d08074c655f51afb9abf2cd1f&quot; &gt;&lt;/div&gt;
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_fb1d78ebe158e7b5a0ae315dbc826a52&quot; &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_5626f49d08074c655f51afb9abf2cd1f = L.map(
-                &quot;map_5626f49d08074c655f51afb9abf2cd1f&quot;,
+            var map_fb1d78ebe158e7b5a0ae315dbc826a52 = L.map(
+                &quot;map_fb1d78ebe158e7b5a0ae315dbc826a52&quot;,
                 {
                     center: [-7.1201, 112.4147],
                     crs: L.CRS.EPSG3857,
@@ -961,7 +963,7 @@ via <code class="docutils literal notranslate"><span class="pre">geopandas</span
 
         
     
-            var tile_layer_718711fa25973576143c47c49fdf4f35 = L.tileLayer(
+            var tile_layer_7b207e89499cc6af0bf4736effdd2728 = L.tileLayer(
                 &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
                 {
   &quot;minZoom&quot;: 0,
@@ -978,17 +980,17 @@ via <code class="docutils literal notranslate"><span class="pre">geopandas</span
             );
         
     
-            tile_layer_718711fa25973576143c47c49fdf4f35.addTo(map_5626f49d08074c655f51afb9abf2cd1f);
+            tile_layer_7b207e89499cc6af0bf4736effdd2728.addTo(map_fb1d78ebe158e7b5a0ae315dbc826a52);
         
     
-            var marker_85bd9a994462d82c45ccb4c761ad4306 = L.marker(
+            var marker_e085485f4983ebc3bf7b8970d586508a = L.marker(
                 [-7.1201, 112.4147],
                 {
 }
-            ).addTo(map_5626f49d08074c655f51afb9abf2cd1f);
+            ).addTo(map_fb1d78ebe158e7b5a0ae315dbc826a52);
         
     
-            var icon_c60fb159a3784e9a9fd09b75ed3f7166 = L.AwesomeMarkers.icon(
+            var icon_ea6d90d412082006e71fd39f36299dfd = L.AwesomeMarkers.icon(
                 {
   &quot;markerColor&quot;: &quot;red&quot;,
   &quot;iconColor&quot;: &quot;white&quot;,
@@ -999,44 +1001,44 @@ via <code class="docutils literal notranslate"><span class="pre">geopandas</span
             );
         
     
-        var popup_93f306716f8acb36221bb88555724c5d = L.popup({
+        var popup_951ca9ea880402345299e71eff6242c9 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_d481a6c1a0d6c53396f4e278bf33f2c9 = $(`&lt;div id=&quot;html_d481a6c1a0d6c53396f4e278bf33f2c9&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Pusat Kabupaten Lamongan&lt;/div&gt;`)[0];
-                popup_93f306716f8acb36221bb88555724c5d.setContent(html_d481a6c1a0d6c53396f4e278bf33f2c9);
+                var html_3f56877438a374ba034576a3dbeed7a4 = $(`&lt;div id=&quot;html_3f56877438a374ba034576a3dbeed7a4&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Pusat Kabupaten Lamongan&lt;/div&gt;`)[0];
+                popup_951ca9ea880402345299e71eff6242c9.setContent(html_3f56877438a374ba034576a3dbeed7a4);
             
         
 
-        marker_85bd9a994462d82c45ccb4c761ad4306.bindPopup(popup_93f306716f8acb36221bb88555724c5d)
+        marker_e085485f4983ebc3bf7b8970d586508a.bindPopup(popup_951ca9ea880402345299e71eff6242c9)
         ;
 
         
     
     
-                marker_85bd9a994462d82c45ccb4c761ad4306.setIcon(icon_c60fb159a3784e9a9fd09b75ed3f7166);
+                marker_e085485f4983ebc3bf7b8970d586508a.setIcon(icon_ea6d90d412082006e71fd39f36299dfd);
             
     
-            var polygon_9b832eedfbc705f4a005e70de3986668 = L.polygon(
+            var polygon_9ac44015d0d110dbcdab08aeefb064f0 = L.polygon(
                 [[-7.0, 112.0], [-7.3, 112.1], [-7.35, 112.25], [-7.25, 112.4], [-7.15, 112.55], [-7.0, 112.6], [-6.88, 112.5], [-6.85, 112.3], [-6.9, 112.1], [-7.0, 112.0]],
                 {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;blue&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;blue&quot;, &quot;fillOpacity&quot;: 0.15, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 1.0, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 2}
-            ).addTo(map_5626f49d08074c655f51afb9abf2cd1f);
+            ).addTo(map_fb1d78ebe158e7b5a0ae315dbc826a52);
         
     
-        var popup_560a195e7657d56c1d2f2054287404a7 = L.popup({
+        var popup_bb278891ab7674ff920a4e94aab11635 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_64e81be561e7714129bf3c91e9d74c3f = $(`&lt;div id=&quot;html_64e81be561e7714129bf3c91e9d74c3f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Area Kajian Kabupaten Lamongan&lt;/div&gt;`)[0];
-                popup_560a195e7657d56c1d2f2054287404a7.setContent(html_64e81be561e7714129bf3c91e9d74c3f);
+                var html_4ef1d13fee1d0adbcaa95a9aaa7c4c73 = $(`&lt;div id=&quot;html_4ef1d13fee1d0adbcaa95a9aaa7c4c73&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Area Kajian Kabupaten Lamongan&lt;/div&gt;`)[0];
+                popup_bb278891ab7674ff920a4e94aab11635.setContent(html_4ef1d13fee1d0adbcaa95a9aaa7c4c73);
             
         
 
-        polygon_9b832eedfbc705f4a005e70de3986668.bindPopup(popup_560a195e7657d56c1d2f2054287404a7)
+        polygon_9ac44015d0d110dbcdab08aeefb064f0.bindPopup(popup_bb278891ab7674ff920a4e94aab11635)
         ;
 
         
@@ -1300,12 +1302,8 @@ setiap polutan, sebagai penutup tahap analisis pada notebook ini.</p>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NO2  : 0 outlier terdeteksi dari 341 data (0.0%)
 CO   : 0 outlier terdeteksi dari 341 data (0.0%)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SO2  : 0 outlier terdeteksi dari 341 data (0.0%)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CH4  : 0 outlier terdeteksi dari 341 data (0.0%)
+SO2  : 0 outlier terdeteksi dari 341 data (0.0%)
+CH4  : 0 outlier terdeteksi dari 341 data (0.0%)
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1443,6 +1441,15 @@ CO   : 0 outlier terdeteksi dari 341 data (0.0%)
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Ekstraksi Data Kualitas Udara — Kabupaten Lamongan</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="analisis_statistic.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Analisis Statistik Data Menggunakan Aiven dan KNIME</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

@@ -187,6 +187,7 @@
 <li class="toctree-l2"><a class="reference internal" href="analisis_lamongan.html">Analisis Data Kualitas Udara — Kabupaten Lamongan</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="analisis_statistic.html">Analisis Statistik Data Menggunakan Aiven dan KNIME</a></li>
 </ul>
 
     </div>
@@ -453,8 +454,8 @@ relatif menggunakan <code class="docutils literal notranslate"><span class="pre"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Folder output siap:
- - D:\Semester 5\Proyek sain data\PSD\data\nc
- - D:\Semester 5\Proyek sain data\PSD\data\csv
+ - d:\Semester 5\Proyek sain data\PSD\data\nc
+ - d:\Semester 5\Proyek sain data\PSD\data\csv
 </pre></div>
 </div>
 </div>
@@ -484,10 +485,8 @@ Copernicus Data Space (CDSE) Anda.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Authenticated using refresh token.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Berhasil terhubung sebagai: {&#39;info&#39;: {&#39;oidc_userinfo&#39;: {&#39;email&#39;: &#39;triswanti1395@gmail.com&#39;, &#39;email_verified&#39;: True, &#39;family_name&#39;: &quot;Jannatul Ma&#39;wa&quot;, &#39;given_name&#39;: &#39;Triswanti&#39;, &#39;name&#39;: &quot;Triswanti Jannatul Ma&#39;wa&quot;, &#39;preferred_username&#39;: &#39;triswanti1395@gmail.com&#39;, &#39;sub&#39;: &#39;08868660-f1d0-4cae-bac7-ad9a53fa7209&#39;}}, &#39;name&#39;: &quot;Triswanti Jannatul Ma&#39;wa&quot;, &#39;user_id&#39;: &#39;08868660-f1d0-4cae-bac7-ad9a53fa7209&#39;}
+<div class="output text_html">Visit <a href="https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=FQEI-PEHF" title="Authenticate at https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=FQEI-PEHF" target="_blank" rel="noopener noreferrer">https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=FQEI-PEHF</a> <a href="#" onclick="navigator.clipboard.writeText('https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=FQEI-PEHF');return false;" title="Copy authentication URL to clipboard">&#128203;</a> to authenticate.</div><div class="output text_html">✅ Authorized successfully</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Authenticated using device code flow.
+Berhasil terhubung sebagai: {&#39;info&#39;: {&#39;oidc_userinfo&#39;: {&#39;email&#39;: &#39;triswanti1395@gmail.com&#39;, &#39;email_verified&#39;: True, &#39;family_name&#39;: &quot;Jannatul Ma&#39;wa&quot;, &#39;given_name&#39;: &#39;Triswanti&#39;, &#39;name&#39;: &quot;Triswanti Jannatul Ma&#39;wa&quot;, &#39;preferred_username&#39;: &#39;triswanti1395@gmail.com&#39;, &#39;sub&#39;: &#39;08868660-f1d0-4cae-bac7-ad9a53fa7209&#39;}}, &#39;name&#39;: &quot;Triswanti Jannatul Ma&#39;wa&quot;, &#39;user_id&#39;: &#39;08868660-f1d0-4cae-bac7-ad9a53fa7209&#39;}
 </pre></div>
 </div>
 </div>
@@ -691,9 +690,26 @@ menghasilkan satu file <code class="docutils literal notranslate"><span class="p
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[NO2] Memuat koleksi SENTINEL_5P_L2 (band=NO2) ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[NO2] Menjalankan proses di backend &amp; mengunduh ke ../data/nc/no2_lamongan.nc ...
+[NO2] Menjalankan proses di backend &amp; mengunduh ke ../data/nc/no2_lamongan.nc ...
+[NO2] Selesai -&gt; ../data/nc/no2_lamongan.nc
+
+[CO] Memuat koleksi SENTINEL_5P_L2 (band=CO) ...
+[CO] Menjalankan proses di backend &amp; mengunduh ke ../data/nc/co_lamongan.nc ...
+[CO] Selesai -&gt; ../data/nc/co_lamongan.nc
+
+[SO2] Memuat koleksi SENTINEL_5P_L2 (band=SO2) ...
+[SO2] Menjalankan proses di backend &amp; mengunduh ke ../data/nc/so2_lamongan.nc ...
+[SO2] Selesai -&gt; ../data/nc/so2_lamongan.nc
+
+[CH4] Memuat koleksi SENTINEL_5P_L2 (band=CH4) ...
+[CH4] Menjalankan proses di backend &amp; mengunduh ke ../data/nc/ch4_lamongan.nc ...
+[CH4] Selesai -&gt; ../data/nc/ch4_lamongan.nc
+
+Ringkasan file NetCDF yang berhasil dibuat:
+ - no2: ../data/nc/no2_lamongan.nc
+ - co: ../data/nc/co_lamongan.nc
+ - so2: ../data/nc/so2_lamongan.nc
+ - ch4: ../data/nc/ch4_lamongan.nc
 </pre></div>
 </div>
 </div>

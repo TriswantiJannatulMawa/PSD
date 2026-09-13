@@ -1,0 +1,1212 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pipeline Lengkap: Analisis Polutan NO₂ — Kecamatan Kedungpring &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pipeline-lengkap-no2-kedungpring (1)';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Proyek Sains Data
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="analisis-polutan-lamongan.html">Pengantar Analisis Polutan Kabupaten Lamongan</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="business-understanding.html">Business Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-understanding.html">Data Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ekstraksi_data.html">Ekstraksi Data Kualitas Udara — Kabupaten Lamongan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analisis_lamongan.html">Analisis Data Kualitas Udara — Kabupaten Lamongan</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="analisis_statistic.html">Analisis Statistik Data Menggunakan Aiven dan KNIME</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpipeline-lengkap-no2-kedungpring (1).html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/pipeline-lengkap-no2-kedungpring (1).ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pipeline Lengkap: Analisis Polutan NO₂ — Kecamatan Kedungpring</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pipeline Lengkap: Analisis Polutan NO₂ — Kecamatan Kedungpring</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-notebook">Tujuan Notebook</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tahap-1-ekstraksi-data">Tahap 1 — Ekstraksi Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-pustaka">1.1 Import Pustaka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-otentikasi-ke-copernicus-data-space">1.2 Koneksi &amp; Otentikasi ke Copernicus Data Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#area-of-interest-aoi-kecamatan-kedungpring">1.3 Area of Interest (AOI): Kecamatan Kedungpring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-collection-agregasi-download">1.4 Load Collection, Agregasi, &amp; Download</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan-deteksi-kolom-tanggal-secara-fleksibel">Catatan: Deteksi Kolom Tanggal Secara Fleksibel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tahap-2-deteksi-outlier-iqr-imputasi-missing-value">Tahap 2 — Deteksi Outlier (IQR) &amp; Imputasi Missing Value</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konversi-tipe-numerik">2.1 Konversi Tipe Numerik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-metode-iqr">2.2 Deteksi Outlier — Metode IQR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputasi-hingga-0-nan">2.3 Imputasi hingga 0 NaN</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tahap-3-ekstraksi-68-fitur-dengan-tsfel">Tahap 3 — Ekstraksi 68 Fitur dengan TSFEL</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyiapkan-sinyal">3.1 Menyiapkan Sinyal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daftar-68-fitur-tsfel">3.2 Daftar 68 Fitur TSFEL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-ekstraksi">3.3 Fungsi Ekstraksi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyimpan-hasil-fitur">3.4 Menyimpan Hasil Fitur</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tahap-4-upload-ke-database-aiven">Tahap 4 — Upload ke Database Aiven</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurasi-koneksi-database">4.1 Konfigurasi Koneksi Database</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyiapkan-data-untuk-diunggah">4.2 Menyiapkan Data untuk Diunggah</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-insert-ke-tabel-aiven">4.3 Koneksi &amp; Insert ke Tabel Aiven</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-data-di-database">4.4 Verifikasi Data di Database</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-pipeline">Ringkasan Pipeline</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yang-perlu-kamu-lengkapi">Yang Perlu Kamu Lengkapi</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pipeline-lengkap-analisis-polutan-no2-kecamatan-kedungpring">
+<h1>Pipeline Lengkap: Analisis Polutan NO₂ — Kecamatan Kedungpring<a class="headerlink" href="#pipeline-lengkap-analisis-polutan-no2-kecamatan-kedungpring" title="Link to this heading">#</a></h1>
+<p><strong>Mata Kuliah:</strong> Proyek Sains Data — Semester 5
+<strong>Wilayah:</strong> Kecamatan Kedungpring, Kabupaten Lamongan
+<strong>Polutan:</strong> NO₂ (Nitrogen Dioksida)
+<strong>Rentang Waktu:</strong> 31 Agustus 2025 — 31 Agustus 2026</p>
+<section id="tujuan-notebook">
+<h2>Tujuan Notebook<a class="headerlink" href="#tujuan-notebook" title="Link to this heading">#</a></h2>
+<p>Notebook ini menggabungkan <strong>seluruh alur kerja</strong> analisis polutan NO₂ Kecamatan
+Kedungpring menjadi satu file, dari data mentah hingga siap disimpan ke database:</p>
+<ol class="arabic simple">
+<li><p><strong>Ekstraksi Data</strong> — menarik data Sentinel-5P L2 (band NO2) via openEO Copernicus
+Data Space untuk Kecamatan Kedungpring.</p></li>
+<li><p><strong>Deteksi Outlier &amp; Imputasi</strong> — membersihkan data menggunakan metode <strong>IQR</strong>,
+lalu mengisi seluruh nilai kosong hingga <strong>0 NaN tersisa</strong>.</p></li>
+<li><p><strong>Ekstraksi Fitur (68 fitur TSFEL)</strong> — mengubah deret waktu NO₂ yang sudah bersih
+menjadi 68 nilai fitur (domain statistik, temporal, dan spektral).</p></li>
+<li><p><strong>Upload ke Database Aiven</strong> — menyimpan hasil fitur ke tabel database.</p></li>
+</ol>
+<blockquote>
+<div><p><strong>Catatan penting:</strong> Bagian 4 (upload Aiven) memerlukan <strong>informasi koneksi database
+milikmu sendiri</strong> (host, port, nama database, kredensial, nama tabel). Notebook ini
+menyediakan strukturnya secara lengkap — kamu hanya perlu mengisi bagian yang ditandai
+<code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">TODO</span></code> sebelum menjalankannya.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="tahap-1-ekstraksi-data">
+<h1>Tahap 1 — Ekstraksi Data<a class="headerlink" href="#tahap-1-ekstraksi-data" title="Link to this heading">#</a></h1>
+<section id="import-pustaka">
+<h2>1.1 Import Pustaka<a class="headerlink" href="#import-pustaka" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">openeo</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tsfel.feature_extraction.features</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tsfel_features</span>
+
+<span class="n">NC_DIR</span> <span class="o">=</span> <span class="s2">&quot;../data/nc/&quot;</span>
+<span class="n">CSV_DIR</span> <span class="o">=</span> <span class="s2">&quot;../data/csv/&quot;</span>
+<span class="n">FEATURE_DIR</span> <span class="o">=</span> <span class="s2">&quot;../data/features/&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">NC_DIR</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">FEATURE_DIR</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Folder output siap.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Folder output siap.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="koneksi-otentikasi-ke-copernicus-data-space">
+<h2>1.2 Koneksi &amp; Otentikasi ke Copernicus Data Space<a class="headerlink" href="#koneksi-otentikasi-ke-copernicus-data-space" title="Link to this heading">#</a></h2>
+<p>Menghubungkan ke server openEO menggunakan <strong>OIDC Device Code Flow</strong>. Saat dijalankan,
+akan muncul tautan otentikasi — buka di browser, login dengan akun Copernicus Data
+Space Ecosystem (CDSE), lalu proses akan otomatis melanjutkan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">connection</span> <span class="o">=</span> <span class="n">openeo</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;openeo.dataspace.copernicus.eu&quot;</span><span class="p">)</span>
+<span class="n">connection</span><span class="o">.</span><span class="n">authenticate_oidc</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Terhubung sebagai:&quot;</span><span class="p">,</span> <span class="n">connection</span><span class="o">.</span><span class="n">describe_account</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Authenticated using refresh token.
+Terhubung sebagai: {&#39;info&#39;: {&#39;oidc_userinfo&#39;: {&#39;email&#39;: &#39;triswanti1395@gmail.com&#39;, &#39;email_verified&#39;: True, &#39;family_name&#39;: &quot;Jannatul Ma&#39;wa&quot;, &#39;given_name&#39;: &#39;Triswanti&#39;, &#39;name&#39;: &quot;Triswanti Jannatul Ma&#39;wa&quot;, &#39;preferred_username&#39;: &#39;triswanti1395@gmail.com&#39;, &#39;sub&#39;: &#39;08868660-f1d0-4cae-bac7-ad9a53fa7209&#39;}}, &#39;name&#39;: &quot;Triswanti Jannatul Ma&#39;wa&quot;, &#39;user_id&#39;: &#39;08868660-f1d0-4cae-bac7-ad9a53fa7209&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="area-of-interest-aoi-kecamatan-kedungpring">
+<h2>1.3 Area of Interest (AOI): Kecamatan Kedungpring<a class="headerlink" href="#area-of-interest-aoi-kecamatan-kedungpring" title="Link to this heading">#</a></h2>
+<p>Koordinat dikonversi dari data resmi <em>LKjIP Kecamatan Kedungpring 2024</em>
+(112°10′01″–112°13′28″ BT, 07°08′19″–07°12′27″ LS). Luas wilayah 84,54 km², 23 desa.</p>
+<blockquote>
+<div><p>Masih berupa bounding box (persegi pembatas) — ganti dengan poligon administratif
+resmi (GADM/BIG/Kemendagri) jika dibutuhkan presisi lebih tinggi.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">KEDUNGPRING_BBOX</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;west&quot;</span><span class="p">:</span> <span class="mf">112.1669</span><span class="p">,</span>
+    <span class="s2">&quot;south&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">7.2075</span><span class="p">,</span>
+    <span class="s2">&quot;east&quot;</span><span class="p">:</span> <span class="mf">112.2244</span><span class="p">,</span>
+    <span class="s2">&quot;north&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">7.1386</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">KEDUNGPRING_POLYGON</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[[</span>
+        <span class="p">[</span><span class="mf">112.1669</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.1386</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">112.2244</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.1386</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">112.2244</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.2075</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">112.1669</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.2075</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">112.1669</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.1386</span><span class="p">],</span>
+    <span class="p">]]</span>
+<span class="p">}</span>
+
+<span class="n">TEMPORAL_EXTENT</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2025-08-31&quot;</span><span class="p">,</span> <span class="s2">&quot;2026-08-31&quot;</span><span class="p">]</span>
+<span class="n">target_pollutant</span> <span class="o">=</span> <span class="s2">&quot;NO2&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AOI Kedungpring:&quot;</span><span class="p">,</span> <span class="n">KEDUNGPRING_BBOX</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rentang waktu:&quot;</span><span class="p">,</span> <span class="n">TEMPORAL_EXTENT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AOI Kedungpring: {&#39;west&#39;: 112.1669, &#39;south&#39;: -7.2075, &#39;east&#39;: 112.2244, &#39;north&#39;: -7.1386}
+Rentang waktu: [&#39;2025-08-31&#39;, &#39;2026-08-31&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-collection-agregasi-download">
+<h2>1.4 Load Collection, Agregasi, &amp; Download<a class="headerlink" href="#load-collection-agregasi-download" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">load_collection</span></code> — memuat band NO2 dari koleksi <code class="docutils literal notranslate"><span class="pre">SENTINEL_5P_L2</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aggregate_temporal_period</span></code> — rata-rata harian.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aggregate_spatial</span></code> — rata-rata dalam polygon Kedungpring.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">download</span></code> — mengunduh hasil sebagai NetCDF, lalu dikonversi ke CSV.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gunakan path absolut agar tidak bergantung pada working directory saat notebook dijalankan</span>
+<span class="n">NC_DIR_ABS</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">NC_DIR</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">NC_DIR_ABS</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">nc_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NC_DIR_ABS</span><span class="p">,</span> <span class="s2">&quot;no2_kedungpring.nc&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Path absolut tujuan unduhan:&quot;</span><span class="p">,</span> <span class="n">nc_path</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">spatial_result</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">nc_path</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;netCDF&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unduhan selesai:&quot;</span><span class="p">,</span> <span class="n">nc_path</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">PermissionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gagal menulis file karena izin ditolak.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Detail:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Kemungkinan penyebab:</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;1. Folder tujuan berada di lokasi yang tidak bisa ditulis (cek hasil diagnostik di atas)</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;2. File sedang dibuka/terkunci aplikasi lain (tutup OneDrive sync/Explorer/Excel di folder ini)</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;3. Coba jalankan VS Code sebagai Administrator, atau pindahkan folder proyek ke luar &quot;</span>
+        <span class="s2">&quot;OneDrive/Documents yang tersinkronisasi cloud&quot;</span>
+    <span class="p">)</span>
+    <span class="k">raise</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Path absolut tujuan unduhan: d:\Semester 5\Proyek sain data\PSD\data\nc\no2_kedungpring.nc
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Preflight process graph validation failed: (&#39;Connection aborted.&#39;, ConnectionResetError(10054, &#39;An existing connection was forcibly closed by the remote host&#39;, None, 10054, None))
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal menulis file karena izin ditolak.
+Detail: [Errno 13] Permission denied
+
+Kemungkinan penyebab:
+1. Folder tujuan berada di lokasi yang tidak bisa ditulis (cek hasil diagnostik di atas)
+2. File sedang dibuka/terkunci aplikasi lain (tutup OneDrive sync/Explorer/Excel di folder ini)
+3. Coba jalankan VS Code sebagai Administrator, atau pindahkan folder proyek ke luar OneDrive/Documents yang tersinkronisasi cloud
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">PermissionError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Path absolut tujuan unduhan:&quot;</span><span class="p">,</span> <span class="n">nc_path</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="n">spatial_result</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">nc_path</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;netCDF&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unduhan selesai:&quot;</span><span class="p">,</span> <span class="n">nc_path</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">except</span> <span class="ne">PermissionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">File c:\Users\PC\AppData\Local\Programs\Python\Python39\lib\site-packages\openeo\rest\vectorcube.py:294,</span> in <span class="ni">VectorCube.download</span><span class="nt">(self, outputfile, format, options, validate, auto_add_save_result, additional, job_options, on_response_headers)</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span>     <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span>
+<span class="ne">--&gt; </span><span class="mi">294</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="o">.</span><span class="n">download</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>     <span class="n">res</span><span class="o">.</span><span class="n">flat_graph</span><span class="p">(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>     <span class="n">outputfile</span><span class="o">=</span><span class="n">outputfile</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>     <span class="n">validate</span><span class="o">=</span><span class="n">validate</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>     <span class="n">additional</span><span class="o">=</span><span class="n">additional</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>     <span class="n">job_options</span><span class="o">=</span><span class="n">job_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>     <span class="n">on_response_headers</span><span class="o">=</span><span class="n">on_response_headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span> <span class="p">)</span>
+
+<span class="nn">File c:\Users\PC\AppData\Local\Programs\Python\Python39\lib\site-packages\openeo\rest\connection.py:1794,</span> in <span class="ni">Connection.download</span><span class="nt">(self, graph, outputfile, timeout, validate, chunk_size, additional, job_options, on_response_headers)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1792</span>     <span class="k">with</span> <span class="n">target</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1793</span>         <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1794</span>             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1795</span>     <span class="c1"># TODO: return target path instead of None? Or return a generic result wrapper?</span>
+<span class="g g-Whitespace">   </span><span class="mi">1796</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1797</span>     <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+
+<span class="ne">PermissionError</span>: [Errno 13] Permission denied
+</pre></div>
+</div>
+</div>
+</div>
+<section id="catatan-deteksi-kolom-tanggal-secara-fleksibel">
+<h3>Catatan: Deteksi Kolom Tanggal Secara Fleksibel<a class="headerlink" href="#catatan-deteksi-kolom-tanggal-secara-fleksibel" title="Link to this heading">#</a></h3>
+<p>Nama kolom waktu hasil <code class="docutils literal notranslate"><span class="pre">to_dataframe()</span></code> pada <code class="docutils literal notranslate"><span class="pre">xarray</span></code> <strong>tidak selalu</strong> bernama <code class="docutils literal notranslate"><span class="pre">&quot;time&quot;</span></code>
+atau <code class="docutils literal notranslate"><span class="pre">&quot;date&quot;</span></code> secara eksplisit — openEO terkadang memberi nama dimensi waktu hanya <code class="docutils literal notranslate"><span class="pre">&quot;t&quot;</span></code>
+saja. Jika deteksi kolom hanya mencari kata <code class="docutils literal notranslate"><span class="pre">&quot;time&quot;</span></code>/<code class="docutils literal notranslate"><span class="pre">&quot;date&quot;</span></code>, hasilnya bisa berupa list
+kosong dan menyebabkan <code class="docutils literal notranslate"><span class="pre">IndexError:</span> <span class="pre">list</span> <span class="pre">index</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">range</span></code>.</p>
+<p>Sel berikut mengatasi ini dengan mencoba beberapa nama kolom umum (<code class="docutils literal notranslate"><span class="pre">date</span></code>, <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code>),
+lalu sebagai jalan terakhir mencari kolom mana pun yang bertipe <code class="docutils literal notranslate"><span class="pre">datetime</span></code>. Diagnostik
+(<code class="docutils literal notranslate"><span class="pre">print(df.columns.tolist())</span></code>) juga ditampilkan agar struktur data hasil <code class="docutils literal notranslate"><span class="pre">aggregate_spatial</span></code>
+selalu terlihat jelas sebelum diproses lebih lanjut.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">nc_path</span><span class="p">)</span>
+<span class="n">df_raw</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># --- Diagnostik: lihat dulu struktur kolom sebenarnya ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kolom yang tersedia:&quot;</span><span class="p">,</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_raw</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+
+<span class="c1"># Deteksi kolom tanggal: coba beberapa kemungkinan nama umum dari openEO</span>
+<span class="n">possible_date_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;time_bnds&quot;</span><span class="p">]</span>
+<span class="n">date_col</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">possible_date_names</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">date_col</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">break</span>
+
+<span class="c1"># Fallback terakhir: cari kolom apapun yang bertipe datetime</span>
+<span class="k">if</span> <span class="n">date_col</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">datetime_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_datetime64_any_dtype</span><span class="p">(</span><span class="n">df_raw</span><span class="p">[</span><span class="n">c</span><span class="p">])]</span>
+    <span class="k">if</span> <span class="n">datetime_cols</span><span class="p">:</span>
+        <span class="n">date_col</span> <span class="o">=</span> <span class="n">datetime_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">date_col</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Tidak ditemukan kolom tanggal. Kolom yang ada: </span><span class="si">{</span><span class="n">df_raw</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">. &quot;</span>
+        <span class="s2">&quot;Cek output &#39;Kolom yang tersedia&#39; di atas untuk menentukan nama kolom waktu yang benar.&quot;</span>
+    <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Kolom tanggal terdeteksi: &#39;</span><span class="si">{</span><span class="n">date_col</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Kolom nilai NO2: ambil kolom numerik selain kolom tanggal</span>
+<span class="n">value_candidates</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="n">date_col</span> <span class="ow">and</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_numeric_dtype</span><span class="p">(</span><span class="n">df_raw</span><span class="p">[</span><span class="n">c</span><span class="p">])]</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">value_candidates</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tidak ditemukan kolom nilai numerik. Kolom yang ada: </span><span class="si">{</span><span class="n">df_raw</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">value_col</span> <span class="o">=</span> <span class="n">value_candidates</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kolom nilai terdeteksi: &#39;</span><span class="si">{</span><span class="n">value_col</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+
+<span class="n">df_raw</span> <span class="o">=</span> <span class="n">df_raw</span><span class="p">[[</span><span class="n">date_col</span><span class="p">,</span> <span class="n">value_col</span><span class="p">]]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">date_col</span><span class="p">:</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">value_col</span><span class="p">:</span> <span class="s2">&quot;NO2&quot;</span><span class="p">})</span>
+<span class="n">df_raw</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_raw</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
+
+<span class="n">raw_csv_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">,</span> <span class="s2">&quot;NO2-Kedungpring.csv&quot;</span><span class="p">)</span>
+<span class="n">df_raw</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">raw_csv_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">CSV mentah disimpan: </span><span class="si">{</span><span class="n">raw_csv_path</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_raw</span><span class="p">)</span><span class="si">}</span><span class="s2"> baris)&quot;</span><span class="p">)</span>
+<span class="n">df_raw</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="tahap-2-deteksi-outlier-iqr-imputasi-missing-value">
+<h1>Tahap 2 — Deteksi Outlier (IQR) &amp; Imputasi Missing Value<a class="headerlink" href="#tahap-2-deteksi-outlier-iqr-imputasi-missing-value" title="Link to this heading">#</a></h1>
+<section id="konversi-tipe-numerik">
+<h2>2.1 Konversi Tipe Numerik<a class="headerlink" href="#konversi-tipe-numerik" title="Link to this heading">#</a></h2>
+<p>Kolom NO₂ dipaksa menjadi tipe numerik; nilai yang gagal dikonversi otomatis menjadi
+<code class="docutils literal notranslate"><span class="pre">NaN</span></code> sehingga ikut ditangani pada tahap imputasi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="n">target_pollutant</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">target_pollutant</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+
+<span class="n">n_missing_before</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">target_pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah baris                                   : </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nilai non-numerik/kosong (dikonversi jadi NaN) : </span><span class="si">{</span><span class="n">n_missing_before</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="deteksi-outlier-metode-iqr">
+<h2>2.2 Deteksi Outlier — Metode IQR<a class="headerlink" href="#deteksi-outlier-metode-iqr" title="Link to this heading">#</a></h2>
+<p>Outlier dideteksi berdasarkan rentang <span class="math notranslate nohighlight">\([Q1 - 1.5 \times IQR,\; Q3 + 1.5 \times IQR]\)</span>,
+lalu ditandai sebagai NaN (bukan dihapus barisnya) agar struktur deret waktu tetap
+utuh.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">target_pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">Q3</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">target_pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+<span class="n">lower_bound</span> <span class="o">=</span> <span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+<span class="n">upper_bound</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+
+<span class="n">is_outlier</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">target_pollutant</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lower_bound</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">target_pollutant</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper_bound</span><span class="p">)</span>
+<span class="n">n_outlier</span> <span class="o">=</span> <span class="n">is_outlier</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Q1 = </span><span class="si">{</span><span class="n">Q1</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> | Q3 = </span><span class="si">{</span><span class="n">Q3</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> | IQR = </span><span class="si">{</span><span class="n">IQR</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Batas bawah = </span><span class="si">{</span><span class="n">lower_bound</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> | Batas atas = </span><span class="si">{</span><span class="n">upper_bound</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah outlier terdeteksi: </span><span class="si">{</span><span class="n">n_outlier</span><span class="si">}</span><span class="s2"> dari </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">target_pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> data valid&quot;</span><span class="p">)</span>
+
+<span class="n">df_before_impute</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_before_impute</span><span class="p">[</span><span class="s2">&quot;is_outlier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">is_outlier</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">is_outlier</span><span class="p">,</span> <span class="n">target_pollutant</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualisasi: normal vs outlier</span>
+<span class="n">normal</span> <span class="o">=</span> <span class="n">df_before_impute</span><span class="p">[</span><span class="o">~</span><span class="n">df_before_impute</span><span class="p">[</span><span class="s2">&quot;is_outlier&quot;</span><span class="p">]]</span>
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">df_before_impute</span><span class="p">[</span><span class="n">df_before_impute</span><span class="p">[</span><span class="s2">&quot;is_outlier&quot;</span><span class="p">]]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">normal</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">normal</span><span class="p">[</span><span class="n">target_pollutant</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;steelblue&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Normal&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">outliers</span><span class="p">[</span><span class="n">target_pollutant</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;crimson&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Outlier (IQR)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Deteksi Outlier </span><span class="si">{</span><span class="n">target_pollutant</span><span class="si">}</span><span class="s2"> — Kecamatan Kedungpring (Metode IQR)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tanggal&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Konsentrasi </span><span class="si">{</span><span class="n">target_pollutant</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="imputasi-hingga-0-nan">
+<h2>2.3 Imputasi hingga 0 NaN<a class="headerlink" href="#imputasi-hingga-0-nan" title="Link to this heading">#</a></h2>
+<p>Missing value asli dan outlier yang baru ditandai diisi bersamaan menggunakan
+interpolasi linear berbasis waktu, dilanjutkan forward/backward fill. Sebuah <code class="docutils literal notranslate"><span class="pre">assert</span></code>
+memastikan <strong>tidak ada NaN tersisa</strong> sebelum lanjut ke tahap ekstraksi fitur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span><span class="o">.</span><span class="n">bfill</span><span class="p">()</span>
+
+<span class="n">n_missing_after</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">target_pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing value SEBELUM imputasi : </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">target_pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing value SETELAH imputasi : </span><span class="si">{</span><span class="n">n_missing_after</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">n_missing_after</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Masih ada NaN tersisa setelah imputasi!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">✅ Data NO2 Kedungpring sudah 100% bersih — 0 NaN, 0 outlier tersisa.&quot;</span><span class="p">)</span>
+
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">clean_csv_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CSV_DIR</span><span class="p">,</span> <span class="s2">&quot;NO2-Kedungpring-clean.csv&quot;</span><span class="p">)</span>
+<span class="n">df_clean</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">clean_csv_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data bersih disimpan: </span><span class="si">{</span><span class="n">clean_csv_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">df_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="tahap-3-ekstraksi-68-fitur-dengan-tsfel">
+<h1>Tahap 3 — Ekstraksi 68 Fitur dengan TSFEL<a class="headerlink" href="#tahap-3-ekstraksi-68-fitur-dengan-tsfel" title="Link to this heading">#</a></h1>
+<section id="menyiapkan-sinyal">
+<h2>3.1 Menyiapkan Sinyal<a class="headerlink" href="#menyiapkan-sinyal" title="Link to this heading">#</a></h2>
+<p>Kolom NO₂ yang sudah bersih (hasil Tahap 2) diambil sebagai array 1 dimensi
+(<code class="docutils literal notranslate"><span class="pre">signal_1d</span></code>), dengan <code class="docutils literal notranslate"><span class="pre">fs=1</span></code> (frekuensi sampling harian — satu nilai per hari, sesuai
+hasil agregasi temporal pada Tahap 1).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">signal_1d</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">target_pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Panjang sinyal: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">signal_1d</span><span class="p">)</span><span class="si">}</span><span class="s2"> titik data (hari)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="daftar-68-fitur-tsfel">
+<h2>3.2 Daftar 68 Fitur TSFEL<a class="headerlink" href="#daftar-68-fitur-tsfel" title="Link to this heading">#</a></h2>
+<p>Daftar fungsi fitur berikut diambil langsung dari modul
+<code class="docutils literal notranslate"><span class="pre">tsfel.feature_extraction.features</span></code>, mencakup tiga domain:</p>
+<ul class="simple">
+<li><p><strong>Statistical</strong> — mis. <code class="docutils literal notranslate"><span class="pre">calc_mean</span></code>, <code class="docutils literal notranslate"><span class="pre">calc_std</span></code>, <code class="docutils literal notranslate"><span class="pre">skewness</span></code>, <code class="docutils literal notranslate"><span class="pre">kurtosis</span></code>, <code class="docutils literal notranslate"><span class="pre">interq_range</span></code></p></li>
+<li><p><strong>Temporal</strong> — mis. <code class="docutils literal notranslate"><span class="pre">autocorr</span></code>, <code class="docutils literal notranslate"><span class="pre">slope</span></code>, <code class="docutils literal notranslate"><span class="pre">zero_cross</span></code>, <code class="docutils literal notranslate"><span class="pre">mean_abs_diff</span></code>, <code class="docutils literal notranslate"><span class="pre">entropy</span></code></p></li>
+<li><p><strong>Spectral</strong> — mis. <code class="docutils literal notranslate"><span class="pre">spectral_entropy</span></code>, <code class="docutils literal notranslate"><span class="pre">fundamental_frequency</span></code>, <code class="docutils literal notranslate"><span class="pre">spectral_centroid</span></code>,
+<code class="docutils literal notranslate"><span class="pre">wavelet_energy</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FEATURE_LIST</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;abs_energy auc autocorr average_power calc_centroid calc_max calc_mean</span>
+<span class="s2">calc_median calc_min calc_std calc_var dfa distance ecdf ecdf_percentile ecdf_percentile_count</span>
+<span class="s2">ecdf_slope entropy fundamental_frequency higuchi_fractal_dimension hist_mode human_range_energy</span>
+<span class="s2">hurst_exponent interq_range kurtosis lempel_ziv lpcc max_frequency max_power_spectrum</span>
+<span class="s2">maximum_fractal_length mean_abs_deviation mean_abs_diff mean_diff median_abs_deviation</span>
+<span class="s2">median_abs_diff median_diff median_frequency mfcc mse negative_turning neighbourhood_peaks</span>
+<span class="s2">petrosian_fractal_dimension pk_pk_distance positive_turning power_bandwidth rms skewness slope</span>
+<span class="s2">spectral_centroid spectral_decrease spectral_distance spectral_entropy spectral_kurtosis</span>
+<span class="s2">spectral_positive_turning spectral_roll_off spectral_roll_on spectral_skewness spectral_slope</span>
+<span class="s2">spectral_spread spectral_variation spectrogram_mean_coeff sum_abs_diff wavelet_abs_mean</span>
+<span class="s2">wavelet_energy wavelet_entropy wavelet_std wavelet_var zero_cross&quot;&quot;&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah fitur yang akan diekstrak:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">FEATURE_LIST</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fungsi-ekstraksi">
+<h2>3.3 Fungsi Ekstraksi<a class="headerlink" href="#fungsi-ekstraksi" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">extract_one()</span></code> memanggil setiap fungsi fitur TSFEL secara dinamis (mengecek apakah
+fungsi tersebut membutuhkan parameter <code class="docutils literal notranslate"><span class="pre">fs</span></code> atau tidak), lalu <code class="docutils literal notranslate"><span class="pre">to_scalar()</span></code> memastikan
+hasilnya berupa satu angka tunggal (beberapa fungsi TSFEL mengembalikan array/dict,
+mis. <code class="docutils literal notranslate"><span class="pre">mfcc</span></code> atau <code class="docutils literal notranslate"><span class="pre">lpcc</span></code>, sehingga dirata-ratakan menjadi satu nilai representatif).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">to_scalar</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;values&quot;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_one</span><span class="p">(</span><span class="n">fn_name</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="n">fs</span><span class="p">):</span>
+    <span class="n">fn</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">tsfel_features</span><span class="p">,</span> <span class="n">fn_name</span><span class="p">)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span>
+    <span class="k">if</span> <span class="s2">&quot;fs&quot;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">to_scalar</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="n">row</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">fn_name</span> <span class="ow">in</span> <span class="n">FEATURE_LIST</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">row</span><span class="p">[</span><span class="n">fn_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">extract_one</span><span class="p">(</span><span class="n">fn_name</span><span class="p">,</span> <span class="n">signal_1d</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[PERINGATAN] Gagal mengekstrak fitur &#39;</span><span class="si">{</span><span class="n">fn_name</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">row</span><span class="p">[</span><span class="n">fn_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">extracted_features_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">row</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Berhasil! Jumlah fitur yang dihasilkan untuk </span><span class="si">{</span><span class="n">target_pollutant</span><span class="si">}</span><span class="s2">: &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">extracted_features_final</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">extracted_features_final</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menyimpan-hasil-fitur">
+<h2>3.4 Menyimpan Hasil Fitur<a class="headerlink" href="#menyimpan-hasil-fitur" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_csv_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">FEATURE_DIR</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">target_pollutant</span><span class="si">}</span><span class="s2">_Kedungpring_TSFEL.csv&quot;</span><span class="p">)</span>
+<span class="n">extracted_features_final</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">feature_csv_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fitur tersimpan: </span><span class="si">{</span><span class="n">feature_csv_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="tahap-4-upload-ke-database-aiven">
+<h1>Tahap 4 — Upload ke Database Aiven<a class="headerlink" href="#tahap-4-upload-ke-database-aiven" title="Link to this heading">#</a></h1>
+<section id="konfigurasi-koneksi-database">
+<h2>4.1 Konfigurasi Koneksi Database<a class="headerlink" href="#konfigurasi-koneksi-database" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>⚠️ <strong>Bagian ini perlu kamu lengkapi sendiri</strong> dengan informasi koneksi Aiven-mu.
+Jangan pernah menuliskan password langsung di notebook yang akan di-<em>commit</em> ke
+GitHub — gunakan <strong>environment variable</strong> atau file <code class="docutils literal notranslate"><span class="pre">.env</span></code> (lihat catatan di bawah).</p>
+</div></blockquote>
+<p>Install driver database yang sesuai (pilih salah satu sesuai jenis database Aiven-mu):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>psycopg2-binary<span class="w">   </span><span class="c1"># jika PostgreSQL</span>
+pip<span class="w"> </span>install<span class="w"> </span>pymysql<span class="w">           </span><span class="c1"># jika MySQL</span>
+pip<span class="w"> </span>install<span class="w"> </span>sqlalchemy
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span><span class="p">,</span> <span class="n">text</span>
+
+<span class="c1"># TODO: isi sesuai info koneksi Aiven kamu (Overview -&gt; Connection information)</span>
+<span class="n">DB_TYPE</span> <span class="o">=</span> <span class="s2">&quot;postgresql&quot;</span>   <span class="c1"># atau &quot;mysql&quot;, sesuaikan dengan jenis service Aiven-mu</span>
+<span class="n">DB_HOST</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AIVEN_DB_HOST&quot;</span><span class="p">,</span> <span class="s2">&quot;TODO_ISI_HOST&quot;</span><span class="p">)</span>
+<span class="n">DB_PORT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AIVEN_DB_PORT&quot;</span><span class="p">,</span> <span class="s2">&quot;TODO_ISI_PORT&quot;</span><span class="p">)</span>
+<span class="n">DB_NAME</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AIVEN_DB_NAME&quot;</span><span class="p">,</span> <span class="s2">&quot;TODO_ISI_NAMA_DATABASE&quot;</span><span class="p">)</span>
+<span class="n">DB_USER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AIVEN_DB_USER&quot;</span><span class="p">,</span> <span class="s2">&quot;TODO_ISI_USERNAME&quot;</span><span class="p">)</span>
+<span class="n">DB_PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AIVEN_DB_PASSWORD&quot;</span><span class="p">,</span> <span class="s2">&quot;TODO_ISI_PASSWORD&quot;</span><span class="p">)</span>
+<span class="n">DB_TABLE</span> <span class="o">=</span> <span class="s2">&quot;fitur_no2_kedungpring&quot;</span>  <span class="c1"># TODO: sesuaikan nama tabel tujuan</span>
+
+<span class="c1"># Aiven umumnya mewajibkan SSL</span>
+<span class="k">if</span> <span class="n">DB_TYPE</span> <span class="o">==</span> <span class="s2">&quot;postgresql&quot;</span><span class="p">:</span>
+    <span class="n">conn_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;postgresql+psycopg2://</span><span class="si">{</span><span class="n">DB_USER</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">DB_PASSWORD</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">DB_HOST</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">DB_PORT</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">DB_NAME</span><span class="si">}</span><span class="s2">?sslmode=require&quot;</span>
+<span class="k">elif</span> <span class="n">DB_TYPE</span> <span class="o">==</span> <span class="s2">&quot;mysql&quot;</span><span class="p">:</span>
+    <span class="n">conn_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;mysql+pymysql://</span><span class="si">{</span><span class="n">DB_USER</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">DB_PASSWORD</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">DB_HOST</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">DB_PORT</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">DB_NAME</span><span class="si">}</span><span class="s2">?ssl_verify_cert=true&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;DB_TYPE harus &#39;postgresql&#39; atau &#39;mysql&#39;&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Konfigurasi koneksi disiapkan (belum tersambung).&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tabel tujuan:&quot;</span><span class="p">,</span> <span class="n">DB_TABLE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menyiapkan-data-untuk-diunggah">
+<h2>4.2 Menyiapkan Data untuk Diunggah<a class="headerlink" href="#menyiapkan-data-untuk-diunggah" title="Link to this heading">#</a></h2>
+<p>Menambahkan kolom metadata (<code class="docutils literal notranslate"><span class="pre">kecamatan</span></code>, <code class="docutils literal notranslate"><span class="pre">polutan</span></code>, <code class="docutils literal notranslate"><span class="pre">tanggal_ekstraksi</span></code>) pada tabel
+fitur, agar data yang tersimpan di database tetap bisa ditelusuri asalnya jika nanti
+digabung dengan data kecamatan lain.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">upload_df</span> <span class="o">=</span> <span class="n">extracted_features_final</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">upload_df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;kecamatan&quot;</span><span class="p">,</span> <span class="s2">&quot;Kedungpring&quot;</span><span class="p">)</span>
+<span class="n">upload_df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;polutan&quot;</span><span class="p">,</span> <span class="n">target_pollutant</span><span class="p">)</span>
+<span class="n">upload_df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;tanggal_ekstraksi&quot;</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">))</span>
+
+<span class="n">upload_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="koneksi-insert-ke-tabel-aiven">
+<h2>4.3 Koneksi &amp; Insert ke Tabel Aiven<a class="headerlink" href="#koneksi-insert-ke-tabel-aiven" title="Link to this heading">#</a></h2>
+<p>Jika tabel tujuan <strong>belum ada</strong>, <code class="docutils literal notranslate"><span class="pre">to_sql(...,</span> <span class="pre">if_exists=&quot;replace&quot;)</span></code> akan membuat tabel
+baru secara otomatis mengikuti struktur <code class="docutils literal notranslate"><span class="pre">upload_df</span></code>. Jika tabel <strong>sudah ada</strong> dan hanya
+ingin menambah baris baru, ganti <code class="docutils literal notranslate"><span class="pre">if_exists=&quot;replace&quot;</span></code> menjadi <code class="docutils literal notranslate"><span class="pre">if_exists=&quot;append&quot;</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">conn_str</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">engine</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;SELECT 1&quot;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Koneksi ke database Aiven berhasil.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># TODO: ganti &quot;replace&quot; -&gt; &quot;append&quot; setelah tabel pertama kali dibuat,</span>
+    <span class="c1"># supaya proses selanjutnya menambah baris baru, bukan menimpa tabel.</span>
+    <span class="n">upload_df</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="n">DB_TABLE</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Berhasil mengunggah </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">upload_df</span><span class="p">)</span><span class="si">}</span><span class="s2"> baris ke tabel &#39;</span><span class="si">{</span><span class="n">DB_TABLE</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gagal terhubung/mengunggah ke database Aiven.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Detail error:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Periksa kembali: host, port, username, password, nama database, &quot;</span>
+          <span class="s2">&quot;dan apakah IP kamu sudah diizinkan di pengaturan firewall Aiven.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="verifikasi-data-di-database">
+<h2>4.4 Verifikasi Data di Database<a class="headerlink" href="#verifikasi-data-di-database" title="Link to this heading">#</a></h2>
+<p>Membaca kembali beberapa baris dari tabel untuk memastikan data benar-benar tersimpan
+dengan struktur yang sesuai.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">verify_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SELECT * FROM </span><span class="si">{</span><span class="n">DB_TABLE</span><span class="si">}</span><span class="s2"> LIMIT 5&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Verifikasi data di tabel Aiven:&quot;</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">verify_df</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Belum bisa memverifikasi (kemungkinan koneksi belum berhasil di atas):&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="ringkasan-pipeline">
+<h1>Ringkasan Pipeline<a class="headerlink" href="#ringkasan-pipeline" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tahap</p></th>
+<th class="head"><p>Proses</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1. Ekstraksi</p></td>
+<td><p>Tarik data Sentinel-5P NO₂, AOI Kecamatan Kedungpring, 31 Agu 2025–31 Agu 2026</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NO2-Kedungpring.csv</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>2. Outlier &amp; Imputasi</p></td>
+<td><p>Deteksi outlier (IQR), imputasi hingga 0 NaN</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NO2-Kedungpring-clean.csv</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>3. Ekstraksi Fitur</p></td>
+<td><p>68 fitur TSFEL (statistical, temporal, spectral)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NO2_Kedungpring_TSFEL.csv</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>4. Upload Database</p></td>
+<td><p>Insert hasil fitur ke tabel Aiven</p></td>
+<td><p>Tabel <code class="docutils literal notranslate"><span class="pre">fitur_no2_kedungpring</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="yang-perlu-kamu-lengkapi">
+<h2>Yang Perlu Kamu Lengkapi<a class="headerlink" href="#yang-perlu-kamu-lengkapi" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Bagian 4.1</strong> — isi <code class="docutils literal notranslate"><span class="pre">DB_HOST</span></code>, <code class="docutils literal notranslate"><span class="pre">DB_PORT</span></code>, <code class="docutils literal notranslate"><span class="pre">DB_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">DB_USER</span></code>, <code class="docutils literal notranslate"><span class="pre">DB_PASSWORD</span></code> sesuai
+info dari dashboard Aiven (menu <strong>Overview</strong> → <strong>Connection information</strong>).</p></li>
+<li><p>Sebaiknya simpan kredensial di <strong>environment variable</strong> atau file <code class="docutils literal notranslate"><span class="pre">.env</span></code> (jangan
+ditulis langsung di notebook), terutama jika notebook ini akan di-<em>push</em> ke GitHub
+untuk ditampilkan di web statis — supaya password tidak ikut ter-<em>publish</em>.</p></li>
+<li><p>Setelah tabel berhasil dibuat pertama kali, ganti <code class="docutils literal notranslate"><span class="pre">if_exists=&quot;replace&quot;</span></code> menjadi
+<code class="docutils literal notranslate"><span class="pre">if_exists=&quot;append&quot;</span></code> di Bagian 4.3 supaya proses berikutnya menambah baris, bukan
+menimpa data lama.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pipeline Lengkap: Analisis Polutan NO₂ — Kecamatan Kedungpring</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-notebook">Tujuan Notebook</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tahap-1-ekstraksi-data">Tahap 1 — Ekstraksi Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-pustaka">1.1 Import Pustaka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-otentikasi-ke-copernicus-data-space">1.2 Koneksi &amp; Otentikasi ke Copernicus Data Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#area-of-interest-aoi-kecamatan-kedungpring">1.3 Area of Interest (AOI): Kecamatan Kedungpring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-collection-agregasi-download">1.4 Load Collection, Agregasi, &amp; Download</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan-deteksi-kolom-tanggal-secara-fleksibel">Catatan: Deteksi Kolom Tanggal Secara Fleksibel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tahap-2-deteksi-outlier-iqr-imputasi-missing-value">Tahap 2 — Deteksi Outlier (IQR) &amp; Imputasi Missing Value</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konversi-tipe-numerik">2.1 Konversi Tipe Numerik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-metode-iqr">2.2 Deteksi Outlier — Metode IQR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputasi-hingga-0-nan">2.3 Imputasi hingga 0 NaN</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tahap-3-ekstraksi-68-fitur-dengan-tsfel">Tahap 3 — Ekstraksi 68 Fitur dengan TSFEL</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyiapkan-sinyal">3.1 Menyiapkan Sinyal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daftar-68-fitur-tsfel">3.2 Daftar 68 Fitur TSFEL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-ekstraksi">3.3 Fungsi Ekstraksi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyimpan-hasil-fitur">3.4 Menyimpan Hasil Fitur</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tahap-4-upload-ke-database-aiven">Tahap 4 — Upload ke Database Aiven</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurasi-koneksi-database">4.1 Konfigurasi Koneksi Database</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyiapkan-data-untuk-diunggah">4.2 Menyiapkan Data untuk Diunggah</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-insert-ke-tabel-aiven">4.3 Koneksi &amp; Insert ke Tabel Aiven</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifikasi-data-di-database">4.4 Verifikasi Data di Database</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-pipeline">Ringkasan Pipeline</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yang-perlu-kamu-lengkapi">Yang Perlu Kamu Lengkapi</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
