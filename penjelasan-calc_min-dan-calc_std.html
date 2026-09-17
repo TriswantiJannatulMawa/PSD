@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Proyek Sains Data &#8212; My sample book</title>
+    <title>Penjelasan dan Perhitungan dari fitur calc_min dan calc_std &#8212; My sample book</title>
   
   
   
@@ -59,10 +59,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'penjelasan-calc_min-dan-calc_std';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pengantar Analisis Polutan Kabupaten Lamongan" href="analisis-polutan-lamongan.html" />
+    <link rel="prev" title="Preprocessing &amp; Ekstraksi Fitur CO dan SO₂ — Kecamatan Kedungpring" href="preprocessing-fitur-co-so2-kedungpring.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,7 +143,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -176,13 +174,13 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Proyek Sains Data
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="analisis-polutan-lamongan.html">Pengantar Analisis Polutan Kabupaten Lamongan</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="business-understanding.html">Business Understanding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data-understanding.html">Data Understanding</a></li>
@@ -267,7 +265,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpenjelasan-calc_min-dan-calc_std.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -297,7 +295,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/penjelasan-calc_min-dan-calc_std.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -307,7 +305,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -368,7 +366,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -379,11 +379,40 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Proyek Sains Data</h1>
+    <h1>Penjelasan dan Perhitungan dari fitur calc_min dan calc_std</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-calc-min">1. Fitur calc_min</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">1.1 Pengertian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat-dalam-analisis">1.2 Manfaat dalam Analisis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-calc-min">1.3 Menghitung calc_min</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-min-so2">1.3.1 Calc_min SO2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-min-co">1.3.2 Calc_min CO</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-min-no2">1.3.3 Calc_min NO2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-calc-std-standar-deviasi">2. Fitur calc_std(standar deviasi)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1 Pengertian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2 Manfaat dalam Analisis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-calc-std">1.4 Menghitung calc_std</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-std-so2">1.4.1 Calc_std SO2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-std-co">1.4.2 calc_std CO</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-std-no2">1.4.3 Calc_std NO2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -393,13 +422,91 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="proyek-sains-data">
-<h1>Proyek Sains Data<a class="headerlink" href="#proyek-sains-data" title="Link to this heading">#</a></h1>
-<p>Nama : Triswanti Jannatul Ma’wa</p>
-<p>NIM : 240411100125</p>
-<p>Kelas : PSD IF5A</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="penjelasan-dan-perhitungan-dari-fitur-calc-min-dan-calc-std">
+<h1>Penjelasan dan Perhitungan dari fitur calc_min dan calc_std<a class="headerlink" href="#penjelasan-dan-perhitungan-dari-fitur-calc-min-dan-calc-std" title="Link to this heading">#</a></h1>
+<section id="fitur-calc-min">
+<h2>1. Fitur calc_min<a class="headerlink" href="#fitur-calc-min" title="Link to this heading">#</a></h2>
+<section id="pengertian">
+<h3>1.1 Pengertian<a class="headerlink" href="#pengertian" title="Link to this heading">#</a></h3>
+<p>calc_min adalah fitur statistik deskriptif dasar yang bertugas untuk mencari dan menampilkan nilai terkecil dari seluruh rangkaian data sensor polutan dalam satu periode pengamatan (window). Di dalam pustaka TSFEL, calc_min termasuk ke dalam kelompok Statistical Domain (Domain Statistik).</p>
+</section>
+<section id="manfaat-dalam-analisis">
+<h3>1.2 Manfaat dalam Analisis<a class="headerlink" href="#manfaat-dalam-analisis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Mengetahui Titik Terendah Pencemaran: Membantu peneliti mengetahui kondisi paling bersih atau tingkat emisi terendah yang pernah tercatat oleh sensor di suatu wilayah (misalnya Kedungpring).</p></li>
+<li><p>Deteksi Anomali/Kesalahan Sensor: Jika nilai minimum bernilai negatif tidak wajar (seperti -0.000369 pada SO2), fitur ini langsung mendeteksi adanya offset atau kebutuhan kalibrasi ulang pada alat sensor.</p></li>
+<li><p>Baseline Konsentrasi: Berfungsi sebagai batas bawah untuk melihat rentang fluktuasi (range) kualitas udara bersamaan dengan nilai maksimumnya (calc_max).</p></li>
+</ul>
+</section>
+<section id="menghitung-calc-min">
+<h3>1.3 Menghitung calc_min<a class="headerlink" href="#menghitung-calc-min" title="Link to this heading">#</a></h3>
+<section id="calc-min-so2">
+<h4>1.3.1 Calc_min SO2<a class="headerlink" href="#calc-min-so2" title="Link to this heading">#</a></h4>
+<p>Mencari nilai terkecil dari seluruh data yaitu 366 baris pada kolom SO2. Sehingga ditemukan nilai min nya <strong>-0.0003685372357722</strong> pada <strong>7 april 2026</strong>.</p>
+<p>Keterangan: Pada hari tersebut, sensor merekam tingkat konsentrasi sulfur dioksida terendah yang mencatat angka negatif kecil (kemungkinan akibat penyesuaian kalibrasi atau baseline sensor).</p>
+</section>
+<section id="calc-min-co">
+<h4>1.3.2 Calc_min CO<a class="headerlink" href="#calc-min-co" title="Link to this heading">#</a></h4>
+<p>Mencari nilai terkecil dari seluruh data yaitu 366 baris pada kolom SO2. Sehingga ditemukan nilai min nya <strong>0.020191341638565</strong> pada <strong>5 maret 2026</strong>.</p>
+<p>Keterangan: Pada tanggal ini, gas Karbon Monoksida di Kedungpring berada pada titik paling bersih atau emisi terendah sepanjang tahun pengamatan (berbeda dengan standar deviasinya yang tinggi, menunjukkan pada hari lain CO bisa melonjak tajam).</p>
+</section>
+<section id="calc-min-no2">
+<h4>1.3.3 Calc_min NO2<a class="headerlink" href="#calc-min-no2" title="Link to this heading">#</a></h4>
+<p>Mencari nilai terkecil dari seluruh data yaitu 366 baris pada kolom SO2. Sehingga ditemukan nilai min nya <strong>7.337210263358429e-06</strong> pada <strong>8 april 2026</strong>.</p>
+<p>Keterangan: Menariknya, tanggal pencatatan nilai minimum NO2 ini berselang sehari setelah nilai minimum SO2 tercatat (7 April 2026), menunjukkan adanya tren kualitas udara yang sangat bersih pada awal bulan April 2026 di wilayah tersebut.</p>
+</section>
+</section>
+</section>
+<section id="fitur-calc-std-standar-deviasi">
+<h2>2. Fitur calc_std(standar deviasi)<a class="headerlink" href="#fitur-calc-std-standar-deviasi" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>2.1 Pengertian<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>calc_std adalah ukuran statistik yang menunjukkan seberapa jauh data tersebar dari nilai rata-ratanya (<span class="math notranslate nohighlight">\(\mu\)</span>). Jika grafiknya stabil datar-datar saja, maka nilai calc_std akan mendekati angka 0. Sebaliknya, jika dalam beberapa hari polusinya melonjak tinggi lalu anjlok drastis secara acak, nilai calc_std akan menjadi besar.</p>
+<p>Sama seperti calc_min, calc_std juga masuk ke dalam kelompok Statistical Domain (Domain Statistik) di TSFEL, karena dihitung langsung menggunakan persamaan matematis standar deviasi terhadap seluruh titik data deret waktu.</p>
+</section>
+<section id="id2">
+<h3>2.2 Manfaat dalam Analisis<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Mengukur Tingkat Volatilitas/Fluktuasi: Membantu membandingkan tingkat kestabilan polutan. Sebagai contoh, dari data Anda:</p>
+<ul>
+<li><p>CO memiliki calc_std paling tinggi (0.003424), yang berarti gas Karbon Monoksida di Kedungpring paling dinamis dan berfluktuasi (bisa naik/turun tajam, dipicu aktivitas harian seperti kendaraan).</p></li>
+<li><p>SO2 dan NO2 memiliki calc_std yang sangat kecil (mendekati nol), menandakan konsentrasinya cenderung stabil dan datar sepanjang tahun.</p></li>
+</ul>
+</li>
+<li><p>Indikator Stabilitas Lingkungan: Standar deviasi yang rendah sering diartikan bahwa kondisi lingkungan atau emisi sumber pencemar di daerah tersebut relatif konsisten dari waktu ke waktu.</p></li>
+</ul>
+</section>
+<section id="menghitung-calc-std">
+<h3>1.4 Menghitung calc_std<a class="headerlink" href="#menghitung-calc-std" title="Link to this heading">#</a></h3>
+<section id="calc-std-so2">
+<h4>1.4.1 Calc_std SO2<a class="headerlink" href="#calc-std-so2" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Menentukan nilai rata-rata dengan menjulahkan seluruh data lalu dibagi dengan N(366), Sehingga mendapatkan hasil $<span class="math notranslate nohighlight">\(\mu = 0.00005866\)</span>$</p></li>
+<li><p>Hitung selisih kuadrat dari rata-rata <span class="math notranslate nohighlight">\(\sum (x_i - \mu)^2\)</span> , setiap data dikurangi dengan rata-rata lalu dikuadratkan dan setelah itu seluruh hasilnya dijumlahkan, sehingga hasilnya <span class="math notranslate nohighlight">\(8.68909 \times 10^{-6}\)</span></p></li>
+<li><p>Hitung varians, $<span class="math notranslate nohighlight">\(\text{Varians} = \frac{\sum (x_i - \mu)^2}{N} = \frac{8.68909 \times 10^{-6}}{366} = \mathbf{2.37407 \times 10^{-8}}\)</span>$</p></li>
+<li><p>hitung standar deviasi, $<span class="math notranslate nohighlight">\(\sigma = \sqrt{\text{Varians}} = \sqrt{2.37407 \times 10^{-8}} = \mathbf{0.000154}\)</span>$</p></li>
+</ul>
+</section>
+<section id="calc-std-co">
+<h4>1.4.2 calc_std CO<a class="headerlink" href="#calc-std-co" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Menghitung rata-rata, $<span class="math notranslate nohighlight">\(\mu = 0.02965457\)</span>$</p></li>
+<li><p>menghitung total kuadrat selisih, yaitu 0.00428976</p></li>
+<li><p>Menghitung varians, $<span class="math notranslate nohighlight">\(\text{Varians} = \frac{0.00428976}{366} = \mathbf{1.17206 \times 10^{-5}}\)</span>$</p></li>
+<li><p>Menghitung standar deviasi, $<span class="math notranslate nohighlight">\(\sigma = \sqrt{1.17206 \times 10^{-5}} = \mathbf{0.003424}\)</span>$</p></li>
+</ul>
+</section>
+<section id="calc-std-no2">
+<h4>1.4.3 Calc_std NO2<a class="headerlink" href="#calc-std-no2" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Menghitung nilai rata-rata, $<span class="math notranslate nohighlight">\(\mu = 0.00002987\)</span>$</p></li>
+<li><p>Menghitung total kuadrat selisih,  <span class="math notranslate nohighlight">\(4.3550 \times 10^{-8}\)</span></p></li>
+<li><p>Menghitung varians, $<span class="math notranslate nohighlight">\(\text{Varians} = \frac{4.3550 \times 10^{-8}}{366} = \mathbf{1.18989 \times 10^{-10}}\)</span>$</p></li>
+<li><p>Menghitung standar deviasi, $<span class="math notranslate nohighlight">\(\sigma = \sqrt{1.18989 \times 10^{-10}} = \mathbf{0.000011}\)</span>$</p></li>
+</ul>
+</section>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -432,14 +539,14 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="analisis-polutan-lamongan.html"
-       title="next page">
+    <a class="left-prev"
+       href="preprocessing-fitur-co-so2-kedungpring.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pengantar Analisis Polutan Kabupaten Lamongan</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Preprocessing &amp; Ekstraksi Fitur CO dan SO₂ — Kecamatan Kedungpring</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -447,6 +554,42 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-calc-min">1. Fitur calc_min</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">1.1 Pengertian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat-dalam-analisis">1.2 Manfaat dalam Analisis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-calc-min">1.3 Menghitung calc_min</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-min-so2">1.3.1 Calc_min SO2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-min-co">1.3.2 Calc_min CO</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-min-no2">1.3.3 Calc_min NO2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-calc-std-standar-deviasi">2. Fitur calc_std(standar deviasi)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1 Pengertian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2 Manfaat dalam Analisis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-calc-std">1.4 Menghitung calc_std</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-std-so2">1.4.1 Calc_std SO2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-std-co">1.4.2 calc_std CO</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calc-std-no2">1.4.3 Calc_std NO2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
