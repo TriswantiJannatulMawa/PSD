@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -194,6 +194,10 @@
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="preprocessing-fitur-co-so2-kedungpring.html">Preprocessing &amp; Ekstraksi Fitur CO dan SO₂ — Kecamatan Kedungpring</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Penjelasan dan Perhitungan dari fitur calc_min dan calc_std</a></li>
 </ul>
 
     </div>
@@ -481,19 +485,19 @@ document.write(`
 <section id="calc-std-so2">
 <h4>1.4.1 Calc_std SO2<a class="headerlink" href="#calc-std-so2" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Menentukan nilai rata-rata dengan menjulahkan seluruh data lalu dibagi dengan N(366), Sehingga mendapatkan hasil $<span class="math notranslate nohighlight">\(\mu = 0.00005866\)</span>$</p></li>
+<li><p>Menentukan nilai rata-rata dengan menjulahkan seluruh data lalu dibagi dengan N(366), Sehingga mendapatkan hasil <span class="math notranslate nohighlight">\(\mu = 0.00005866\)</span></p></li>
 <li><p>Hitung selisih kuadrat dari rata-rata <span class="math notranslate nohighlight">\(\sum (x_i - \mu)^2\)</span> , setiap data dikurangi dengan rata-rata lalu dikuadratkan dan setelah itu seluruh hasilnya dijumlahkan, sehingga hasilnya <span class="math notranslate nohighlight">\(8.68909 \times 10^{-6}\)</span></p></li>
-<li><p>Hitung varians, $<span class="math notranslate nohighlight">\(\text{Varians} = \frac{\sum (x_i - \mu)^2}{N} = \frac{8.68909 \times 10^{-6}}{366} = \mathbf{2.37407 \times 10^{-8}}\)</span>$</p></li>
-<li><p>hitung standar deviasi, $<span class="math notranslate nohighlight">\(\sigma = \sqrt{\text{Varians}} = \sqrt{2.37407 \times 10^{-8}} = \mathbf{0.000154}\)</span>$</p></li>
+<li><p>Hitung varians, <span class="math notranslate nohighlight">\(\text{Varians} = \frac{\sum (x_i - \mu)^2}{N} = \frac{8.68909 \times 10^{-6}}{366} = \mathbf{2.37407 \times 10^{-8}}\)</span></p></li>
+<li><p>hitung standar deviasi, <span class="math notranslate nohighlight">\(\sigma = \sqrt{\text{Varians}} = \sqrt{2.37407 \times 10^{-8}} = \mathbf{0.000154}\)</span></p></li>
 </ul>
 </section>
 <section id="calc-std-co">
 <h4>1.4.2 calc_std CO<a class="headerlink" href="#calc-std-co" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Menghitung rata-rata, $<span class="math notranslate nohighlight">\(\mu = 0.02965457\)</span>$</p></li>
+<li><p>Menghitung rata-rata, <span class="math notranslate nohighlight">\(\mu = 0.02965457\)</span></p></li>
 <li><p>menghitung total kuadrat selisih, yaitu 0.00428976</p></li>
-<li><p>Menghitung varians, $<span class="math notranslate nohighlight">\(\text{Varians} = \frac{0.00428976}{366} = \mathbf{1.17206 \times 10^{-5}}\)</span>$</p></li>
-<li><p>Menghitung standar deviasi, $<span class="math notranslate nohighlight">\(\sigma = \sqrt{1.17206 \times 10^{-5}} = \mathbf{0.003424}\)</span>$</p></li>
+<li><p>Menghitung varians, <span class="math notranslate nohighlight">\(\text{Varians} = \frac{0.00428976}{366} = \mathbf{1.17206 \times 10^{-5}}\)</span></p></li>
+<li><p>Menghitung standar deviasi, <span class="math notranslate nohighlight">\(\sigma = \sqrt{1.17206 \times 10^{-5}} = \mathbf{0.003424}\)</span></p></li>
 </ul>
 </section>
 <section id="calc-std-no2">
@@ -501,8 +505,8 @@ document.write(`
 <ul class="simple">
 <li><p>Menghitung nilai rata-rata, $<span class="math notranslate nohighlight">\(\mu = 0.00002987\)</span>$</p></li>
 <li><p>Menghitung total kuadrat selisih,  <span class="math notranslate nohighlight">\(4.3550 \times 10^{-8}\)</span></p></li>
-<li><p>Menghitung varians, $<span class="math notranslate nohighlight">\(\text{Varians} = \frac{4.3550 \times 10^{-8}}{366} = \mathbf{1.18989 \times 10^{-10}}\)</span>$</p></li>
-<li><p>Menghitung standar deviasi, $<span class="math notranslate nohighlight">\(\sigma = \sqrt{1.18989 \times 10^{-10}} = \mathbf{0.000011}\)</span>$</p></li>
+<li><p>Menghitung varians, <span class="math notranslate nohighlight">\(\text{Varians} = \frac{4.3550 \times 10^{-8}}{366} = \mathbf{1.18989 \times 10^{-10}}\)</span></p></li>
+<li><p>Menghitung standar deviasi, <span class="math notranslate nohighlight">\(\sigma = \sqrt{1.18989 \times 10^{-10}} = \mathbf{0.000011}\)</span></p></li>
 </ul>
 </section>
 </section>
