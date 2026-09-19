@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -195,6 +195,10 @@
 
 
 
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Preprocessing &amp; Ekstraksi Fitur CO dan SO₂ — Kecamatan Kedungpring</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="penjelasan-calc_min-dan-calc_std.html">Penjelasan dan Perhitungan dari fitur calc_min dan calc_std</a></li>
 </ul>
 
     </div>
@@ -394,7 +398,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-pustaka">Import Pustaka</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-loop-co-so2">Preprocessing (Loop CO &amp; SO₂)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reindex-ke-deret-harian-penuh">1. Reindex ke Deret Harian Penuh</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-metode-iqr">2. Deteksi Outlier — Metode IQR</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputasi-hingga-0-nan">3. Imputasi hingga 0 NaN</a></li>
@@ -456,8 +460,9 @@ document.write(`
 </section>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="preprocessing-loop-co-so2">
-<h1>Preprocessing (Loop CO &amp; SO₂)<a class="headerlink" href="#preprocessing-loop-co-so2" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="preprocessing">
+<h1>Preprocessing<a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h1>
+<p>Preprocessing dilakukan untuk memastikan data siap digunakan dalam proses ekstraksi fitur.</p>
 <section id="reindex-ke-deret-harian-penuh">
 <h2>1. Reindex ke Deret Harian Penuh<a class="headerlink" href="#reindex-ke-deret-harian-penuh" title="Link to this heading">#</a></h2>
 <p>Data mentah hanya berisi baris untuk hari-hari dengan observasi satelit valid. Setiap
@@ -567,6 +572,17 @@ memastikan hasil akhir <strong>benar-benar 0 NaN</strong> sebelum lanjut ke ekst
 </section>
 <section id="visualisasi-outlier-deret-waktu-bersih-co-dan-so2">
 <h2>Visualisasi: Outlier &amp; Deret Waktu Bersih (CO dan SO₂)<a class="headerlink" href="#visualisasi-outlier-deret-waktu-bersih-co-dan-so2" title="Link to this heading">#</a></h2>
+<p><strong>Grafik pertama</strong></p>
+<p>Menampilkan:</p>
+<ul class="simple">
+<li><p>data normal</p></li>
+<li><p>data yang terdeteksi sebagai outlier</p></li>
+</ul>
+<p><strong>Grafik kedua</strong></p>
+<p>Menampilkan:</p>
+<ul class="simple">
+<li><p>deret waktu setelah preprocessing</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">band</span> <span class="ow">in</span> <span class="n">POLLUTANTS_TO_PROCESS</span><span class="p">:</span>
@@ -702,6 +718,122 @@ Ringkasan fitur yang berhasil diekstrak:
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== HASIL EKSTRAKSI FITUR ===&quot;</span><span class="p">)</span>
+
+<span class="n">all_features</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">band</span><span class="p">,</span> <span class="n">feats</span> <span class="ow">in</span> <span class="n">feature_results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">feats</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">temp</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Polutan&quot;</span><span class="p">,</span> <span class="n">band</span><span class="p">)</span>
+    <span class="n">all_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+<span class="n">all_features_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">all_features</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">all_features_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== HASIL EKSTRAKSI FITUR ===
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Polutan</th>
+      <th>abs_energy</th>
+      <th>auc</th>
+      <th>autocorr</th>
+      <th>average_power</th>
+      <th>calc_centroid</th>
+      <th>calc_max</th>
+      <th>calc_mean</th>
+      <th>calc_median</th>
+      <th>calc_min</th>
+      <th>...</th>
+      <th>spectral_spread</th>
+      <th>spectral_variation</th>
+      <th>spectrogram_mean_coeff</th>
+      <th>sum_abs_diff</th>
+      <th>wavelet_abs_mean</th>
+      <th>wavelet_energy</th>
+      <th>wavelet_entropy</th>
+      <th>wavelet_std</th>
+      <th>wavelet_var</th>
+      <th>zero_cross</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CO</td>
+      <td>0.326148</td>
+      <td>10.822841</td>
+      <td>3.0</td>
+      <td>8.935557e-04</td>
+      <td>184.681419</td>
+      <td>0.039073</td>
+      <td>0.029655</td>
+      <td>0.029280</td>
+      <td>0.020191</td>
+      <td>...</td>
+      <td>0.134737</td>
+      <td>0.573634</td>
+      <td>1.795362e-05</td>
+      <td>0.706885</td>
+      <td>0.001774</td>
+      <td>0.008004</td>
+      <td>2.137570</td>
+      <td>0.007777</td>
+      <td>6.767125e-05</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>SO2</td>
+      <td>0.000010</td>
+      <td>0.040629</td>
+      <td>2.0</td>
+      <td>2.725647e-08</td>
+      <td>219.452157</td>
+      <td>0.000548</td>
+      <td>0.000059</td>
+      <td>0.000041</td>
+      <td>-0.000369</td>
+      <td>...</td>
+      <td>0.146712</td>
+      <td>0.217979</td>
+      <td>4.179144e-08</td>
+      <td>0.039747</td>
+      <td>0.000003</td>
+      <td>0.000212</td>
+      <td>2.175391</td>
+      <td>0.000212</td>
+      <td>4.629732e-08</td>
+      <td>86.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 69 columns</p>
+</div></div></div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -772,7 +904,7 @@ Ringkasan fitur yang berhasil diekstrak:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-pustaka">Import Pustaka</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-loop-co-so2">Preprocessing (Loop CO &amp; SO₂)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reindex-ke-deret-harian-penuh">1. Reindex ke Deret Harian Penuh</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-metode-iqr">2. Deteksi Outlier — Metode IQR</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputasi-hingga-0-nan">3. Imputasi hingga 0 NaN</a></li>
