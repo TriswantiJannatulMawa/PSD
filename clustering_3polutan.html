@@ -1,0 +1,1381 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pengolahan dan Analisis Data Kualitas Udara &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clustering_3polutan';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Proyek Sains Data
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="analisis-polutan-lamongan.html">Pengantar Analisis Polutan Kabupaten Lamongan</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="business-understanding.html">Business Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-understanding.html">Data Understanding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ekstraksi_data.html">Ekstraksi Data Kualitas Udara — Kabupaten Lamongan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analisis_lamongan.html">Analisis Data Kualitas Udara — Kabupaten Lamongan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analisis_statistic.html">Analisis Statistik Data Menggunakan Aiven dan KNIME</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ekstraksi_data_kecamatan.html">Pengantar Ekstraksi Data Kualitas Udara Kecamatan Kedungpring</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="preprocessing-fitur-aiven-kedungpring.html">Preprocessing, Ekstraksi Fitur &amp; Upload Database — NO₂ Kedungpring</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="preprocessing-fitur-co-so2-kedungpring.html">Preprocessing &amp; Ekstraksi Fitur CO dan SO₂ — Kecamatan Kedungpring</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="penjelasan-calc_min-dan-calc_std.html">Penjelasan dan Perhitungan dari fitur calc_min dan calc_std</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analisis_clastering.html">Analisis Clusturing Data Polutan Menggunakan K-Means</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fclustering_3polutan.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/clustering_3polutan.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pengolahan dan Analisis Data Kualitas Udara</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pengolahan dan Analisis Data Kualitas Udara</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-dan-melihat-struktur-data">2. Membaca dan Melihat Struktur Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-dan-penyamaan-data-berdasarkan-tanggal">3.Persiapan dan Penyamaan Data berdasarkan Tanggal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengecekan-missing-value">4. Pengecekan Missing Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-dengan-interpolasi-linear">5. Preprocessing dengan Interpolasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-dengan-interpolasi-polynomial">6. Preprocessing dengan Interpolasi Polynomial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menangin-nan-pada-ujung-data">7. Menangin NaN pada Ujung Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validasi-hasil-preprocessing">8. Validasi Hasil Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggabungkan-tiga-polutan-dan-menyimpan-hasil-preprocessing">9. Menggabungkan Tiga Polutan dan Menyimpan Hasil Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-tsfel">11. Ekstraksi Fitur TSFEL</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pengolahan-dan-analisis-data-kualitas-udara">
+<h1>Pengolahan dan Analisis Data Kualitas Udara<a class="headerlink" href="#pengolahan-dan-analisis-data-kualitas-udara" title="Link to this heading">#</a></h1>
+<p>Pada tugas ini dilakukan pengolahan data kualitas udara dari tiga jenis polutan, yaitu Carbon Monoxide (CO), Nitrogen Dioxide (NO₂), dan Sulfur Dioxide (SO₂). Data awal yang digunakan masih memiliki jumlah pengamatan yang berbeda serta terdapat missing value dan outlier.</p>
+<p>Tahapan pengolahan data dilakukan untuk mempersiapkan data sebelum digunakan pada proses ekstraksi fitur dan analisis clustering. Data yang memiliki missing value dan outlier terlebih dahulu ditangani menggunakan metode interpolasi. Dalam tugas ini digunakan dua pendekatan interpolasi, yaitu interpolasi Linear dan interpolasi Polynomial. Kedua metode tersebut diproses secara terpisah sehingga menghasilkan dua dataset hasil preprocessing yang nantinya dapat digunakan sebagai dua eksperimen.</p>
+<p>Setelah preprocessing selesai, data dari ketiga polutan pada masing-masing metode digabungkan berdasarkan tanggal. Selanjutnya dilakukan ekstraksi fitur menggunakan TSFEL. Dari setiap polutan diekstraksi sebanyak 68 fitur sehingga dari tiga polutan diperoleh:</p>
+<p>68 fitur × 3 polutan = 204 fitur.</p>
+<p>Hasil ekstraksi fitur dari metode Linear dan Polynomial selanjutnya digunakan sebagai dasar untuk tahap analisis berikutnya, yaitu reduksi dimensi, clustering, evaluasi menggunakan Silhouette Coefficient, dan visualisasi hasil clustering pada peta.</p>
+<section id="import-library">
+<h2>Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h2>
+<p>Tahap pertama adalah mempersiapkan library yang dibutuhkan selama proses pengolahan dan analisis data. Library yang digunakan mencakup library untuk membaca dan mengolah data, melakukan perhitungan numerik, visualisasi, reduksi dimensi, clustering, serta evaluasi hasil clustering.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">silhouette_score</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="membaca-dan-melihat-struktur-data">
+<h2>2. Membaca dan Melihat Struktur Data<a class="headerlink" href="#membaca-dan-melihat-struktur-data" title="Link to this heading">#</a></h2>
+<p>Data awal terdiri dari tiga dataset kualitas udara, yaitu CO, NO₂, dan SO₂. Ketiga data tersebut masih disimpan dalam file yang terpisah. Oleh karena itu, masing-masing file perlu dibaca terlebih dahulu untuk mengetahui struktur dan jumlah data yang tersedia.</p>
+<p>Sebelum melakukan preprocessing, struktur data perlu diperiksa terlebih dahulu. Pemeriksaan dilakukan untuk mengetahui contoh isi data serta memastikan nama kolom yang digunakan sudah sesuai.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;..\data\csv\CO-Kedungpring.csv&#39;</span><span class="p">)</span>
+<span class="n">no2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;..\data\csv\NO2-Kedungpring.csv&#39;</span><span class="p">)</span>
+<span class="n">so2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;..\data\csv\SO2-Kedungpring.csv&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CO :&quot;</span><span class="p">,</span> <span class="n">co</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NO2:&quot;</span><span class="p">,</span> <span class="n">no2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SO2:&quot;</span><span class="p">,</span> <span class="n">so2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">co</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">no2</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">so2</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kolom CO :&quot;</span><span class="p">,</span> <span class="n">co</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kolom NO2:&quot;</span><span class="p">,</span> <span class="n">no2</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kolom SO2:&quot;</span><span class="p">,</span> <span class="n">so2</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CO : (205, 2)
+NO2: (169, 2)
+SO2: (221, 2)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>CO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-09-01</td>
+      <td>0.028042</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-09-02</td>
+      <td>0.026509</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-09-03</td>
+      <td>0.025827</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-09-04</td>
+      <td>0.032963</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-09-06</td>
+      <td>0.029518</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>NO2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-08-31</td>
+      <td>0.000036</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-09-01</td>
+      <td>0.000020</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-09-03</td>
+      <td>0.000013</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-09-05</td>
+      <td>0.000029</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-09-11</td>
+      <td>0.000030</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>SO2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-08-31</td>
+      <td>0.000066</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-09-01</td>
+      <td>0.000237</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-09-03</td>
+      <td>-0.000250</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-09-04</td>
+      <td>0.000002</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-09-05</td>
+      <td>-0.000122</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kolom CO : [&#39;date&#39;, &#39;CO&#39;]
+Kolom NO2: [&#39;date&#39;, &#39;NO2&#39;]
+Kolom SO2: [&#39;date&#39;, &#39;SO2&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hasil pembacaan menunjukkan bahwa jumlah baris pada masing-masing dataset belum sama. Hal ini menunjukkan bahwa data ketiga polutan belum berada pada rentang pengamatan yang seragam sehingga diperlukan proses penyamaan tanggal pada tahap berikutnya.</p>
+<p>Dari pemeriksaan Struktur data diketahui bahwa setiap dataset memiliki kolom date sebagai tanggal pengamatan dan satu kolom yang berisi nilai polutan masing-masing, yaitu CO, NO2, dan SO2.</p>
+</section>
+<section id="persiapan-dan-penyamaan-data-berdasarkan-tanggal">
+<h2>3.Persiapan dan Penyamaan Data berdasarkan Tanggal<a class="headerlink" href="#persiapan-dan-penyamaan-data-berdasarkan-tanggal" title="Link to this heading">#</a></h2>
+<p>Sebelum melakukan preprocessing, seluruh data polutan perlu dipersiapkan agar memiliki format tanggal yang seragam dan rentang pengamatan yang sama. Kolom date pada data CO, NO₂, dan SO₂ terlebih dahulu diubah menjadi format datetime. Setelah itu, data disusun berdasarkan tanggal dan dibuat rentang tanggal lengkap dari 31 Agustus 2025 sampai 31 Agustus 2026, sehingga diperoleh 366 tanggal pengamatan. Selanjutnya, masing-masing dataset disesuaikan dengan rentang tanggal tersebut menggunakan reindex(). Proses ini membuat ketiga polutan memiliki jumlah baris dan tanggal yang sama. Tanggal yang sebelumnya tidak memiliki data akan menghasilkan nilai NaN dan nantinya ditangani pada tahap interpolasi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">co</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="n">no2</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">no2</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="n">so2</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">so2</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">co</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">no2</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">so2</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime64[ns]
+datetime64[ns]
+datetime64[ns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tanggal_lengkap</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span>
+    <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2025-08-31&#39;</span><span class="p">,</span>
+    <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2026-08-31&#39;</span><span class="p">,</span>
+    <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah tanggal:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tanggal_lengkap</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah tanggal: 366
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co_365</span> <span class="o">=</span> <span class="n">co_clean</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">co_365</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">co_365</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+
+<span class="n">co_365</span> <span class="o">=</span> <span class="n">co_365</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+
+<span class="n">co_365</span> <span class="o">=</span> <span class="n">co_365</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">tanggal_lengkap</span><span class="p">)</span>
+
+<span class="n">co_365</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;date&#39;</span>
+
+<span class="n">co_365</span> <span class="o">=</span> <span class="n">co_365</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah baris CO:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">co_365</span><span class="p">))</span>
+
+<span class="n">no2_365</span> <span class="o">=</span> <span class="n">no2_clean</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">no2_365</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">no2_365</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+
+<span class="n">no2_365</span> <span class="o">=</span> <span class="n">no2_365</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<span class="n">no2_365</span> <span class="o">=</span> <span class="n">no2_365</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">tanggal_lengkap</span><span class="p">)</span>
+
+<span class="n">no2_365</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;date&#39;</span>
+<span class="n">no2_365</span> <span class="o">=</span> <span class="n">no2_365</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah baris NO2:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">no2_365</span><span class="p">))</span>
+
+<span class="n">so2_365</span> <span class="o">=</span> <span class="n">so2_clean</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">so2_365</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">so2_365</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+
+<span class="n">so2_365</span> <span class="o">=</span> <span class="n">so2_365</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<span class="n">so2_365</span> <span class="o">=</span> <span class="n">so2_365</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">tanggal_lengkap</span><span class="p">)</span>
+
+<span class="n">so2_365</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;date&#39;</span>
+<span class="n">so2_365</span> <span class="o">=</span> <span class="n">so2_365</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah baris SO2:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">so2_365</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah baris CO: 366
+Jumlah baris NO2: 366
+Jumlah baris SO2: 366
+</pre></div>
+</div>
+</div>
+</div>
+<p>Setelah proses ini, ketiga dataset memiliki 366 baris dengan rentang tanggal yang sama. Nilai NaN yang muncul berasal dari tanggal yang tidak memiliki data pengukuran dan akan diproses pada tahap interpolasi Linear dan Polynomial.</p>
+</section>
+<section id="pengecekan-missing-value">
+<h2>4. Pengecekan Missing Value<a class="headerlink" href="#pengecekan-missing-value" title="Link to this heading">#</a></h2>
+<p>Setelah proses ini, ketiga dataset memiliki 366 baris dengan rentang tanggal yang sama. Nilai NaN yang muncul berasal dari tanggal yang tidak memiliki data pengukuran dan akan diproses pada tahap interpolasi Linear dan Polynomial.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CO :&quot;</span><span class="p">,</span> <span class="n">co_365</span><span class="p">[</span><span class="s1">&#39;CO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NO2:&quot;</span><span class="p">,</span> <span class="n">no2_365</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SO2:&quot;</span><span class="p">,</span> <span class="n">so2_365</span><span class="p">[</span><span class="s1">&#39;SO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CO : 162
+NO2: 197
+SO2: 157
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hasil pengecekan menunjukkan bahwa masih terdapat nilai NaN pada ketiga polutan. Nilai tersebut tidak langsung dihapus karena penghapusan data akan mengurangi jumlah pengamatan. Oleh karena itu, missing value ditangani menggunakan metode interpolasi</p>
+</section>
+<section id="preprocessing-dengan-interpolasi-linear">
+<h2>5. Preprocessing dengan Interpolasi Linear<a class="headerlink" href="#preprocessing-dengan-interpolasi-linear" title="Link to this heading">#</a></h2>
+<p>Pada eksperimen pertama digunakan interpolasi Linear untuk memperkirakan nilai yang hilang. Metode ini memperkirakan nilai berdasarkan hubungan linear antara nilai yang tersedia di sekitar posisi missing value.</p>
+<p>Hasil preprocessing Linear disimpan secara terpisah agar dapat digunakan sebagai dataset eksperimen pertama.</p>
+<p>Setelah interpolasi Linear, nilai yang kosong diestimasi berdasarkan pola nilai yang tersedia. Dataset ini menjadi hasil preprocessing Linear dan akan digunakan sebagai eksperimen pertama.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># INTERPOLASI LINEAR</span>
+
+<span class="n">co_linear</span> <span class="o">=</span> <span class="n">co_365</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">no2_linear</span> <span class="o">=</span> <span class="n">no2_365</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">so2_linear</span> <span class="o">=</span> <span class="n">so2_365</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">co_linear</span> <span class="o">=</span> <span class="n">co_linear</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<span class="n">no2_linear</span> <span class="o">=</span> <span class="n">no2_linear</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<span class="n">so2_linear</span> <span class="o">=</span> <span class="n">so2_linear</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+
+<span class="n">co_linear</span><span class="p">[</span><span class="s1">&#39;CO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">co_linear</span><span class="p">[</span><span class="s1">&#39;CO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
+    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span>
+    <span class="n">limit_direction</span><span class="o">=</span><span class="s1">&#39;both&#39;</span>
+<span class="p">)</span>
+
+<span class="n">no2_linear</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">no2_linear</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
+    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span>
+    <span class="n">limit_direction</span><span class="o">=</span><span class="s1">&#39;both&#39;</span>
+<span class="p">)</span>
+
+<span class="n">so2_linear</span><span class="p">[</span><span class="s1">&#39;SO2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">so2_linear</span><span class="p">[</span><span class="s1">&#39;SO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
+    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span>
+    <span class="n">limit_direction</span><span class="o">=</span><span class="s1">&#39;both&#39;</span>
+<span class="p">)</span>
+
+<span class="n">co_linear</span> <span class="o">=</span> <span class="n">co_linear</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">no2_linear</span> <span class="o">=</span> <span class="n">no2_linear</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">so2_linear</span> <span class="o">=</span> <span class="n">so2_linear</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="preprocessing-dengan-interpolasi-polynomial">
+<h2>6. Preprocessing dengan Interpolasi Polynomial<a class="headerlink" href="#preprocessing-dengan-interpolasi-polynomial" title="Link to this heading">#</a></h2>
+<p>Setelah interpolasi Linear, nilai yang kosong diestimasi berdasarkan pola nilai yang tersedia. Dataset ini menjadi hasil preprocessing Linear dan akan digunakan sebagai eksperimen pertama.</p>
+<p>Hasilnya menjadi dataset preprocessing Polynomial. Dataset ini tetap dipisahkan dari hasil Linear karena nantinya kedua metode akan menjadi dua eksperimen yang dibandingkan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># INTERPOLASI POLYNOMIAL</span>
+
+<span class="n">co_polynomial</span> <span class="o">=</span> <span class="n">co_365</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">no2_polynomial</span> <span class="o">=</span> <span class="n">no2_365</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">so2_polynomial</span> <span class="o">=</span> <span class="n">so2_365</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">co_polynomial</span> <span class="o">=</span> <span class="n">co_polynomial</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<span class="n">no2_polynomial</span> <span class="o">=</span> <span class="n">no2_polynomial</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<span class="n">so2_polynomial</span> <span class="o">=</span> <span class="n">so2_polynomial</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+
+<span class="n">co_polynomial</span><span class="p">[</span><span class="s1">&#39;CO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">co_polynomial</span><span class="p">[</span><span class="s1">&#39;CO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
+    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;polynomial&#39;</span><span class="p">,</span>
+    <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">limit_direction</span><span class="o">=</span><span class="s1">&#39;both&#39;</span>
+<span class="p">)</span>
+
+<span class="n">no2_polynomial</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">no2_polynomial</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
+    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;polynomial&#39;</span><span class="p">,</span>
+    <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">limit_direction</span><span class="o">=</span><span class="s1">&#39;both&#39;</span>
+<span class="p">)</span>
+
+<span class="n">so2_polynomial</span><span class="p">[</span><span class="s1">&#39;SO2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">so2_polynomial</span><span class="p">[</span><span class="s1">&#39;SO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
+    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;polynomial&#39;</span><span class="p">,</span>
+    <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">limit_direction</span><span class="o">=</span><span class="s1">&#39;both&#39;</span>
+<span class="p">)</span>
+
+<span class="n">co_polynomial</span> <span class="o">=</span> <span class="n">co_polynomial</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">no2_polynomial</span> <span class="o">=</span> <span class="n">no2_polynomial</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">so2_polynomial</span> <span class="o">=</span> <span class="n">so2_polynomial</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menangin-nan-pada-ujung-data">
+<h2>7. Menangin NaN pada Ujung Data<a class="headerlink" href="#menangin-nan-pada-ujung-data" title="Link to this heading">#</a></h2>
+<p>Pada kondisi tertentu, interpolasi Polynomial masih dapat meninggalkan nilai NaN, terutama apabila missing value berada pada bagian paling awal atau paling akhir data. Oleh karena itu digunakan fungsi tambahan untuk memperkirakan nilai tersebut menggunakan beberapa data valid terdekat dengan model Polynomial orde 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">isi_nan_ujung_polynomial</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">kolom</span><span class="p">,</span> <span class="n">jumlah_data</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="n">indeks_nan</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="n">kolom</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span><span class="o">.</span><span class="n">index</span>
+
+    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">indeks_nan</span><span class="p">:</span>
+
+        <span class="c1"># =========================</span>
+        <span class="c1"># NaN berada di awal data</span>
+        <span class="c1"># =========================</span>
+        <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">():</span>
+
+            <span class="n">data_valid</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">:,</span> <span class="n">kolom</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">jumlah_data</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_valid</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">order</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+
+                <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_valid</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="n">data_valid</span><span class="o">.</span><span class="n">values</span>
+
+                <span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
+                <span class="n">X_poly</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+                <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+                <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_poly</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+                <span class="c1"># Prediksi posisi sebelum data pertama</span>
+                <span class="n">X_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+                <span class="n">X_pred_poly</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_pred</span><span class="p">)</span>
+
+                <span class="n">hasil</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_pred_poly</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+                <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="n">kolom</span><span class="p">]</span> <span class="o">=</span> <span class="n">hasil</span>
+
+        <span class="c1"># =========================</span>
+        <span class="c1"># NaN berada di akhir data</span>
+        <span class="c1"># =========================</span>
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">data_valid</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="n">idx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kolom</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">jumlah_data</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_valid</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">order</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+
+                <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_valid</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="n">data_valid</span><span class="o">.</span><span class="n">values</span>
+
+                <span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
+                <span class="n">X_poly</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+                <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+                <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_poly</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+                <span class="c1"># Prediksi posisi setelah data terakhir</span>
+                <span class="n">X_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="nb">len</span><span class="p">(</span><span class="n">data_valid</span><span class="p">)]])</span>
+                <span class="n">X_pred_poly</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_pred</span><span class="p">)</span>
+
+                <span class="n">hasil</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_pred_poly</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+                <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="n">kolom</span><span class="p">]</span> <span class="o">=</span> <span class="n">hasil</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co_polynomial</span> <span class="o">=</span> <span class="n">isi_nan_ujung_polynomial</span><span class="p">(</span>
+    <span class="n">co_polynomial</span><span class="p">,</span>
+    <span class="s1">&#39;CO&#39;</span>
+<span class="p">)</span>
+
+<span class="n">no2_polynomial</span> <span class="o">=</span> <span class="n">isi_nan_ujung_polynomial</span><span class="p">(</span>
+    <span class="n">no2_polynomial</span><span class="p">,</span>
+    <span class="s1">&#39;NO2&#39;</span>
+<span class="p">)</span>
+
+<span class="n">so2_polynomial</span> <span class="o">=</span> <span class="n">isi_nan_ujung_polynomial</span><span class="p">(</span>
+    <span class="n">so2_polynomial</span><span class="p">,</span>
+    <span class="s1">&#39;SO2&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="validasi-hasil-preprocessing">
+<h2>8. Validasi Hasil Preprocessing<a class="headerlink" href="#validasi-hasil-preprocessing" title="Link to this heading">#</a></h2>
+<p>Setelah kedua metode interpolasi selesai, dilakukan pengecekan untuk memastikan bahwa jumlah data tetap 366 baris dan tidak terdapat missing value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== JUMLAH BARIS ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CO :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">co_linear</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NO2:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">no2_linear</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SO2:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">so2_linear</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== LINEAR ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CO :&quot;</span><span class="p">,</span> <span class="n">co_linear</span><span class="p">[</span><span class="s1">&#39;CO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NO2:&quot;</span><span class="p">,</span> <span class="n">no2_linear</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SO2:&quot;</span><span class="p">,</span> <span class="n">so2_linear</span><span class="p">[</span><span class="s1">&#39;SO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== POLYNOMIAL ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CO :&quot;</span><span class="p">,</span> <span class="n">co_polynomial</span><span class="p">[</span><span class="s1">&#39;CO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NO2:&quot;</span><span class="p">,</span> <span class="n">no2_polynomial</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SO2:&quot;</span><span class="p">,</span> <span class="n">so2_polynomial</span><span class="p">[</span><span class="s1">&#39;SO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== JUMLAH BARIS ===
+CO : 366
+NO2: 366
+SO2: 366
+
+=== LINEAR ===
+CO : 0
+NO2: 0
+SO2: 0
+
+=== POLYNOMIAL ===
+CO : 0
+NO2: 0
+SO2: 0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menggabungkan-tiga-polutan-dan-menyimpan-hasil-preprocessing">
+<h2>9. Menggabungkan Tiga Polutan dan Menyimpan Hasil Preprocessing<a class="headerlink" href="#menggabungkan-tiga-polutan-dan-menyimpan-hasil-preprocessing" title="Link to this heading">#</a></h2>
+<p>Setelah preprocessing selesai, ketiga polutan digabungkan berdasarkan kolom date. Penggabungan dilakukan di masing-masing metode, sehingga tidak mencampurkan hasil Linear dengan Polynomial.</p>
+<p>Dengan demikian terdapat dua dataset:</p>
+<ul class="simple">
+<li><p>Dataset gabungan hasil Linear</p></li>
+<li><p>Dataset gabungan hasil Polynomial</p></li>
+</ul>
+<p>Kedua dataset hasil preprocessing disimpan sebagai file CSV agar dapat digunakan kembali pada proses ekstraksi fitur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_linear</span> <span class="o">=</span> <span class="n">co_linear</span><span class="p">[[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;CO&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">no2_linear</span><span class="p">[[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;NO2&#39;</span><span class="p">]],</span>
+    <span class="n">on</span><span class="o">=</span><span class="s1">&#39;date&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">so2_linear</span><span class="p">[[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;SO2&#39;</span><span class="p">]],</span>
+    <span class="n">on</span><span class="o">=</span><span class="s1">&#39;date&#39;</span>
+<span class="p">)</span>
+
+<span class="n">data_polynomial</span> <span class="o">=</span> <span class="n">co_polynomial</span><span class="p">[[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;CO&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">no2_polynomial</span><span class="p">[[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;NO2&#39;</span><span class="p">]],</span>
+    <span class="n">on</span><span class="o">=</span><span class="s1">&#39;date&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">so2_polynomial</span><span class="p">[[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;SO2&#39;</span><span class="p">]],</span>
+    <span class="n">on</span><span class="o">=</span><span class="s1">&#39;date&#39;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear:&quot;</span><span class="p">,</span> <span class="n">data_linear</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Polynomial:&quot;</span><span class="p">,</span> <span class="n">data_polynomial</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">data_linear</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
+    <span class="s1">&#39;../data/csv/Hasil_Preprocessing_Linear.csv&#39;</span><span class="p">,</span>
+    <span class="n">index</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">data_polynomial</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
+    <span class="s1">&#39;../data/csv/Hasil_Preprocessing_Polynomial.csv&#39;</span><span class="p">,</span>
+    <span class="n">index</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear: (366, 4)
+Polynomial: (366, 4)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ekstraksi-fitur-tsfel">
+<h2>11. Ekstraksi Fitur TSFEL<a class="headerlink" href="#ekstraksi-fitur-tsfel" title="Link to this heading">#</a></h2>
+<p>Setelah preprocessing selesai, tahap berikutnya adalah ekstraksi fitur. Pada tahap ini digunakan library TSFEL (Time Series Feature Extraction Library) untuk mengambil karakteristik statistik dan karakteristik sinyal dari data polutan.</p>
+<p>Pada tugas ini digunakan 68 fitur untuk setiap polutan. Karena terdapat tiga polutaN (CO,NO2,SO2) maka Jumlah Keseluruhan fitur 204.</p>
+<p>Proses ini dilakukan 2 kali dengan menggunakan hasil preprocessing linear dan hasil preprocessing polynomial, Kedua dataset hasil ekstraksi fitur disimpan sebagai file CSV agar dapat digunakan kembali pada proses Clustering.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tsfel.feature_extraction.features</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tsfel_features</span>
+
+<span class="c1"># ---------- 1. Muat 1 file CSV utama yang berisi semua polutan ----------</span>
+<span class="c1"># Sesuaikan nama file jika berbeda (misal: &#39;mystorage/Kerek-Clean.csv&#39;)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/csv/Hasil_Preprocessing_Polynomial.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">pollutants</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">,</span> <span class="s1">&#39;SO2&#39;</span><span class="p">,</span> <span class="s1">&#39;CO&#39;</span><span class="p">]</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># ---------- 2. Daftar PERSIS 68 fitur yang diminta ----------</span>
+<span class="n">FEATURE_LIST</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;abs_energy auc autocorr average_power calc_centroid calc_max calc_mean</span>
+<span class="s2">calc_median calc_min calc_std calc_var dfa distance ecdf ecdf_percentile ecdf_percentile_count</span>
+<span class="s2">ecdf_slope entropy fundamental_frequency higuchi_fractal_dimension hist_mode human_range_energy</span>
+<span class="s2">hurst_exponent interq_range kurtosis lempel_ziv lpcc max_frequency max_power_spectrum</span>
+<span class="s2">maximum_fractal_length mean_abs_deviation mean_abs_diff mean_diff median_abs_deviation</span>
+<span class="s2">median_abs_diff median_diff median_frequency mfcc mse negative_turning neighbourhood_peaks</span>
+<span class="s2">petrosian_fractal_dimension pk_pk_distance positive_turning power_bandwidth rms skewness slope</span>
+<span class="s2">spectral_centroid spectral_decrease spectral_distance spectral_entropy spectral_kurtosis</span>
+<span class="s2">spectral_positive_turning spectral_roll_off spectral_roll_on spectral_skewness spectral_slope</span>
+<span class="s2">spectral_spread spectral_variation spectrogram_mean_coeff sum_abs_diff wavelet_abs_mean</span>
+<span class="s2">wavelet_energy wavelet_entropy wavelet_std wavelet_var zero_cross&quot;&quot;&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah fitur per polutan: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">FEATURE_LIST</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total target fitur keseluruhan: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">FEATURE_LIST</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">pollutants</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">to_scalar</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;values&quot;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_one</span><span class="p">(</span><span class="n">fn_name</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="n">fs</span><span class="p">):</span>
+    <span class="n">fn</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">tsfel_features</span><span class="p">,</span> <span class="n">fn_name</span><span class="p">)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span>
+    <span class="k">if</span> <span class="s2">&quot;fs&quot;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">to_scalar</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="c1"># Dictionary untuk menampung seluruh hasil ekstraksi dari semua polutan</span>
+<span class="n">combined_row</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># ---------- 3. Looping untuk membersihkan dan mengekstraksi tiap polutan ----------</span>
+<span class="k">for</span> <span class="n">pollutant</span> <span class="ow">in</span> <span class="n">pollutants</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Memproses polutan: </span><span class="si">{</span><span class="n">pollutant</span><span class="si">}</span><span class="s2"> ---&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Buat copy dataframe agar tidak saling menimpa</span>
+    <span class="n">df_poly</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">pollutant</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Paksa kolom target jadi numerik</span>
+    <span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+    <span class="n">n_missing_before</span> <span class="o">=</span> <span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah NaN/non-numerik pada </span><span class="si">{</span><span class="n">pollutant</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">n_missing_before</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Handling outlier dengan IQR</span>
+    <span class="n">Q1</span> <span class="o">=</span> <span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+    <span class="n">Q3</span> <span class="o">=</span> <span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+    <span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+    <span class="n">lower_bound</span> <span class="o">=</span> <span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+    <span class="n">upper_bound</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+    <span class="n">df_poly</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lower_bound</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper_bound</span><span class="p">),</span> <span class="n">pollutant</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+    <span class="c1"># Interpolasi waktu dan cleaning</span>
+    <span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_poly</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span><span class="o">.</span><span class="n">bfill</span><span class="p">()</span>
+    <span class="n">signal_1d</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="c1"># Ekstraksi fitur dan beri prefix nama polutan (misal: NO2_abs_energy)</span>
+    <span class="k">for</span> <span class="n">fn_name</span> <span class="ow">in</span> <span class="n">FEATURE_LIST</span><span class="p">:</span>
+        <span class="n">feature_key</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pollutant</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">fn_name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">combined_row</span><span class="p">[</span><span class="n">feature_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">extract_one</span><span class="p">(</span><span class="n">fn_name</span><span class="p">,</span> <span class="n">signal_1d</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+
+<span class="c1"># ---------- 4. Simpan ke DataFrame final (1 baris, 204 kolom) ----------</span>
+<span class="n">extracted_features_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">combined_row</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Berhasil! Total kolom akhir yang dihasilkan: </span><span class="si">{</span><span class="n">extracted_features_final</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">output_filename</span> <span class="o">=</span> <span class="s1">&#39;../data/features/Pollutants-Kedungpring-Polynomial-TSFEL.csv&#39;</span>
+<span class="n">extracted_features_final</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_filename</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File berhasil disimpan sebagai: </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah fitur per polutan: 68
+Total target fitur keseluruhan: 204
+
+--- Memproses polutan: NO2 ---
+Jumlah NaN/non-numerik pada NO2: 0
+
+--- Memproses polutan: SO2 ---
+Jumlah NaN/non-numerik pada SO2: 0
+
+--- Memproses polutan: CO ---
+Jumlah NaN/non-numerik pada CO: 0
+
+Berhasil! Total kolom akhir yang dihasilkan: 204
+File berhasil disimpan sebagai: ../data/features/Pollutants-Kedungpring-Polynomial-TSFEL.csv
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tsfel.feature_extraction.features</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tsfel_features</span>
+
+<span class="c1"># ---------- 1. Muat 1 file CSV utama yang berisi semua polutan ----------</span>
+<span class="c1"># Sesuaikan nama file jika berbeda (misal: &#39;mystorage/Kerek-Clean.csv&#39;)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/csv/Hasil_Preprocessing_Linear.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">pollutants</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">,</span> <span class="s1">&#39;SO2&#39;</span><span class="p">,</span> <span class="s1">&#39;CO&#39;</span><span class="p">]</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># ---------- 2. Daftar PERSIS 68 fitur yang diminta ----------</span>
+<span class="n">FEATURE_LIST</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;abs_energy auc autocorr average_power calc_centroid calc_max calc_mean</span>
+<span class="s2">calc_median calc_min calc_std calc_var dfa distance ecdf ecdf_percentile ecdf_percentile_count</span>
+<span class="s2">ecdf_slope entropy fundamental_frequency higuchi_fractal_dimension hist_mode human_range_energy</span>
+<span class="s2">hurst_exponent interq_range kurtosis lempel_ziv lpcc max_frequency max_power_spectrum</span>
+<span class="s2">maximum_fractal_length mean_abs_deviation mean_abs_diff mean_diff median_abs_deviation</span>
+<span class="s2">median_abs_diff median_diff median_frequency mfcc mse negative_turning neighbourhood_peaks</span>
+<span class="s2">petrosian_fractal_dimension pk_pk_distance positive_turning power_bandwidth rms skewness slope</span>
+<span class="s2">spectral_centroid spectral_decrease spectral_distance spectral_entropy spectral_kurtosis</span>
+<span class="s2">spectral_positive_turning spectral_roll_off spectral_roll_on spectral_skewness spectral_slope</span>
+<span class="s2">spectral_spread spectral_variation spectrogram_mean_coeff sum_abs_diff wavelet_abs_mean</span>
+<span class="s2">wavelet_energy wavelet_entropy wavelet_std wavelet_var zero_cross&quot;&quot;&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah fitur per polutan: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">FEATURE_LIST</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total target fitur keseluruhan: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">FEATURE_LIST</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">pollutants</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">to_scalar</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;values&quot;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_one</span><span class="p">(</span><span class="n">fn_name</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="n">fs</span><span class="p">):</span>
+    <span class="n">fn</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">tsfel_features</span><span class="p">,</span> <span class="n">fn_name</span><span class="p">)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span>
+    <span class="k">if</span> <span class="s2">&quot;fs&quot;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">to_scalar</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="c1"># Dictionary untuk menampung seluruh hasil ekstraksi dari semua polutan</span>
+<span class="n">combined_row</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># ---------- 3. Looping untuk membersihkan dan mengekstraksi tiap polutan ----------</span>
+<span class="k">for</span> <span class="n">pollutant</span> <span class="ow">in</span> <span class="n">pollutants</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Memproses polutan: </span><span class="si">{</span><span class="n">pollutant</span><span class="si">}</span><span class="s2"> ---&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Buat copy dataframe agar tidak saling menimpa</span>
+    <span class="n">df_poly</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">pollutant</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Paksa kolom target jadi numerik</span>
+    <span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+    <span class="n">n_missing_before</span> <span class="o">=</span> <span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah NaN/non-numerik pada </span><span class="si">{</span><span class="n">pollutant</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">n_missing_before</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Handling outlier dengan IQR</span>
+    <span class="n">Q1</span> <span class="o">=</span> <span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+    <span class="n">Q3</span> <span class="o">=</span> <span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+    <span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+    <span class="n">lower_bound</span> <span class="o">=</span> <span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+    <span class="n">upper_bound</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+    <span class="n">df_poly</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lower_bound</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_poly</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper_bound</span><span class="p">),</span> <span class="n">pollutant</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+    <span class="c1"># Interpolasi waktu dan cleaning</span>
+    <span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_poly</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span><span class="o">.</span><span class="n">bfill</span><span class="p">()</span>
+    <span class="n">signal_1d</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="c1"># Ekstraksi fitur dan beri prefix nama polutan (misal: NO2_abs_energy)</span>
+    <span class="k">for</span> <span class="n">fn_name</span> <span class="ow">in</span> <span class="n">FEATURE_LIST</span><span class="p">:</span>
+        <span class="n">feature_key</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pollutant</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">fn_name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">combined_row</span><span class="p">[</span><span class="n">feature_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">extract_one</span><span class="p">(</span><span class="n">fn_name</span><span class="p">,</span> <span class="n">signal_1d</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+
+<span class="c1"># ---------- 4. Simpan ke DataFrame final (1 baris, 204 kolom) ----------</span>
+<span class="n">extracted_features_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">combined_row</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Berhasil! Total kolom akhir yang dihasilkan: </span><span class="si">{</span><span class="n">extracted_features_final</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">output_filename</span> <span class="o">=</span> <span class="s1">&#39;../data/features/Pollutants-Kedungpring-Linear-TSFEL.csv&#39;</span>
+<span class="n">extracted_features_final</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_filename</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File berhasil disimpan sebagai: </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah fitur per polutan: 68
+Total target fitur keseluruhan: 204
+
+--- Memproses polutan: NO2 ---
+Jumlah NaN/non-numerik pada NO2: 0
+
+--- Memproses polutan: SO2 ---
+Jumlah NaN/non-numerik pada SO2: 0
+
+--- Memproses polutan: CO ---
+Jumlah NaN/non-numerik pada CO: 0
+
+Berhasil! Total kolom akhir yang dihasilkan: 204
+File berhasil disimpan sebagai: ../data/features/Pollutants-Kedungpring-Linear-TSFEL.csv
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="kesimpulan">
+<h1>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h1>
+<p>Berdasarkan proses pengolahan data kualitas udara di wilayah Kedungpring, data konsentrasi CO, NO₂, dan SO₂ berhasil disiapkan dalam rentang 31 Agustus 2025 sampai 31 Agustus 2026 sehingga seluruh polutan memiliki 366 data harian yang seragam. Data yang memiliki nilai hilang akibat proses penyamaan tanggal kemudian ditangani menggunakan dua metode interpolasi, yaitu interpolasi linear dan interpolasi polynomial orde 2. Hasil validasi menunjukkan bahwa kedua metode berhasil menghasilkan data lengkap tanpa nilai NaN pada ketiga polutan.</p>
+<p>Selanjutnya, data hasil interpolasi digabungkan berdasarkan tanggal dan digunakan sebagai input untuk ekstraksi fitur menggunakan TSFEL. Setiap polutan menghasilkan 68 fitur, sehingga diperoleh 204 fitur untuk masing-masing metode interpolasi. Dengan demikian, terdapat dua dataset fitur yang terpisah, yaitu dataset hasil interpolasi linear dan dataset hasil interpolasi polynomial, yang selanjutnya dapat digunakan untuk tahap reduksi dimensi, clustering, dan evaluasi silhouette.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pengolahan dan Analisis Data Kualitas Udara</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-dan-melihat-struktur-data">2. Membaca dan Melihat Struktur Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-dan-penyamaan-data-berdasarkan-tanggal">3.Persiapan dan Penyamaan Data berdasarkan Tanggal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengecekan-missing-value">4. Pengecekan Missing Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-dengan-interpolasi-linear">5. Preprocessing dengan Interpolasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-dengan-interpolasi-polynomial">6. Preprocessing dengan Interpolasi Polynomial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menangin-nan-pada-ujung-data">7. Menangin NaN pada Ujung Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validasi-hasil-preprocessing">8. Validasi Hasil Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggabungkan-tiga-polutan-dan-menyimpan-hasil-preprocessing">9. Menggabungkan Tiga Polutan dan Menyimpan Hasil Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-tsfel">11. Ekstraksi Fitur TSFEL</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
