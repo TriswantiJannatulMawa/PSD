@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Pengolahan dan Analisis Data Kualitas Udara &#8212; My sample book</title>
+    <title>Analisis Clustering Data Kualitas Udara Menggunakan Ekstraksi Fitur TSFEL dengan Perbandingan Interpolasi Linear dan Polynomial &#8212; My sample book</title>
   
   
   
@@ -195,7 +195,7 @@
 
 <li class="toctree-l2"><a class="reference internal" href="penjelasan-calc_min-dan-calc_std.html">Penjelasan dan Perhitungan dari fitur calc_min dan calc_std</a></li>
 <li class="toctree-l2"><a class="reference internal" href="analisis_clastering.html">Analisis Clusturing Data Polutan Menggunakan K-Means</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pengolahan dan Analisis Data Kualitas Udara</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Analisis Clustering Data Kualitas Udara Menggunakan Ekstraksi Fitur TSFEL dengan Perbandingan Interpolasi Linear dan Polynomial</a></li>
 
 </ul>
 </details></li>
@@ -384,7 +384,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pengolahan dan Analisis Data Kualitas Udara</h1>
+    <h1>Analisis Clustering Data Kualitas Udara Menggunakan Ekstraksi Fitur TSFEL dengan Perbandingan Interpolasi Linear dan Polynomial</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -394,8 +394,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pengolahan dan Analisis Data Kualitas Udara</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analisis Clustering Data Kualitas Udara Menggunakan Ekstraksi Fitur TSFEL dengan Perbandingan Interpolasi Linear dan Polynomial</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">1. Import Library</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-dan-melihat-struktur-data">2. Membaca dan Melihat Struktur Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-dan-penyamaan-data-berdasarkan-tanggal">3.Persiapan dan Penyamaan Data berdasarkan Tanggal</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengecekan-missing-value">4. Pengecekan Missing Value</a></li>
@@ -420,15 +420,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pengolahan-dan-analisis-data-kualitas-udara">
-<h1>Pengolahan dan Analisis Data Kualitas Udara<a class="headerlink" href="#pengolahan-dan-analisis-data-kualitas-udara" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="analisis-clustering-data-kualitas-udara-menggunakan-ekstraksi-fitur-tsfel-dengan-perbandingan-interpolasi-linear-dan-polynomial">
+<h1>Analisis Clustering Data Kualitas Udara Menggunakan Ekstraksi Fitur TSFEL dengan Perbandingan Interpolasi Linear dan Polynomial<a class="headerlink" href="#analisis-clustering-data-kualitas-udara-menggunakan-ekstraksi-fitur-tsfel-dengan-perbandingan-interpolasi-linear-dan-polynomial" title="Link to this heading">#</a></h1>
 <p>Pada tugas ini dilakukan pengolahan data kualitas udara dari tiga jenis polutan, yaitu Carbon Monoxide (CO), Nitrogen Dioxide (NO₂), dan Sulfur Dioxide (SO₂). Data awal yang digunakan masih memiliki jumlah pengamatan yang berbeda serta terdapat missing value dan outlier.</p>
 <p>Tahapan pengolahan data dilakukan untuk mempersiapkan data sebelum digunakan pada proses ekstraksi fitur dan analisis clustering. Data yang memiliki missing value dan outlier terlebih dahulu ditangani menggunakan metode interpolasi. Dalam tugas ini digunakan dua pendekatan interpolasi, yaitu interpolasi Linear dan interpolasi Polynomial. Kedua metode tersebut diproses secara terpisah sehingga menghasilkan dua dataset hasil preprocessing yang nantinya dapat digunakan sebagai dua eksperimen.</p>
 <p>Setelah preprocessing selesai, data dari ketiga polutan pada masing-masing metode digabungkan berdasarkan tanggal. Selanjutnya dilakukan ekstraksi fitur menggunakan TSFEL. Dari setiap polutan diekstraksi sebanyak 68 fitur sehingga dari tiga polutan diperoleh:</p>
 <p>68 fitur × 3 polutan = 204 fitur.</p>
 <p>Hasil ekstraksi fitur dari metode Linear dan Polynomial selanjutnya digunakan sebagai dasar untuk tahap analisis berikutnya, yaitu reduksi dimensi, clustering, evaluasi menggunakan Silhouette Coefficient, dan visualisasi hasil clustering pada peta.</p>
 <section id="import-library">
-<h2>Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h2>
+<h2>1. Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h2>
 <p>Tahap pertama adalah mempersiapkan library yang dibutuhkan selama proses pengolahan dan analisis data. Library yang digunakan mencakup library untuk membaca dan mengolah data, melakukan perhitungan numerik, visualisasi, reduksi dimensi, clustering, serta evaluasi hasil clustering.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1319,8 +1319,8 @@ File berhasil disimpan sebagai: ../data/features/Pollutants-Kedungpring-Linear-T
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pengolahan dan Analisis Data Kualitas Udara</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analisis Clustering Data Kualitas Udara Menggunakan Ekstraksi Fitur TSFEL dengan Perbandingan Interpolasi Linear dan Polynomial</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">1. Import Library</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-dan-melihat-struktur-data">2. Membaca dan Melihat Struktur Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-dan-penyamaan-data-berdasarkan-tanggal">3.Persiapan dan Penyamaan Data berdasarkan Tanggal</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengecekan-missing-value">4. Pengecekan Missing Value</a></li>
