@@ -414,7 +414,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-rester-menjadi-data-pixel">16. Mengubah Rester menjadi Data Pixel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-klasifikasi-seluruh-pixel">18. Melakukan Klasifikasi Seluruh Pixel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-label-menjadi-nilai-kelas">19. Mengubah Label Menjadi Nilai Kelas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hail-implementasi-citra-di-qgis">20. Hail Implementasi Citra di QGIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-implementasi-citra-di-qgis">20. Hasil Implementasi Citra di QGIS</a></li>
 </ul>
             </nav>
         </div>
@@ -1276,6 +1276,7 @@ Data testing : 20
 </section>
 <section id="menghitung-akurasi">
 <h2>12. Menghitung Akurasi<a class="headerlink" href="#menghitung-akurasi" title="Link to this heading">#</a></h2>
+<p>Akurasi model dihitung menggunakan fungsi accuracy_score() dengan membandingkan label aktual pada data testing (y_test) dengan hasil prediksi Random Forest (y_pred). Dari 20 data testing, seluruh data berhasil diklasifikasikan dengan benar, sehingga diperoleh 20 prediksi benar dan 0 prediksi salah. Berdasarkan perhitungan (20/20 = 1.0), diperoleh akurasi sebesar 100%. Hasil tersebut menunjukkan bahwa pada data testing yang digunakan, model Random Forest mampu membedakan kelas sawah dan non-sawah dengan tepat.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
@@ -1425,6 +1426,7 @@ weighted avg       1.00      1.00      1.00        20
 </section>
 <section id="membaca-rester-untuk-klasifikasi-seluruh-wilayah">
 <h2>15. Membaca Rester untuk Klasifikasi Seluruh Wilayah<a class="headerlink" href="#membaca-rester-untuk-klasifikasi-seluruh-wilayah" title="Link to this heading">#</a></h2>
+<p>Membaca citra raster Sentinel-2A secara keseluruhan, bukan hanya pada lokasi sampel. Raster yang digunakan memiliki ukuran 84 × 225 piksel, sehingga terdapat 18.900 piksel yang akan diklasifikasikan.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
@@ -1666,8 +1668,8 @@ materi/hasil_klasifikasi_sawah.tif
 </div>
 </div>
 </section>
-<section id="hail-implementasi-citra-di-qgis">
-<h2>20. Hail Implementasi Citra di QGIS<a class="headerlink" href="#hail-implementasi-citra-di-qgis" title="Link to this heading">#</a></h2>
+<section id="hasil-implementasi-citra-di-qgis">
+<h2>20. Hasil Implementasi Citra di QGIS<a class="headerlink" href="#hasil-implementasi-citra-di-qgis" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Citra Sampel Sawah</p></li>
 </ul>
@@ -1761,7 +1763,7 @@ materi/hasil_klasifikasi_sawah.tif
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-rester-menjadi-data-pixel">16. Mengubah Rester menjadi Data Pixel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-klasifikasi-seluruh-pixel">18. Melakukan Klasifikasi Seluruh Pixel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-label-menjadi-nilai-kelas">19. Mengubah Label Menjadi Nilai Kelas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hail-implementasi-citra-di-qgis">20. Hail Implementasi Citra di QGIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-implementasi-citra-di-qgis">20. Hasil Implementasi Citra di QGIS</a></li>
 </ul>
   </nav></div>
 
