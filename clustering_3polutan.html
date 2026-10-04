@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'clustering_3polutan';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="KLASIFIKASI LAHAN SAWAH DAN NON-SAWAH MENGGUNAKAN SENTINEL-2A DAN RANDOM FOREST" href="clasifikasi_sawah_nonsawah.html" />
     <link rel="prev" title="Analisis Clusturing Data Polutan Menggunakan K-Means" href="analisis_clastering.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -197,6 +198,8 @@
 <li class="toctree-l2"><a class="reference internal" href="analisis_clastering.html">Analisis Clusturing Data Polutan Menggunakan K-Means</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Analisis Clustering Data Kualitas Udara Menggunakan Ekstraksi Fitur TSFEL dengan Perbandingan Interpolasi Linear dan Polynomial</a></li>
 
+
+<li class="toctree-l2"><a class="reference internal" href="clasifikasi_sawah_nonsawah.html">KLASIFIKASI LAHAN SAWAH DAN NON-SAWAH MENGGUNAKAN SENTINEL-2A DAN RANDOM FOREST</a></li>
 </ul>
 </details></li>
 </ul>
@@ -408,6 +411,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-clustering-mengguakan-knime">Analisis Clustering mengguakan KNIME</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -1263,6 +1270,12 @@ File berhasil disimpan sebagai: ../data/features/Pollutants-Kedungpring-Linear-T
 <p>Berdasarkan proses pengolahan data kualitas udara di wilayah Kedungpring, data konsentrasi CO, NO₂, dan SO₂ berhasil disiapkan dalam rentang 31 Agustus 2025 sampai 31 Agustus 2026 sehingga seluruh polutan memiliki 366 data harian yang seragam. Data yang memiliki nilai hilang akibat proses penyamaan tanggal kemudian ditangani menggunakan dua metode interpolasi, yaitu interpolasi linear dan interpolasi polynomial orde 2. Hasil validasi menunjukkan bahwa kedua metode berhasil menghasilkan data lengkap tanpa nilai NaN pada ketiga polutan.</p>
 <p>Selanjutnya, data hasil interpolasi digabungkan berdasarkan tanggal dan digunakan sebagai input untuk ekstraksi fitur menggunakan TSFEL. Setiap polutan menghasilkan 68 fitur, sehingga diperoleh 204 fitur untuk masing-masing metode interpolasi. Dengan demikian, terdapat dua dataset fitur yang terpisah, yaitu dataset hasil interpolasi linear dan dataset hasil interpolasi polynomial, yang selanjutnya dapat digunakan untuk tahap reduksi dimensi, clustering, dan evaluasi silhouette.</p>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="analisis-clustering-mengguakan-knime">
+<h1>Analisis Clustering mengguakan KNIME<a class="headerlink" href="#analisis-clustering-mengguakan-knime" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1303,6 +1316,15 @@ File berhasil disimpan sebagai: ../data/features/Pollutants-Kedungpring-Linear-T
         <p class="prev-next-title">Analisis Clusturing Data Polutan Menggunakan K-Means</p>
       </div>
     </a>
+    <a class="right-next"
+       href="clasifikasi_sawah_nonsawah.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">KLASIFIKASI LAHAN SAWAH DAN NON-SAWAH MENGGUNAKAN SENTINEL-2A DAN RANDOM FOREST</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1333,6 +1355,10 @@ File berhasil disimpan sebagai: ../data/features/Pollutants-Kedungpring-Linear-T
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-clustering-mengguakan-knime">Analisis Clustering mengguakan KNIME</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
