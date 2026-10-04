@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'clustering_3polutan';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="KLASIFIKASI LAHAN SAWAH DAN NON-SAWAH MENGGUNAKAN SENTINEL-2A DAN RANDOM FOREST" href="clasifikasi_sawah_nonsawah.html" />
+    <link rel="next" title="Klasifikasi Lahan Sawah dan Non-Sawah menggunakan Sentinel-2A dan Random Forest" href="clasifikasi_sawah_nonsawah.html" />
     <link rel="prev" title="Analisis Clusturing Data Polutan Menggunakan K-Means" href="analisis_clastering.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -199,7 +199,7 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Analisis Clustering Data Kualitas Udara Menggunakan Ekstraksi Fitur TSFEL dengan Perbandingan Interpolasi Linear dan Polynomial</a></li>
 
 
-<li class="toctree-l2"><a class="reference internal" href="clasifikasi_sawah_nonsawah.html">KLASIFIKASI LAHAN SAWAH DAN NON-SAWAH MENGGUNAKAN SENTINEL-2A DAN RANDOM FOREST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clasifikasi_sawah_nonsawah.html">Klasifikasi Lahan Sawah dan Non-Sawah menggunakan Sentinel-2A dan Random Forest</a></li>
 </ul>
 </details></li>
 </ul>
@@ -412,7 +412,11 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-clustering-mengguakan-knime">Analisis Clustering mengguakan KNIME</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-nilai-k-terbaik">Analisis nilai K terbaik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear">1. Linear</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial">2. Polynomial</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1272,8 +1276,124 @@ File berhasil disimpan sebagai: ../data/features/Pollutants-Kedungpring-Linear-T
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="analisis-clustering-mengguakan-knime">
 <h1>Analisis Clustering mengguakan KNIME<a class="headerlink" href="#analisis-clustering-mengguakan-knime" title="Link to this heading">#</a></h1>
-<section id="id1">
-<h2><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Alur KNIME</p>
+<p><img alt="alt text" src="_images/img13.png" /></p>
+<section id="analisis-nilai-k-terbaik">
+<h2>Analisis nilai K terbaik<a class="headerlink" href="#analisis-nilai-k-terbaik" title="Link to this heading">#</a></h2>
+<section id="linear">
+<h3>1. Linear<a class="headerlink" href="#linear" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Jumlah Cluster (K)</p></th>
+<th class="head text-right"><p>Overall Mean Silhouette (linear)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>2</p></td>
+<td class="text-right"><p>0,822</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>3</p></td>
+<td class="text-right"><p>0,647</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>4</p></td>
+<td class="text-right"><p>0,659</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>5</p></td>
+<td class="text-right"><p>0,637</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>6</p></td>
+<td class="text-right"><p>0,575</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>7</p></td>
+<td class="text-right"><p>0,582</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>plot K=2</p></li>
+</ul>
+<p><img alt="alt text" src="_images/K2.png" /></p>
+<ul class="simple">
+<li><p>plot K=3</p></li>
+</ul>
+<p><img alt="alt text" src="_images/K3.png" /></p>
+<ul class="simple">
+<li><p>plot K=4</p></li>
+</ul>
+<p><img alt="alt text" src="_images/K4.png" /></p>
+<ul class="simple">
+<li><p>plot K=5</p></li>
+</ul>
+<p><img alt="alt text" src="_images/K5.png" /></p>
+<ul class="simple">
+<li><p>plot K=6</p></li>
+</ul>
+<p><img alt="alt text" src="_images/K6.png" /></p>
+<ul class="simple">
+<li><p>plot K=7</p></li>
+</ul>
+<p><img alt="alt text" src="_images/K7.png" /></p>
+<p>Berdasarkan nilai Overall Mean Silhouette, K = 2 dipilih sebagai jumlah cluster terbaik karena menghasilkan nilai silhouette tertinggi sebesar 0,822. Nilai tersebut menunjukkan bahwa pembagian data menjadi 2 cluster memberikan pemisahan cluster yang paling baik dibandingkan K lainnya.</p>
+</section>
+<section id="polynomial">
+<h3>2. Polynomial<a class="headerlink" href="#polynomial" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Jumlah Cluster (K)</p></th>
+<th class="head text-right"><p>Overall Mean Silhouette (polynomial)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>2</p></td>
+<td class="text-right"><p>0,634</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>3</p></td>
+<td class="text-right"><p>0,471</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>4</p></td>
+<td class="text-right"><p>0,466</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>5</p></td>
+<td class="text-right"><p>0,486</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>6</p></td>
+<td class="text-right"><p>0,554</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>7</p></td>
+<td class="text-right"><p>0,537</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>plot K=2</p></li>
+</ul>
+<p><img alt="alt text" src="_images/kp2.png" /></p>
+<ul class="simple">
+<li><p>plot K=3</p></li>
+</ul>
+<p><img alt="alt text" src="_images/kp3.png" /></p>
+<ul class="simple">
+<li><p>plot K=4</p></li>
+</ul>
+<p><img alt="alt text" src="_images/kp4.png" /></p>
+<ul class="simple">
+<li><p>plot K=5</p></li>
+</ul>
+<p><img alt="alt text" src="_images/kp5.png" /></p>
+<ul class="simple">
+<li><p>plot K=6</p></li>
+</ul>
+<p><img alt="alt text" src="_images/kp6.png" /></p>
+<ul class="simple">
+<li><p>plot K=7</p></li>
+</ul>
+<p><img alt="alt text" src="_images/kp7.png" /></p>
+<p>K terbaik = 2, dengan Overall Mean Silhouette = 0,634.</p>
+<p>Artinya, berdasarkan nilai silhouette, pembagian data menjadi 2 cluster memberikan kualitas pemisahan cluster paling baik dibandingkan K lainnya.</p>
+<p>Kalau dibandingkan dengan tabel linear sebelumnya, linear K=2 (0,822) juga lebih baik daripada polynomial K=2 (0,634).</p>
+</section>
 </section>
 </section>
 
@@ -1321,7 +1441,7 @@ File berhasil disimpan sebagai: ../data/features/Pollutants-Kedungpring-Linear-T
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">KLASIFIKASI LAHAN SAWAH DAN NON-SAWAH MENGGUNAKAN SENTINEL-2A DAN RANDOM FOREST</p>
+        <p class="prev-next-title">Klasifikasi Lahan Sawah dan Non-Sawah menggunakan Sentinel-2A dan Random Forest</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1356,7 +1476,11 @@ File berhasil disimpan sebagai: ../data/features/Pollutants-Kedungpring-Linear-T
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-clustering-mengguakan-knime">Analisis Clustering mengguakan KNIME</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-nilai-k-terbaik">Analisis nilai K terbaik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear">1. Linear</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial">2. Polynomial</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
