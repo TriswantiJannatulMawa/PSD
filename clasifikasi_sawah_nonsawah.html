@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'clasifikasi_sawah_nonsawah';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -399,7 +401,19 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyiapkan-dan-menggabungkan-data-sampel">1. Menyiapkan dan Menggabungkan Data Sampel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-batas-wilayah-sampel">2. Menentukan Batas Wilayah Sampel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghubungkan-ke-openeo-copernicus">3. Menghubungkan ke OpenEO Copernicus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-sentinel-2a">4. Mengambil Data Sentinel-2A</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-sentinel-2a">4. Mengambil Data Sentinel-2A</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-fitur-yang-digunakan">Penjelasan Fitur yang Digunakan</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b02-blue">1. B02 – Blue</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b03-green">2. B03 – Green</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b04-red">3. B04 – Red</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b08-near-infrared-nir">4. B08 – Near Infrared (NIR)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b11-short-wave-infrared-swir">5. B11 – Short Wave Infrared (SWIR)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ndvi-normalized-difference-vegetation-index">6. NDVI – Normalized Difference Vegetation Index</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ndwi-normalized-difference-water-index">7. NDWI – Normalized Difference Water Index</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyimpan-citra-sentinel-2-sebagai-tif">5. Menyimpan Citra Sentinel-2 sebagai TIF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyamakan-sistem-koordinat-sampel-dan-raster">6. Menyamakan Sistem Koordinat Sampel dan Raster</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-nilai-band-pada-setiap-sampel">7. Mengambil Nilai Band pada Setiap Sampel</a></li>
@@ -570,6 +584,88 @@ Name: count, dtype: int64
 <li><p>Band B02, B03, B04, B08, dan B11</p></li>
 </ul>
 <p>Kelima band tersebut digunakan sebagai fitur spektral dalam klasifikasi.</p>
+<section id="penjelasan-fitur-yang-digunakan">
+<h3>Penjelasan Fitur yang Digunakan<a class="headerlink" href="#penjelasan-fitur-yang-digunakan" title="Link to this heading">#</a></h3>
+<p>Pada proses klasifikasi tutupan lahan, digunakan tujuh fitur yang berasal dari citra Sentinel-2A. Fitur tersebut terdiri dari lima band spektral, yaitu B02, B03, B04, B08, dan B11, serta dua indeks spektral, yaitu NDVI dan NDWI.</p>
+<section id="b02-blue">
+<h4>1. B02 – Blue<a class="headerlink" href="#b02-blue" title="Link to this heading">#</a></h4>
+<p>B02 merupakan band <strong>Blue (biru)</strong> pada citra Sentinel-2A. Band ini merepresentasikan pantulan cahaya pada spektrum biru.</p>
+<p>B02 digunakan sebagai salah satu fitur spektral karena setiap jenis tutupan lahan memiliki karakteristik pantulan cahaya yang berbeda. Informasi dari B02 dapat membantu model membedakan karakteristik permukaan antara area sawah dan non-sawah.</p>
+<p>B02 merupakan nilai reflektansi yang diperoleh langsung dari citra, sehingga tidak menggunakan rumus perhitungan khusus.</p>
+<div class="math notranslate nohighlight">
+\[
+B02 = \text{nilai reflektansi pada band Blue}
+\]</div>
+</section>
+<section id="b03-green">
+<h4>2. B03 – Green<a class="headerlink" href="#b03-green" title="Link to this heading">#</a></h4>
+<p>B03 merupakan band <strong>Green (hijau)</strong> pada citra Sentinel-2A. Band ini menangkap pantulan cahaya pada spektrum hijau.</p>
+<p>Band B03 memberikan informasi mengenai karakteristik vegetasi dan permukaan lahan. Fitur ini juga digunakan dalam perhitungan NDWI.</p>
+<p>B03 merupakan nilai reflektansi yang diperoleh langsung dari citra.</p>
+<div class="math notranslate nohighlight">
+\[
+B03 = \text{nilai reflektansi pada band Green}
+\]</div>
+</section>
+<section id="b04-red">
+<h4>3. B04 – Red<a class="headerlink" href="#b04-red" title="Link to this heading">#</a></h4>
+<p>B04 merupakan band <strong>Red (merah)</strong> pada citra Sentinel-2A. Band ini penting dalam analisis vegetasi karena klorofil pada tumbuhan menyerap cahaya merah.</p>
+<p>Dalam penelitian ini, B04 digunakan sebagai fitur klasifikasi dan juga digunakan bersama B08 untuk menghitung NDVI.</p>
+<div class="math notranslate nohighlight">
+\[
+B04 = \text{nilai reflektansi pada band Red}
+\]</div>
+</section>
+<section id="b08-near-infrared-nir">
+<h4>4. B08 – Near Infrared (NIR)<a class="headerlink" href="#b08-near-infrared-nir" title="Link to this heading">#</a></h4>
+<p>B08 merupakan band <strong>Near Infrared (NIR)</strong>. Vegetasi umumnya memiliki pantulan yang tinggi pada spektrum NIR.</p>
+<p>Oleh karena itu, B08 dapat memberikan informasi mengenai keberadaan dan karakteristik vegetasi. B08 juga digunakan bersama B04 untuk menghitung NDVI dan bersama B03 untuk menghitung NDWI.</p>
+<div class="math notranslate nohighlight">
+\[
+B08 = \text{nilai reflektansi pada band NIR}
+\]</div>
+</section>
+<section id="b11-short-wave-infrared-swir">
+<h4>5. B11 – Short Wave Infrared (SWIR)<a class="headerlink" href="#b11-short-wave-infrared-swir" title="Link to this heading">#</a></h4>
+<p>B11 merupakan band <strong>Short Wave Infrared (SWIR)</strong>. Band ini memberikan informasi mengenai karakteristik kelembapan dan kondisi permukaan.</p>
+<p>B11 digunakan sebagai fitur tambahan untuk membantu model membedakan karakteristik sawah dan non-sawah berdasarkan respons spektralnya.</p>
+<div class="math notranslate nohighlight">
+\[
+B11 = \text{nilai reflektansi pada band SWIR}
+\]</div>
+</section>
+<section id="ndvi-normalized-difference-vegetation-index">
+<h4>6. NDVI – Normalized Difference Vegetation Index<a class="headerlink" href="#ndvi-normalized-difference-vegetation-index" title="Link to this heading">#</a></h4>
+<p>NDVI digunakan untuk mengetahui karakteristik dan keberadaan vegetasi. NDVI memanfaatkan perbedaan pantulan vegetasi pada band Near Infrared (B08) dan Red (B04).</p>
+<p>Rumus NDVI yang digunakan adalah:</p>
+<div class="math notranslate nohighlight">
+\[
+NDVI = \frac{B08-B04}{B08+B04}
+\]</div>
+</section>
+<section id="ndwi-normalized-difference-water-index">
+<h4>7. NDWI – Normalized Difference Water Index<a class="headerlink" href="#ndwi-normalized-difference-water-index" title="Link to this heading">#</a></h4>
+<p><strong>NDWI (Normalized Difference Water Index)</strong> merupakan indeks spektral yang digunakan untuk memberikan informasi mengenai keberadaan air atau tingkat kelembapan pada permukaan.</p>
+<p>Pada penelitian ini, NDWI dihitung menggunakan <strong>band B03 (Green)</strong> dan <strong>B08 (Near Infrared/NIR)</strong>.</p>
+<p>Rumus NDWI yang digunakan adalah:</p>
+<div class="math notranslate nohighlight">
+\[
+NDWI = \frac{B03-B08}{B03+B08}
+\]</div>
+<p>Keterangan:</p>
+<ul class="simple">
+<li><p><strong>B03</strong> = nilai reflektansi pada band Green</p></li>
+<li><p><strong>B08</strong> = nilai reflektansi pada band Near Infrared (NIR)</p></li>
+<li><p><strong>NDWI</strong> = nilai indeks yang menunjukkan karakteristik air atau kelembapan permukaan</p></li>
+</ul>
+<p>Implementasi perhitungan NDWI menggunakan Python adalah:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;NDWI&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;B03&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;B08&quot;</span><span class="p">])</span> <span class="o">/</span>
+    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;B03&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;B08&quot;</span><span class="p">])</span>
+<span class="p">)</span>
+
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datacube</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">load_collection</span><span class="p">(</span>
@@ -598,6 +694,8 @@ Name: count, dtype: int64
 </div>
 </div>
 </div>
+</section>
+</section>
 </section>
 <section id="menyimpan-citra-sentinel-2-sebagai-tif">
 <h2>5. Menyimpan Citra Sentinel-2 sebagai TIF<a class="headerlink" href="#menyimpan-citra-sentinel-2-sebagai-tif" title="Link to this heading">#</a></h2>
@@ -1748,7 +1846,19 @@ materi/hasil_klasifikasi_sawah.tif
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyiapkan-dan-menggabungkan-data-sampel">1. Menyiapkan dan Menggabungkan Data Sampel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-batas-wilayah-sampel">2. Menentukan Batas Wilayah Sampel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghubungkan-ke-openeo-copernicus">3. Menghubungkan ke OpenEO Copernicus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-sentinel-2a">4. Mengambil Data Sentinel-2A</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-sentinel-2a">4. Mengambil Data Sentinel-2A</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-fitur-yang-digunakan">Penjelasan Fitur yang Digunakan</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b02-blue">1. B02 – Blue</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b03-green">2. B03 – Green</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b04-red">3. B04 – Red</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b08-near-infrared-nir">4. B08 – Near Infrared (NIR)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b11-short-wave-infrared-swir">5. B11 – Short Wave Infrared (SWIR)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ndvi-normalized-difference-vegetation-index">6. NDVI – Normalized Difference Vegetation Index</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ndwi-normalized-difference-water-index">7. NDWI – Normalized Difference Water Index</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyimpan-citra-sentinel-2-sebagai-tif">5. Menyimpan Citra Sentinel-2 sebagai TIF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menyamakan-sistem-koordinat-sampel-dan-raster">6. Menyamakan Sistem Koordinat Sampel dan Raster</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-nilai-band-pada-setiap-sampel">7. Mengambil Nilai Band pada Setiap Sampel</a></li>
