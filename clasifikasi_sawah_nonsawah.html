@@ -658,14 +658,6 @@ NDWI = \frac{B03-B08}{B03+B08}
 <li><p><strong>B08</strong> = nilai reflektansi pada band Near Infrared (NIR)</p></li>
 <li><p><strong>NDWI</strong> = nilai indeks yang menunjukkan karakteristik air atau kelembapan permukaan</p></li>
 </ul>
-<p>Implementasi perhitungan NDWI menggunakan Python adalah:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;NDWI&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;B03&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;B08&quot;</span><span class="p">])</span> <span class="o">/</span>
-    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;B03&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;B08&quot;</span><span class="p">])</span>
-<span class="p">)</span>
-
-</pre></div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datacube</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">load_collection</span><span class="p">(</span>
@@ -892,51 +884,51 @@ CRS raster: EPSG:32749
       <th>0</th>
       <td>0</td>
       <td>sawah</td>
-      <td>1134.250000</td>
-      <td>1273.125000</td>
-      <td>1235.875000</td>
-      <td>1902.125000</td>
-      <td>1286.187500</td>
+      <td>1630.625000</td>
+      <td>1964.250000</td>
+      <td>1919.125000</td>
+      <td>3145.750000</td>
+      <td>2047.687500</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1</td>
       <td>sawah</td>
-      <td>1099.250000</td>
-      <td>1250.750000</td>
-      <td>1172.250000</td>
-      <td>1928.250000</td>
-      <td>1269.500000</td>
+      <td>1638.750000</td>
+      <td>1971.000000</td>
+      <td>1943.500000</td>
+      <td>3161.500000</td>
+      <td>2159.000000</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2</td>
       <td>sawah</td>
-      <td>1140.000000</td>
-      <td>1300.666667</td>
-      <td>1283.333333</td>
-      <td>1980.666667</td>
-      <td>1546.333333</td>
+      <td>1601.333333</td>
+      <td>1910.666667</td>
+      <td>1874.666667</td>
+      <td>3112.000000</td>
+      <td>2330.000000</td>
     </tr>
     <tr>
       <th>3</th>
       <td>3</td>
       <td>sawah</td>
-      <td>1156.888889</td>
-      <td>1302.000000</td>
-      <td>1236.888889</td>
-      <td>2004.222222</td>
-      <td>1487.555556</td>
+      <td>1620.222222</td>
+      <td>1944.444444</td>
+      <td>1901.555556</td>
+      <td>3136.000000</td>
+      <td>2175.111111</td>
     </tr>
     <tr>
       <th>4</th>
       <td>4</td>
       <td>sawah</td>
-      <td>1179.272727</td>
-      <td>1310.272727</td>
-      <td>1228.272727</td>
-      <td>1989.545455</td>
-      <td>1288.136364</td>
+      <td>1737.090909</td>
+      <td>2095.454545</td>
+      <td>2047.090909</td>
+      <td>3154.909091</td>
+      <td>1814.818182</td>
     </tr>
   </tbody>
 </table>
@@ -975,51 +967,51 @@ CRS raster: EPSG:32749
       <th>50</th>
       <td>50</td>
       <td>non_sawah</td>
-      <td>7890.222222</td>
-      <td>7161.777778</td>
-      <td>6484.888889</td>
-      <td>6538.222222</td>
-      <td>4916.444444</td>
+      <td>2819.333333</td>
+      <td>2897.777778</td>
+      <td>3086.222222</td>
+      <td>3139.777778</td>
+      <td>4060.777778</td>
     </tr>
     <tr>
       <th>51</th>
       <td>51</td>
       <td>non_sawah</td>
-      <td>4601.000000</td>
-      <td>4872.000000</td>
-      <td>4908.000000</td>
-      <td>4565.000000</td>
-      <td>4317.750000</td>
+      <td>676.250000</td>
+      <td>849.250000</td>
+      <td>1106.000000</td>
+      <td>1631.000000</td>
+      <td>3022.500000</td>
     </tr>
     <tr>
       <th>52</th>
       <td>52</td>
       <td>non_sawah</td>
-      <td>3562.000000</td>
-      <td>3526.666667</td>
-      <td>3584.000000</td>
-      <td>3642.666667</td>
-      <td>3541.000000</td>
+      <td>1506.000000</td>
+      <td>1666.666667</td>
+      <td>2058.500000</td>
+      <td>2278.666667</td>
+      <td>3513.666667</td>
     </tr>
     <tr>
       <th>53</th>
       <td>53</td>
       <td>non_sawah</td>
-      <td>5320.800000</td>
-      <td>4201.600000</td>
-      <td>3488.800000</td>
-      <td>4416.800000</td>
-      <td>3384.200000</td>
+      <td>823.800000</td>
+      <td>990.400000</td>
+      <td>1242.000000</td>
+      <td>1767.200000</td>
+      <td>3267.600000</td>
     </tr>
     <tr>
       <th>54</th>
       <td>54</td>
       <td>non_sawah</td>
-      <td>4952.000000</td>
-      <td>3776.000000</td>
-      <td>3071.333333</td>
-      <td>4157.333333</td>
-      <td>2774.666667</td>
+      <td>1586.000000</td>
+      <td>1582.000000</td>
+      <td>1840.666667</td>
+      <td>2018.666667</td>
+      <td>3232.000000</td>
     </tr>
   </tbody>
 </table>
@@ -1132,61 +1124,61 @@ dtype: int64
       <th>0</th>
       <td>0</td>
       <td>sawah</td>
-      <td>1134.250000</td>
-      <td>1273.125000</td>
-      <td>1235.875000</td>
-      <td>1902.125000</td>
-      <td>1286.187500</td>
-      <td>0.212317</td>
-      <td>-0.198095</td>
+      <td>1630.625000</td>
+      <td>1964.250000</td>
+      <td>1919.125000</td>
+      <td>3145.750000</td>
+      <td>2047.687500</td>
+      <td>0.242183</td>
+      <td>-0.231213</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1</td>
       <td>sawah</td>
-      <td>1099.250000</td>
-      <td>1250.750000</td>
-      <td>1172.250000</td>
-      <td>1928.250000</td>
-      <td>1269.500000</td>
-      <td>0.243832</td>
-      <td>-0.213117</td>
+      <td>1638.750000</td>
+      <td>1971.000000</td>
+      <td>1943.500000</td>
+      <td>3161.500000</td>
+      <td>2159.000000</td>
+      <td>0.238590</td>
+      <td>-0.231953</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2</td>
       <td>sawah</td>
-      <td>1140.000000</td>
-      <td>1300.666667</td>
-      <td>1283.333333</td>
-      <td>1980.666667</td>
-      <td>1546.333333</td>
-      <td>0.213644</td>
-      <td>-0.207233</td>
+      <td>1601.333333</td>
+      <td>1910.666667</td>
+      <td>1874.666667</td>
+      <td>3112.000000</td>
+      <td>2330.000000</td>
+      <td>0.248128</td>
+      <td>-0.239182</td>
     </tr>
     <tr>
       <th>3</th>
       <td>3</td>
       <td>sawah</td>
-      <td>1156.888889</td>
-      <td>1302.000000</td>
-      <td>1236.888889</td>
-      <td>2004.222222</td>
-      <td>1487.555556</td>
-      <td>0.236750</td>
-      <td>-0.212394</td>
+      <td>1620.222222</td>
+      <td>1944.444444</td>
+      <td>1901.555556</td>
+      <td>3136.000000</td>
+      <td>2175.111111</td>
+      <td>0.245048</td>
+      <td>-0.234538</td>
     </tr>
     <tr>
       <th>4</th>
       <td>4</td>
       <td>sawah</td>
-      <td>1179.272727</td>
-      <td>1310.272727</td>
-      <td>1228.272727</td>
-      <td>1989.545455</td>
-      <td>1288.136364</td>
-      <td>0.236580</td>
-      <td>-0.205852</td>
+      <td>1737.090909</td>
+      <td>2095.454545</td>
+      <td>2047.090909</td>
+      <td>3154.909091</td>
+      <td>1814.818182</td>
+      <td>0.212960</td>
+      <td>-0.201787</td>
     </tr>
   </tbody>
 </table>
@@ -1227,61 +1219,61 @@ dtype: int64
       <th>50</th>
       <td>50</td>
       <td>non_sawah</td>
-      <td>7890.222222</td>
-      <td>7161.777778</td>
-      <td>6484.888889</td>
-      <td>6538.222222</td>
-      <td>4916.444444</td>
-      <td>0.004095</td>
-      <td>0.045515</td>
+      <td>2819.333333</td>
+      <td>2897.777778</td>
+      <td>3086.222222</td>
+      <td>3139.777778</td>
+      <td>4060.777778</td>
+      <td>0.008602</td>
+      <td>-0.040082</td>
     </tr>
     <tr>
       <th>51</th>
       <td>51</td>
       <td>non_sawah</td>
-      <td>4601.000000</td>
-      <td>4872.000000</td>
-      <td>4908.000000</td>
-      <td>4565.000000</td>
-      <td>4317.750000</td>
-      <td>-0.036208</td>
-      <td>0.032532</td>
+      <td>676.250000</td>
+      <td>849.250000</td>
+      <td>1106.000000</td>
+      <td>1631.000000</td>
+      <td>3022.500000</td>
+      <td>0.191816</td>
+      <td>-0.315190</td>
     </tr>
     <tr>
       <th>52</th>
       <td>52</td>
       <td>non_sawah</td>
-      <td>3562.000000</td>
-      <td>3526.666667</td>
-      <td>3584.000000</td>
-      <td>3642.666667</td>
-      <td>3541.000000</td>
-      <td>0.008118</td>
-      <td>-0.016180</td>
+      <td>1506.000000</td>
+      <td>1666.666667</td>
+      <td>2058.500000</td>
+      <td>2278.666667</td>
+      <td>3513.666667</td>
+      <td>0.050763</td>
+      <td>-0.155120</td>
     </tr>
     <tr>
       <th>53</th>
       <td>53</td>
       <td>non_sawah</td>
-      <td>5320.800000</td>
-      <td>4201.600000</td>
-      <td>3488.800000</td>
-      <td>4416.800000</td>
-      <td>3384.200000</td>
-      <td>0.117385</td>
-      <td>-0.024970</td>
+      <td>823.800000</td>
+      <td>990.400000</td>
+      <td>1242.000000</td>
+      <td>1767.200000</td>
+      <td>3267.600000</td>
+      <td>0.174531</td>
+      <td>-0.281694</td>
     </tr>
     <tr>
       <th>54</th>
       <td>54</td>
       <td>non_sawah</td>
-      <td>4952.000000</td>
-      <td>3776.000000</td>
-      <td>3071.333333</td>
-      <td>4157.333333</td>
-      <td>2774.666667</td>
-      <td>0.150235</td>
-      <td>-0.048067</td>
+      <td>1586.000000</td>
+      <td>1582.000000</td>
+      <td>1840.666667</td>
+      <td>2018.666667</td>
+      <td>3232.000000</td>
+      <td>0.046122</td>
+      <td>-0.121274</td>
     </tr>
   </tbody>
 </table>
@@ -1331,14 +1323,24 @@ dtype: int64
     <span class="n">stratify</span><span class="o">=</span><span class="n">y</span>
 <span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data training:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data testing :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran X_train :&quot;</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran X_test  :&quot;</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran y_train :&quot;</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran y_test  :&quot;</span><span class="p">,</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Jumlah data training:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah data testing :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data training: 80
-Data testing : 20
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ukuran X_train : (80, 7)
+Ukuran X_test  : (20, 7)
+Ukuran y_train : (80,)
+Ukuran y_test  : (20,)
+
+Jumlah data training: 80
+Jumlah data testing : 20
 </pre></div>
 </div>
 </div>
