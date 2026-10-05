@@ -1313,6 +1313,52 @@ dtype: int64
 <p>melatih model menggunakan 80 data training, Model yang sudah dilatih digunakan untuk memprediksi kelas dari 20 data testing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">raster_path</span> <span class="o">=</span> <span class="s2">&quot;materi/hasil_klasifikasi_sawah.tif&quot;</span>
+
+<span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">raster_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">nodata</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">nodata</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NoData:&quot;</span><span class="p">,</span> <span class="n">nodata</span><span class="p">)</span>
+
+<span class="c1"># Hanya nilai valid</span>
+<span class="k">if</span> <span class="n">nodata</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">data_valid</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">!=</span> <span class="n">nodata</span><span class="p">]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">data_valid</span> <span class="o">=</span> <span class="n">data</span>
+
+<span class="c1"># Menampilkan jumlah setiap kelas</span>
+<span class="n">nilai</span><span class="p">,</span> <span class="n">jumlah</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">data_valid</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Nilai kelas:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">nilai</span><span class="p">,</span> <span class="n">jumlah</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kelas </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2"> pixel&quot;</span><span class="p">)</span>
+
+<span class="n">jumlah_sawah</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data_valid</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">jumlah_non_sawah</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data_valid</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">total_pixel</span> <span class="o">=</span> <span class="n">jumlah_sawah</span> <span class="o">+</span> <span class="n">jumlah_non_sawah</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total Pixel     :&quot;</span><span class="p">,</span> <span class="n">total_pixel</span><span class="p">,</span> <span class="s2">&quot;pixel&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NoData: 0.0
+
+Nilai kelas:
+Kelas 1: 12445 pixel
+Kelas 2: 6455 pixel
+Total Pixel     : 18900 pixel
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
 
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
