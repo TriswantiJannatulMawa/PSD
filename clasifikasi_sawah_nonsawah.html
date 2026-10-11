@@ -62,7 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'clasifikasi_sawah_nonsawah';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Analisis Clustering Data Kualitas Udara Menggunakan Ekstraksi Fitur TSFEL dengan Perbandingan Interpolasi Linear dan Polynomial" href="clustering_3polutan.html" />
+    <link rel="next" title="Klasifikasi Tutupan Lahan Multikelas Jawa Timur menggunakan Sentinel-2A" href="Klasifikasi_Tutupan_Lahan_Multikelas_Jatim.html" />
+    <link rel="prev" title="Pengertian Clasifikasi" href="clasifikasi.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -189,7 +190,7 @@
 <li class="toctree-l2"><a class="reference internal" href="analisis_statistic.html">Analisis Statistik Data Menggunakan Aiven dan KNIME</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="ekstraksi_data_kecamatan.html">Pengantar Ekstraksi Data Kualitas Udara Kecamatan Kedungpring</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="ekstraksi_data_kecamatan.html">Pengantar Ekstraksi Data Kualitas Udara Kecamatan Kedungpring</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="preprocessing-fitur-aiven-kedungpring.html">Preprocessing, Ekstraksi Fitur &amp; Upload Database — NO₂ Kedungpring</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="preprocessing-fitur-co-so2-kedungpring.html">Preprocessing &amp; Ekstraksi Fitur CO dan SO₂ — Kecamatan Kedungpring</a></li>
@@ -200,7 +201,11 @@
 <li class="toctree-l2"><a class="reference internal" href="clustering_3polutan.html">Analisis Clustering Data Kualitas Udara Menggunakan Ekstraksi Fitur TSFEL dengan Perbandingan Interpolasi Linear dan Polynomial</a></li>
 
 
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="clasifikasi.html">Pengertian Clasifikasi</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Klasifikasi Lahan Sawah dan Non-Sawah menggunakan Sentinel-2A dan Random Forest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Klasifikasi_Tutupan_Lahan_Multikelas_Jatim.html">Klasifikasi Tutupan Lahan Multikelas Jawa Timur menggunakan Sentinel-2A</a></li>
 </ul>
 </details></li>
 </ul>
@@ -1833,6 +1838,172 @@ materi/hasil_klasifikasi_sawah.tif
 </ul>
 <p><img alt="alt text" src="_images/hasil_klasifikasi.png" />
 <img alt="alt text" src="_images/hasil_klasifikasi2.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">folium</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rasterio.features</span><span class="w"> </span><span class="kn">import</span> <span class="n">shapes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">shapely.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">shape</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># ============================================</span>
+<span class="c1"># 1. FILE RASTER HASIL KLASIFIKASI</span>
+<span class="c1"># ============================================</span>
+
+<span class="n">raster_path</span> <span class="o">=</span> <span class="s2">&quot;materi/hasil_klasifikasi_sawah.tif&quot;</span>
+
+<span class="c1"># ============================================</span>
+<span class="c1"># 2. BACA RASTER</span>
+<span class="c1"># ============================================</span>
+
+<span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">raster_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">transform</span>
+    <span class="n">raster_crs</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">crs</span>
+    <span class="n">nodata</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">nodata</span>
+
+<span class="c1"># ============================================</span>
+<span class="c1"># 3. BUANG NODATA</span>
+<span class="c1"># ============================================</span>
+
+<span class="k">if</span> <span class="n">nodata</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">mask_valid</span> <span class="o">=</span> <span class="n">data</span> <span class="o">!=</span> <span class="n">nodata</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">mask_valid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+
+<span class="c1"># ============================================</span>
+<span class="c1"># 4. UBAH RASTER MENJADI POLYGON</span>
+<span class="c1"># ============================================</span>
+
+<span class="n">geometries</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">geom</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">mask</span><span class="o">=</span><span class="n">mask_valid</span><span class="p">,</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">transform</span>
+<span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
+
+        <span class="n">geometries</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="n">shape</span><span class="p">(</span><span class="n">geom</span><span class="p">),</span>
+            <span class="s2">&quot;kelas&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="p">})</span>
+
+<span class="c1"># ============================================</span>
+<span class="c1"># 5. BUAT GEODATAFRAME</span>
+<span class="c1"># ============================================</span>
+
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
+    <span class="n">geometries</span><span class="p">,</span>
+    <span class="n">crs</span><span class="o">=</span><span class="n">raster_crs</span>
+<span class="p">)</span>
+
+<span class="c1"># Ubah ke WGS84 untuk Folium</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span>
+
+<span class="c1"># ============================================</span>
+<span class="c1"># 6. BUAT NAMA KELAS</span>
+<span class="c1"># ============================================</span>
+
+<span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;kelas&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;Sawah&quot;</span><span class="p">,</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;Non-Sawah&quot;</span>
+<span class="p">})</span>
+
+<span class="c1"># ============================================</span>
+<span class="c1"># 7. TENTUKAN PUSAT PETA OTOMATIS</span>
+<span class="c1"># ============================================</span>
+
+<span class="n">center</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">union_all</span><span class="p">()</span><span class="o">.</span><span class="n">centroid</span>
+
+<span class="n">center_lat</span> <span class="o">=</span> <span class="n">center</span><span class="o">.</span><span class="n">y</span>
+<span class="n">center_lon</span> <span class="o">=</span> <span class="n">center</span><span class="o">.</span><span class="n">x</span>
+
+<span class="c1"># ============================================</span>
+<span class="c1"># 8. BUAT PETA INTERAKTIF</span>
+<span class="c1"># ============================================</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span>
+    <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">center_lat</span><span class="p">,</span> <span class="n">center_lon</span><span class="p">],</span>
+    <span class="n">zoom_start</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+    <span class="n">tiles</span><span class="o">=</span><span class="s2">&quot;OpenStreetMap&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># ============================================</span>
+<span class="c1"># 9. TAMBAHKAN SATELLITE</span>
+<span class="c1"># ============================================</span>
+
+<span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
+    <span class="n">tiles</span><span class="o">=</span><span class="s2">&quot;https://mt1.google.com/vt/lyrs=y&amp;x=</span><span class="si">{x}</span><span class="s2">&amp;y=</span><span class="si">{y}</span><span class="s2">&amp;z=</span><span class="si">{z}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">attr</span><span class="o">=</span><span class="s2">&quot;Google Satellite&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Google Satellite&quot;</span><span class="p">,</span>
+    <span class="n">overlay</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">control</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># ============================================</span>
+<span class="c1"># 10. WARNA KELAS</span>
+<span class="c1"># ============================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">style_function</span><span class="p">(</span><span class="n">feature</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Sawah&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;fillColor&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;darkgreen&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;fillOpacity&quot;</span><span class="p">:</span> <span class="mf">0.6</span>
+        <span class="p">}</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;fillColor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;darkred&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;fillOpacity&quot;</span><span class="p">:</span> <span class="mf">0.5</span>
+        <span class="p">}</span>
+
+<span class="c1"># ============================================</span>
+<span class="c1"># 11. TAMBAHKAN HASIL KLASIFIKASI</span>
+<span class="c1"># ============================================</span>
+
+<span class="n">folium</span><span class="o">.</span><span class="n">GeoJson</span><span class="p">(</span>
+    <span class="n">gdf</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Hasil Klasifikasi&quot;</span><span class="p">,</span>
+    <span class="n">style_function</span><span class="o">=</span><span class="n">style_function</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">GeoJsonTooltip</span><span class="p">(</span>
+        <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">],</span>
+        <span class="n">aliases</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kelas:&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># ============================================</span>
+<span class="c1"># 12. LEGENDA/LAYER CONTROL</span>
+<span class="c1"># ============================================</span>
+
+<span class="n">folium</span><span class="o">.</span><span class="n">LayerControl</span><span class="p">(</span><span class="n">collapsed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># ============================================</span>
+<span class="c1"># 13. TAMPILKAN</span>
+<span class="c1"># ============================================</span>
+
+<span class="n">m</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;materi/peta_hasil_klasifikasi.html&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Peta berhasil dibuat!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Peta berhasil dibuat!
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -1867,13 +2038,22 @@ materi/hasil_klasifikasi_sawah.tif
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="clustering_3polutan.html"
+       href="clasifikasi.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Analisis Clustering Data Kualitas Udara Menggunakan Ekstraksi Fitur TSFEL dengan Perbandingan Interpolasi Linear dan Polynomial</p>
+        <p class="prev-next-title">Pengertian Clasifikasi</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Klasifikasi_Tutupan_Lahan_Multikelas_Jatim.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Klasifikasi Tutupan Lahan Multikelas Jawa Timur menggunakan Sentinel-2A</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
